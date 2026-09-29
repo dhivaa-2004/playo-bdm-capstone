@@ -1,0 +1,6899 @@
+{
+  "after_exact_deduplication": {
+    "rows": 3697,
+    "rated_rows": 3186,
+    "unrated_rows": 511,
+    "ratings_rated": {
+      "n": 3186,
+      "min": 1,
+      "p25": 4.1,
+      "median": 4.67,
+      "p75": 5.0,
+      "p95": 5.0,
+      "max": 5,
+      "mean": 4.447325800376648,
+      "sample_stddev": 0.6698481319526407
+    },
+    "rating_count_thresholds": {
+      "1": 3186,
+      "5": 1965,
+      "10": 1363,
+      "20": 904,
+      "50": 481,
+      "100": 287
+    }
+  },
+  "audit_at": "2026-09-29T09:58:38.220100+00:00",
+  "input_zip_sha256": "55f338caebbac0eeed8d563f3848e98118ead6baed4831b057ec8a5fecaff07e",
+  "record_total": 3701,
+  "files": [
+    {
+      "path": "playo-find-venue-master/.github/workflows/main.yml",
+      "bytes": 972,
+      "sha256": "d1e0520a3ac4fb1598b07d18d910006e7a5ee1c49cd0c9ea65cbbd3b7da513eb",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/LICENSE",
+      "bytes": 34520,
+      "sha256": "76a97c878c9c7a8321bb395c2b44d3fe2f8d81314d219b20138ed0e2dddd5182",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/README.md",
+      "bytes": 1078,
+      "sha256": "b2a1feb8319f212bd9062fbbec8bc9efb883ae35d4fa9667b259963db71ba26c",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/data/venues_bangalore.json",
+      "bytes": 1032947,
+      "sha256": "18d5a4ece2f366e78602cd93f6b0b1591baf078ea42723c6ab30b42f88616aba",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/data/venues_chennai.json",
+      "bytes": 414069,
+      "sha256": "63766879316ef1368c027c052942a57d5a07fb4b27dbf440168d96f077f9f364",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/data/venues_delhi.json",
+      "bytes": 524024,
+      "sha256": "ab78d1219b812a972266253f36cf85b70e0a12901f28991ae0901c3dc99cdf73",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/data/venues_hyderabad.json",
+      "bytes": 810676,
+      "sha256": "77c67876879b7409477531d106f5c7b974896ce0af3912eb1037d90454bd73b6",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/index.html",
+      "bytes": 4139,
+      "sha256": "397b52f0fc444cbeeda27a6e320b9f86b95d4bdb2223418f1f09bde24cb6b034",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/js/locations.json",
+      "bytes": 228,
+      "sha256": "c534337d02c8c0f5350312149afc3c35a75e0ed7273ff556a6cfd25e6d120203",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/js/places.js",
+      "bytes": 7657,
+      "sha256": "92707a4e18c83adf03e2dbcfa0b851b2498639e952aa7f0b7a126bdea0466070",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/requirements.txt",
+      "bytes": 138,
+      "sha256": "ad408ddc6e8e9de000e8e4532be52262fd59607f6dbeb71e961d3ba34e48b79d",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/scripts/fetch_venues.py",
+      "bytes": 4554,
+      "sha256": "640c5b41d6ddff5052773e918941e1b6b13366fc8fab948e8ea679da08d98a0e",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/scripts/gh-actions-update-venues.sh",
+      "bytes": 403,
+      "sha256": "c95fa4678568f2b2b72158c87cd848712f24808903e93f1fb8993f96b6879df6",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    },
+    {
+      "path": "playo-find-venue-master/scripts/git-checkout-date-sequence",
+      "bytes": 1392,
+      "sha256": "5a2b7ff3ac00fb6d16e80c068e7533de82190fb421a9351e05fe049ddd8f2811",
+      "zip_modified_time_unverified": [
+        2026,
+        9,
+        28,
+        15,
+        20,
+        40
+      ]
+    }
+  ],
+  "datasets": {
+    "bangalore": {
+      "path": "playo-find-venue-master/data/venues_bangalore.json",
+      "rows": 1359,
+      "unique_venue_ids": 1355,
+      "unique_sports": 74,
+      "missing_by_column": {
+        "avgRating": 0,
+        "deferLink": 0,
+        "filter_by": 0,
+        "fullLink": 3,
+        "icon": 0,
+        "info": 0,
+        "lat": 0,
+        "lng": 0,
+        "name": 0,
+        "rating": 0,
+        "ratingCount": 0
+      },
+      "rated_rows": 1300,
+      "unrated_zero_pair": 59,
+      "ratings_rated": {
+        "n": 1300,
+        "min": 1,
+        "p25": 4.0,
+        "median": 4.49,
+        "p75": 5.0,
+        "p95": 5.0,
+        "max": 5,
+        "mean": 4.3443,
+        "sample_stddev": 0.6657130571942094
+      },
+      "rating_counts": {
+        "n": 1359,
+        "min": 0,
+        "p25": 4.0,
+        "median": 13.0,
+        "p75": 54.0,
+        "p95": 262.0,
+        "max": 1463,
+        "mean": 57.127299484915376,
+        "sample_stddev": 116.01541521027794
+      },
+      "latitude": {
+        "n": 1359,
+        "min": 12.56487953260827,
+        "p25": 12.896088315352035,
+        "median": 12.960524704766408,
+        "p75": 13.032092418860852,
+        "p95": 13.107011851625916,
+        "max": 13.300383295773315,
+        "mean": 12.962398208589327,
+        "sample_stddev": 0.09359145311890245
+      },
+      "longitude": {
+        "n": 1359,
+        "min": 77.2769615094082,
+        "p25": 77.56704567345434,
+        "median": 77.63357,
+        "p75": 77.69205801674985,
+        "p95": 77.76802842802793,
+        "max": 77.95567878407226,
+        "mean": 77.63129798283666,
+        "sample_stddev": 0.08802249600051679
+      },
+      "distance_km_from_query_center": {
+        "n": 1359,
+        "min": 0.46328396861533633,
+        "p25": 9.446250100576428,
+        "median": 12.1511215780925,
+        "p75": 15.718041492473098,
+        "p95": 24.866056343256794,
+        "max": 46.45777329806715,
+        "mean": 13.262810781953785,
+        "sample_stddev": 6.337278455334649
+      },
+      "outside_100km": 0,
+      "sports": {
+        "Badminton": 500,
+        "Box Cricket": 482,
+        "Football": 481,
+        "Cricket Nets": 221,
+        "Pickleball": 192,
+        "Table Tennis": 137,
+        "Swimming": 108,
+        "Bowling Machine": 75,
+        "Basketball": 71,
+        "Cricket": 70,
+        "Snooker": 67,
+        "Pool": 60,
+        "Tennis": 46,
+        "Volleyball": 45,
+        "Ultimate Frisbee": 34,
+        "Foosball": 29,
+        "Skating": 26,
+        "SideArm Ball Throws": 22,
+        "Gym": 20,
+        "Chess": 17,
+        "Padel": 16,
+        "Play Station": 16,
+        "Carrom": 15,
+        "Squash": 13,
+        "Throwball": 13,
+        "Air Hockey": 12,
+        "eSports": 11,
+        "Shooting": 11,
+        "Hockey": 8,
+        "Rifle Shooting": 8,
+        "Handball": 7,
+        "Rental": 6,
+        "Billiards": 6,
+        "Car Racing": 5,
+        "Cricket Match": 5,
+        "Dance": 4,
+        "Adventure Sports": 4,
+        "Futsal": 4,
+        "Yoga": 4,
+        "Paintball": 4,
+        "Kids Play Area": 4,
+        "Steam Bath": 4,
+        "Laser Tag": 4,
+        "Archery": 3,
+        "Golf": 3,
+        "Board Games": 3,
+        "Climbing": 3,
+        "Bowling": 3,
+        "Sports Massage": 3,
+        "Zumba": 2,
+        "Indoor Cricket": 2,
+        "Darts": 2,
+        "Boxing": 2,
+        "Massage Therapy": 2,
+        "Beach Volleyball": 2,
+        "Rugby": 2,
+        "XBox": 2,
+        "Taekwondo": 2,
+        "Physiotherapy": 2,
+        "Running": 1,
+        "Combat Sports": 1,
+        "Trampoline": 1,
+        "Racket Stringing": 1,
+        "Baseball": 1,
+        "Water Spa": 1,
+        "Kick Boxing": 1,
+        "Futnet": 1,
+        "Skyball": 1,
+        "Sauna": 1,
+        "Screening": 1,
+        "Crossfit": 1,
+        "Workout": 1,
+        "VR": 1,
+        "Coaching": 1
+      }
+    },
+    "chennai": {
+      "path": "playo-find-venue-master/data/venues_chennai.json",
+      "rows": 557,
+      "unique_venue_ids": 556,
+      "unique_sports": 31,
+      "missing_by_column": {
+        "avgRating": 0,
+        "deferLink": 1,
+        "filter_by": 0,
+        "fullLink": 0,
+        "icon": 0,
+        "info": 0,
+        "lat": 0,
+        "lng": 0,
+        "name": 0,
+        "rating": 0,
+        "ratingCount": 0
+      },
+      "rated_rows": 534,
+      "unrated_zero_pair": 23,
+      "ratings_rated": {
+        "n": 534,
+        "min": 1,
+        "p25": 4.45,
+        "median": 5.0,
+        "p75": 5.0,
+        "p95": 5.0,
+        "max": 5,
+        "mean": 4.638539325842697,
+        "sample_stddev": 0.5970557226708649
+      },
+      "rating_counts": {
+        "n": 557,
+        "min": 0,
+        "p25": 2.0,
+        "median": 4.0,
+        "p75": 9.0,
+        "p95": 27.199999999999932,
+        "max": 237,
+        "mean": 8.055655296229803,
+        "sample_stddev": 15.525059499290338
+      },
+      "latitude": {
+        "n": 557,
+        "min": 12.741529415808913,
+        "p25": 12.92736891020891,
+        "median": 12.980964475438133,
+        "p75": 13.055292690023322,
+        "p95": 13.128597727072487,
+        "max": 13.237694943732004,
+        "mean": 12.990585956791119,
+        "sample_stddev": 0.08943001475835967
+      },
+      "longitude": {
+        "n": 557,
+        "min": 79.64399499285847,
+        "p25": 80.15700396714912,
+        "median": 80.194254,
+        "p75": 80.22161060061093,
+        "p95": 80.25511998044311,
+        "max": 80.30406646096392,
+        "mean": 80.18150662596918,
+        "sample_stddev": 0.07180168047557363
+      },
+      "distance_km_from_query_center": {
+        "n": 557,
+        "min": 1.1135921299876035,
+        "p25": 12.860859169160102,
+        "median": 17.24341825906692,
+        "p75": 21.325570371822387,
+        "p95": 27.932832731080172,
+        "max": 48.2064153919524,
+        "mean": 17.394749097834453,
+        "sample_stddev": 6.738455860338669
+      },
+      "outside_100km": 0,
+      "sports": {
+        "Badminton": 284,
+        "Box Cricket": 213,
+        "Football": 195,
+        "Pickleball": 85,
+        "Cricket Nets": 51,
+        "Table Tennis": 29,
+        "Cricket": 15,
+        "Basketball": 12,
+        "Volleyball": 12,
+        "Tennis": 10,
+        "Bowling Machine": 9,
+        "Snooker": 7,
+        "Indoor Cricket": 6,
+        "Swimming": 5,
+        "eSports": 5,
+        "Padel": 5,
+        "Play Station": 4,
+        "Pool": 2,
+        "Skating": 2,
+        "Shooting": 2,
+        "Rifle Shooting": 2,
+        "Rental": 1,
+        "Laser Tag": 1,
+        "Heyball": 1,
+        "Squash": 1,
+        "Golf": 1,
+        "Billiards": 1,
+        "Bowling": 1,
+        "Futsal": 1,
+        "Water Sports": 1,
+        "Crossfit": 1
+      }
+    },
+    "delhi": {
+      "path": "playo-find-venue-master/data/venues_delhi.json",
+      "rows": 699,
+      "unique_venue_ids": 698,
+      "unique_sports": 35,
+      "missing_by_column": {
+        "avgRating": 0,
+        "deferLink": 0,
+        "filter_by": 0,
+        "fullLink": 0,
+        "icon": 0,
+        "info": 0,
+        "lat": 0,
+        "lng": 0,
+        "name": 0,
+        "rating": 0,
+        "ratingCount": 0
+      },
+      "rated_rows": 351,
+      "unrated_zero_pair": 348,
+      "ratings_rated": {
+        "n": 351,
+        "min": 1,
+        "p25": 4.38,
+        "median": 5.0,
+        "p75": 5.0,
+        "p95": 5.0,
+        "max": 5,
+        "mean": 4.551652421652421,
+        "sample_stddev": 0.7063209339254088
+      },
+      "rating_counts": {
+        "n": 699,
+        "min": 0,
+        "p25": 0.0,
+        "median": 1.0,
+        "p75": 2.0,
+        "p95": 12.0,
+        "max": 485,
+        "mean": 3.6623748211731044,
+        "sample_stddev": 20.9190800219638
+      },
+      "latitude": {
+        "n": 699,
+        "min": 28.152509946717927,
+        "p25": 28.44404339540057,
+        "median": 28.55603931114516,
+        "p75": 28.651570692372083,
+        "p95": 28.737517211150827,
+        "max": 29.37598630713587,
+        "mean": 28.556450152236952,
+        "sample_stddev": 0.132854027615808
+      },
+      "longitude": {
+        "n": 699,
+        "min": 76.28426561510314,
+        "p25": 77.07801341933731,
+        "median": 77.18032868105229,
+        "p75": 77.37938104992824,
+        "p95": 77.47036078407655,
+        "max": 77.75994491481552,
+        "mean": 77.22044927537735,
+        "sample_stddev": 0.17659240388761605
+      },
+      "distance_km_from_query_center": {
+        "n": 699,
+        "min": 1.7446795795357648,
+        "p25": 15.131615590804692,
+        "median": 21.801603069778913,
+        "p75": 28.741992917829947,
+        "p95": 37.08381582286959,
+        "max": 91.03302690587103,
+        "mean": 22.5710891487629,
+        "sample_stddev": 10.10018086396303
+      },
+      "outside_100km": 0,
+      "sports": {
+        "Box Cricket": 231,
+        "Badminton": 182,
+        "Football": 157,
+        "Pickleball": 153,
+        "Cricket": 141,
+        "Cricket Nets": 62,
+        "Table Tennis": 57,
+        "Basketball": 47,
+        "Tennis": 41,
+        "Bowling Machine": 24,
+        "Padel": 23,
+        "Futsal": 17,
+        "Swimming": 15,
+        "Pool": 10,
+        "Snooker": 8,
+        "Volleyball": 5,
+        "Shooting": 5,
+        "Squash": 4,
+        "Golf": 2,
+        "Ultimate Frisbee": 2,
+        "Skating": 2,
+        "Rifle Shooting": 2,
+        "Play Station": 2,
+        "eSports": 2,
+        "Zumba": 1,
+        "Yoga": 1,
+        "Gym": 1,
+        "Kids Play Area": 1,
+        "Darts": 1,
+        "Carrom": 1,
+        "Equestrian": 1,
+        "Climbing": 1,
+        "Cricket Match": 1,
+        "Archery": 1,
+        "SideArm Ball Throws": 1
+      }
+    },
+    "hyderabad": {
+      "path": "playo-find-venue-master/data/venues_hyderabad.json",
+      "rows": 1086,
+      "unique_venue_ids": 1085,
+      "unique_sports": 61,
+      "missing_by_column": {
+        "avgRating": 0,
+        "deferLink": 1,
+        "filter_by": 0,
+        "fullLink": 0,
+        "icon": 0,
+        "info": 0,
+        "lat": 0,
+        "lng": 0,
+        "name": 0,
+        "rating": 0,
+        "ratingCount": 0
+      },
+      "rated_rows": 1005,
+      "unrated_zero_pair": 81,
+      "ratings_rated": {
+        "n": 1005,
+        "min": 1.57,
+        "p25": 4.07,
+        "median": 4.68,
+        "p75": 5.0,
+        "p95": 5.0,
+        "max": 5,
+        "mean": 4.4417810945273635,
+        "sample_stddev": 0.6741409701614309
+      },
+      "rating_counts": {
+        "n": 1086,
+        "min": 0,
+        "p25": 2.0,
+        "median": 6.0,
+        "p75": 18.75,
+        "p95": 99.75,
+        "max": 651,
+        "mean": 22.060773480662984,
+        "sample_stddev": 52.78341092690577
+      },
+      "latitude": {
+        "n": 1086,
+        "min": 16.729625898161704,
+        "p25": 17.38440814737431,
+        "median": 17.444673878089688,
+        "p75": 17.493838177028785,
+        "p95": 17.554057631895528,
+        "max": 17.838036417142412,
+        "mean": 17.43281365154433,
+        "sample_stddev": 0.09748625919072368
+      },
+      "longitude": {
+        "n": 1086,
+        "min": 78.00660596986596,
+        "p25": 78.36185135153339,
+        "median": 78.41037741610361,
+        "p75": 78.53859756213845,
+        "p95": 78.60482948531802,
+        "max": 78.72732337491037,
+        "mean": 78.43416684902739,
+        "sample_stddev": 0.11154984592249706
+      },
+      "distance_km_from_query_center": {
+        "n": 1086,
+        "min": 0.7191295418392446,
+        "p25": 9.738437129761056,
+        "median": 12.835126479294175,
+        "p75": 17.2429616440742,
+        "p95": 25.011234986261073,
+        "max": 91.35219823827899,
+        "mean": 14.22852090972163,
+        "sample_stddev": 8.193498775803372
+      },
+      "outside_100km": 0,
+      "sports": {
+        "Box Cricket": 476,
+        "Badminton": 246,
+        "Pickleball": 235,
+        "Football": 228,
+        "Cricket Nets": 126,
+        "Cricket": 113,
+        "Bowling Machine": 75,
+        "Table Tennis": 61,
+        "Volleyball": 46,
+        "Snooker": 45,
+        "Swimming": 39,
+        "Basketball": 37,
+        "Beach Volleyball": 26,
+        "Pool": 23,
+        "Tennis": 21,
+        "Play Station": 19,
+        "eSports": 16,
+        "Padel": 14,
+        "Carrom": 12,
+        "Foosball": 9,
+        "Skating": 8,
+        "Chess": 7,
+        "Billiards": 6,
+        "Gym": 5,
+        "Rifle Shooting": 4,
+        "Throwball": 3,
+        "Cricket Match": 3,
+        "Archery": 3,
+        "Squash": 3,
+        "Laser Tag": 3,
+        "Bowling": 2,
+        "Shooting": 2,
+        "Massage Therapy": 2,
+        "Escape Time": 2,
+        "Zapminton": 2,
+        "Steam Bath": 2,
+        "Golf": 2,
+        "Air Hockey": 1,
+        "Box Office": 1,
+        "Yoga": 1,
+        "Sports Massage": 1,
+        "Hall": 1,
+        "Car Racing": 1,
+        "Crossfit": 1,
+        "Cue Sports": 1,
+        "Go Karting": 1,
+        "Kids Play Area": 1,
+        "Horse Riding": 1,
+        "Bubble soccer": 1,
+        "Screening": 1,
+        "Rugby": 1,
+        "VR": 1,
+        "SideArm Ball Throws": 1,
+        "Paintball": 1,
+        "Baseball": 1,
+        "Trampoline": 1,
+        "Ultimate Frisbee": 1,
+        "Jazzminton": 1,
+        "Cycling": 1,
+        "Kayaking": 1,
+        "Footpool": 1
+      }
+    }
+  },
+  "columns": {
+    "avgRating": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "float": 1790,
+        "int": 1911
+      },
+      "distinct_values": 248
+    },
+    "deferLink": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 2,
+      "types": {
+        "str": 3701
+      },
+      "distinct_values": 3696
+    },
+    "filter_by": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "list": 3701
+      },
+      "distinct_values": 558
+    },
+    "fullLink": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 3,
+      "types": {
+        "str": 3701
+      },
+      "distinct_values": 3695
+    },
+    "icon": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "str": 3701
+      },
+      "distinct_values": 6
+    },
+    "info": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "str": 3701
+      },
+      "distinct_values": 3697
+    },
+    "lat": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "float": 3701
+      },
+      "distinct_values": 3670
+    },
+    "lng": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "float": 3701
+      },
+      "distinct_values": 3671
+    },
+    "name": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "str": 3701
+      },
+      "distinct_values": 3682
+    },
+    "rating": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "int": 3701
+      },
+      "distinct_values": 6
+    },
+    "ratingCount": {
+      "absent": 0,
+      "null": 0,
+      "blank_or_empty": 0,
+      "types": {
+        "int": 3701
+      },
+      "distinct_values": 280
+    }
+  },
+  "duplicates": {
+    "exact_record": {
+      "distinct_keys": 3697,
+      "duplicate_groups": 4,
+      "rows_in_duplicate_groups": 8,
+      "excess_rows": 4,
+      "groups": [
+        [
+          "bangalore:1059",
+          "bangalore:1060"
+        ],
+        [
+          "chennai:128",
+          "chennai:129"
+        ],
+        [
+          "delhi:533",
+          "delhi:534"
+        ],
+        [
+          "hyderabad:263",
+          "hyderabad:264"
+        ]
+      ]
+    },
+    "venue_id": {
+      "distinct_keys": 3694,
+      "duplicate_groups": 4,
+      "rows_in_duplicate_groups": 8,
+      "excess_rows": 4,
+      "groups": [
+        [
+          "bangalore:1059",
+          "bangalore:1060"
+        ],
+        [
+          "chennai:128",
+          "chennai:129"
+        ],
+        [
+          "delhi:533",
+          "delhi:534"
+        ],
+        [
+          "hyderabad:263",
+          "hyderabad:264"
+        ]
+      ]
+    },
+    "name_normalized": {
+      "distinct_keys": 3681,
+      "duplicate_groups": 19,
+      "rows_in_duplicate_groups": 39,
+      "excess_rows": 20,
+      "groups": [
+        [
+          "bangalore:71",
+          "bangalore:72",
+          "hyderabad:61"
+        ],
+        [
+          "bangalore:401",
+          "hyderabad:287"
+        ],
+        [
+          "bangalore:723",
+          "bangalore:724"
+        ],
+        [
+          "bangalore:1021",
+          "hyderabad:851"
+        ],
+        [
+          "bangalore:1037",
+          "chennai:426"
+        ],
+        [
+          "bangalore:1059",
+          "bangalore:1060"
+        ],
+        [
+          "chennai:128",
+          "chennai:129"
+        ],
+        [
+          "chennai:174",
+          "delhi:199"
+        ],
+        [
+          "chennai:333",
+          "hyderabad:637"
+        ],
+        [
+          "chennai:504",
+          "chennai:505"
+        ],
+        [
+          "delhi:67",
+          "hyderabad:116"
+        ],
+        [
+          "delhi:176",
+          "hyderabad:244"
+        ],
+        [
+          "delhi:533",
+          "delhi:534"
+        ],
+        [
+          "delhi:637",
+          "delhi:638"
+        ],
+        [
+          "delhi:641",
+          "delhi:642"
+        ],
+        [
+          "hyderabad:69",
+          "hyderabad:70"
+        ],
+        [
+          "hyderabad:263",
+          "hyderabad:264"
+        ],
+        [
+          "hyderabad:600",
+          "hyderabad:601"
+        ],
+        [
+          "hyderabad:697",
+          "hyderabad:728"
+        ]
+      ]
+    },
+    "city_name_normalized": {
+      "distinct_keys": 3689,
+      "duplicate_groups": 12,
+      "rows_in_duplicate_groups": 24,
+      "excess_rows": 12,
+      "groups": [
+        [
+          "bangalore:71",
+          "bangalore:72"
+        ],
+        [
+          "bangalore:723",
+          "bangalore:724"
+        ],
+        [
+          "bangalore:1059",
+          "bangalore:1060"
+        ],
+        [
+          "chennai:128",
+          "chennai:129"
+        ],
+        [
+          "chennai:504",
+          "chennai:505"
+        ],
+        [
+          "delhi:533",
+          "delhi:534"
+        ],
+        [
+          "delhi:637",
+          "delhi:638"
+        ],
+        [
+          "delhi:641",
+          "delhi:642"
+        ],
+        [
+          "hyderabad:69",
+          "hyderabad:70"
+        ],
+        [
+          "hyderabad:263",
+          "hyderabad:264"
+        ],
+        [
+          "hyderabad:600",
+          "hyderabad:601"
+        ],
+        [
+          "hyderabad:697",
+          "hyderabad:728"
+        ]
+      ]
+    },
+    "coordinates": {
+      "distinct_keys": 3675,
+      "duplicate_groups": 26,
+      "rows_in_duplicate_groups": 52,
+      "excess_rows": 26,
+      "groups": [
+        [
+          "bangalore:67",
+          "bangalore:69"
+        ],
+        [
+          "bangalore:187",
+          "bangalore:188"
+        ],
+        [
+          "bangalore:192",
+          "bangalore:1088"
+        ],
+        [
+          "bangalore:256",
+          "bangalore:388"
+        ],
+        [
+          "bangalore:608",
+          "bangalore:609"
+        ],
+        [
+          "bangalore:651",
+          "bangalore:1167"
+        ],
+        [
+          "bangalore:725",
+          "bangalore:1314"
+        ],
+        [
+          "bangalore:767",
+          "bangalore:768"
+        ],
+        [
+          "bangalore:792",
+          "bangalore:793"
+        ],
+        [
+          "bangalore:1059",
+          "bangalore:1060"
+        ],
+        [
+          "bangalore:1148",
+          "bangalore:1154"
+        ],
+        [
+          "bangalore:1224",
+          "bangalore:1225"
+        ],
+        [
+          "bangalore:1251",
+          "bangalore:1253"
+        ],
+        [
+          "bangalore:1281",
+          "bangalore:1282"
+        ],
+        [
+          "chennai:2",
+          "chennai:3"
+        ],
+        [
+          "chennai:6",
+          "chennai:231"
+        ],
+        [
+          "chennai:128",
+          "chennai:129"
+        ],
+        [
+          "chennai:281",
+          "chennai:282"
+        ],
+        [
+          "chennai:408",
+          "chennai:556"
+        ],
+        [
+          "delhi:134",
+          "delhi:269"
+        ],
+        [
+          "delhi:533",
+          "delhi:534"
+        ],
+        [
+          "hyderabad:22",
+          "hyderabad:419"
+        ],
+        [
+          "hyderabad:95",
+          "hyderabad:900"
+        ],
+        [
+          "hyderabad:263",
+          "hyderabad:264"
+        ],
+        [
+          "hyderabad:409",
+          "hyderabad:410"
+        ],
+        [
+          "hyderabad:870",
+          "hyderabad:871"
+        ]
+      ]
+    }
+  },
+  "cross_city_id_groups": [],
+  "conflicting_id_groups": [],
+  "sports": {
+    "Box Cricket": 1402,
+    "Badminton": 1212,
+    "Football": 1061,
+    "Pickleball": 665,
+    "Cricket Nets": 460,
+    "Cricket": 339,
+    "Table Tennis": 284,
+    "Bowling Machine": 183,
+    "Swimming": 167,
+    "Basketball": 167,
+    "Snooker": 127,
+    "Tennis": 118,
+    "Volleyball": 108,
+    "Pool": 95,
+    "Padel": 58,
+    "Play Station": 41,
+    "Skating": 38,
+    "Foosball": 38,
+    "Ultimate Frisbee": 37,
+    "eSports": 34,
+    "Carrom": 28,
+    "Beach Volleyball": 28,
+    "Gym": 26,
+    "Chess": 24,
+    "SideArm Ball Throws": 24,
+    "Futsal": 22,
+    "Squash": 21,
+    "Shooting": 20,
+    "Throwball": 16,
+    "Rifle Shooting": 16,
+    "Air Hockey": 13,
+    "Billiards": 13,
+    "Cricket Match": 9,
+    "Hockey": 8,
+    "Indoor Cricket": 8,
+    "Golf": 8,
+    "Laser Tag": 8,
+    "Archery": 7,
+    "Rental": 7,
+    "Handball": 7,
+    "Yoga": 6,
+    "Kids Play Area": 6,
+    "Steam Bath": 6,
+    "Car Racing": 6,
+    "Bowling": 6,
+    "Paintball": 5,
+    "Dance": 4,
+    "Adventure Sports": 4,
+    "Massage Therapy": 4,
+    "Climbing": 4,
+    "Sports Massage": 4,
+    "Zumba": 3,
+    "Darts": 3,
+    "Rugby": 3,
+    "Board Games": 3,
+    "Crossfit": 3,
+    "Trampoline": 2,
+    "Boxing": 2,
+    "Baseball": 2,
+    "XBox": 2,
+    "Taekwondo": 2,
+    "Screening": 2,
+    "Physiotherapy": 2,
+    "VR": 2,
+    "Escape Time": 2,
+    "Zapminton": 2,
+    "Running": 1,
+    "Combat Sports": 1,
+    "Racket Stringing": 1,
+    "Water Spa": 1,
+    "Kick Boxing": 1,
+    "Futnet": 1,
+    "Skyball": 1,
+    "Sauna": 1,
+    "Workout": 1,
+    "Coaching": 1,
+    "Heyball": 1,
+    "Water Sports": 1,
+    "Equestrian": 1,
+    "Box Office": 1,
+    "Hall": 1,
+    "Cue Sports": 1,
+    "Go Karting": 1,
+    "Horse Riding": 1,
+    "Bubble soccer": 1,
+    "Jazzminton": 1,
+    "Cycling": 1,
+    "Kayaking": 1,
+    "Footpool": 1
+  },
+  "sport_cardinalities": {
+    "1": 2018,
+    "2": 883,
+    "3": 383,
+    "4": 200,
+    "5": 107,
+    "6": 49,
+    "7": 29,
+    "8": 14,
+    "9": 8,
+    "10": 4,
+    "11": 2,
+    "12": 3,
+    "13": 1
+  },
+  "sport_combinations": [
+    {
+      "sports": [
+        "Badminton"
+      ],
+      "rows": 790
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football"
+      ],
+      "rows": 461
+    },
+    {
+      "sports": [
+        "Cricket"
+      ],
+      "rows": 285
+    },
+    {
+      "sports": [
+        "Pickleball"
+      ],
+      "rows": 271
+    },
+    {
+      "sports": [
+        "Box Cricket"
+      ],
+      "rows": 248
+    },
+    {
+      "sports": [
+        "Cricket Nets"
+      ],
+      "rows": 73
+    },
+    {
+      "sports": [
+        "Table Tennis"
+      ],
+      "rows": 69
+    },
+    {
+      "sports": [
+        "Tennis"
+      ],
+      "rows": 55
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 52
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 50
+    },
+    {
+      "sports": [
+        "Swimming"
+      ],
+      "rows": 50
+    },
+    {
+      "sports": [
+        "Football"
+      ],
+      "rows": 47
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football"
+      ],
+      "rows": 43
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Table Tennis"
+      ],
+      "rows": 35
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 34
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Cricket Nets"
+      ],
+      "rows": 32
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pickleball"
+      ],
+      "rows": 29
+    },
+    {
+      "sports": [
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 27
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Swimming"
+      ],
+      "rows": 24
+    },
+    {
+      "sports": [
+        "Snooker"
+      ],
+      "rows": 22
+    },
+    {
+      "sports": [
+        "Padel",
+        "Pickleball"
+      ],
+      "rows": 21
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Ultimate Frisbee"
+      ],
+      "rows": 18
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 17
+    },
+    {
+      "sports": [
+        "Bowling Machine"
+      ],
+      "rows": 17
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 15
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket"
+      ],
+      "rows": 15
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 14
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket"
+      ],
+      "rows": 13
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 12
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 11
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 10
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Cricket Nets",
+        "SideArm Ball Throws"
+      ],
+      "rows": 9
+    },
+    {
+      "sports": [
+        "Basketball"
+      ],
+      "rows": 9
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Pickleball"
+      ],
+      "rows": 9
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Pickleball"
+      ],
+      "rows": 9
+    },
+    {
+      "sports": [
+        "eSports"
+      ],
+      "rows": 8
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 8
+    },
+    {
+      "sports": [
+        "Padel"
+      ],
+      "rows": 8
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 8
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Football"
+      ],
+      "rows": 8
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Volleyball"
+      ],
+      "rows": 8
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 7
+    },
+    {
+      "sports": [
+        "Chess"
+      ],
+      "rows": 7
+    },
+    {
+      "sports": [
+        "Play Station",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 7
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Futsal"
+      ],
+      "rows": 7
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 7
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 6
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 6
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Table Tennis"
+      ],
+      "rows": 6
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Football"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Swimming"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Skating"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Rifle Shooting"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Shooting"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Table Tennis"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Golf"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Padel",
+        "Pickleball"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Futsal",
+        "Pickleball"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Beach Volleyball",
+        "Box Cricket"
+      ],
+      "rows": 5
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Pool"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Foosball",
+        "Table Tennis"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "SideArm Ball Throws"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Football"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Rifle Shooting",
+        "Shooting"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Climbing"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Pickleball"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Beach Volleyball",
+        "Box Cricket",
+        "Football"
+      ],
+      "rows": 4
+    },
+    {
+      "sports": [
+        "Adventure Sports"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "SideArm Ball Throws"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Football",
+        "Ultimate Frisbee"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Paintball"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Handball"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Tennis"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Car Racing"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Foosball",
+        "Pool"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Football"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Cricket Match"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Gym"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Gym"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Bowling",
+        "Dance",
+        "Laser Tag",
+        "Pool",
+        "Shooting",
+        "eSports"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Pool"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Play Station",
+        "Snooker",
+        "eSports"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Pickleball"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Play Station"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 3
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Skating"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Hockey"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Beach Volleyball",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Hockey"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Skating"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Squash"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "SideArm Ball Throws"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pool",
+        "Table Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Foosball",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Swimming"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Car Racing",
+        "Play Station",
+        "Pool"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Table Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Gym",
+        "Swimming"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Squash",
+        "Table Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Snooker"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Billiards",
+        "Snooker"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Skating"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Ultimate Frisbee"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Snooker"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Sports Massage"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Futsal",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Padel",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Cricket Nets",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Futsal",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Snooker",
+        "eSports"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Beach Volleyball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Play Station",
+        "Snooker"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Archery",
+        "Rifle Shooting"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Beach Volleyball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Escape Time",
+        "Laser Tag"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Beach Volleyball",
+        "Box Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Billiards",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 2
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Padel",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Running"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Dance",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Gym",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Carrom",
+        "Chess",
+        "Football",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Skating"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Squash",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Foosball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Futsal",
+        "Pickleball",
+        "Skating"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Combat Sports",
+        "Gym",
+        "Table Tennis",
+        "Yoga",
+        "Zumba"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Squash"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Badminton",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Skating",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "SideArm Ball Throws"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Foosball",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Badminton",
+        "Cricket Nets",
+        "Foosball",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Hockey"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Football",
+        "Indoor Cricket",
+        "Padel",
+        "Pickleball",
+        "Swimming",
+        "Table Tennis",
+        "Trampoline",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Gym"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Archery",
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Padel",
+        "Pickleball",
+        "Rental"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Racket Stringing"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Carrom",
+        "Chess",
+        "Darts",
+        "Pickleball",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Skating",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pool",
+        "Snooker",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Carrom",
+        "Football",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "SideArm Ball Throws",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "SideArm Ball Throws",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Hockey",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Carrom",
+        "Chess",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Foosball",
+        "Pool",
+        "Snooker",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Cricket Nets"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Football",
+        "Snooker",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Boxing",
+        "Chess",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Carrom",
+        "Massage Therapy",
+        "Play Station",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Gym",
+        "Pool",
+        "Snooker",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Kids Play Area"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Archery",
+        "Badminton",
+        "Baseball",
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Handball",
+        "Pickleball",
+        "Table Tennis",
+        "Tennis",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Futsal",
+        "Pickleball",
+        "Skating",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Rental",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Kids Play Area",
+        "Snooker",
+        "Squash",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Football",
+        "Rugby",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Archery",
+        "Basketball",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Squash"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Pool",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Kids Play Area",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Cricket Nets",
+        "Football",
+        "Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Chess",
+        "Cricket Nets",
+        "Football",
+        "Skating"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Gym"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Swimming",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Billiards",
+        "Carrom",
+        "Chess",
+        "Darts",
+        "Pool",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Golf",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Gym",
+        "Steam Bath"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Football",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Foosball",
+        "Football",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Water Spa"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Cricket Nets",
+        "Football",
+        "Skating",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Play Station",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Hockey",
+        "Table Tennis",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Play Station"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Futsal",
+        "Handball",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Swimming",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Football",
+        "Skating"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Yoga"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Billiards",
+        "Pool",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Box Cricket",
+        "Snooker",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Badminton",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Chess",
+        "Play Station",
+        "Pool",
+        "Snooker",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Gym",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Football",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Cricket Match",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Foosball",
+        "Football",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Carrom",
+        "Chess",
+        "Foosball",
+        "Pool",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Carrom",
+        "Foosball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Football",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Laser Tag",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Foosball",
+        "XBox"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Gym",
+        "Kick Boxing",
+        "Shooting",
+        "Swimming",
+        "Table Tennis",
+        "Taekwondo",
+        "Yoga",
+        "Zumba"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Futnet",
+        "Rugby",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Rental",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Rental",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Chess",
+        "Foosball",
+        "Play Station",
+        "Pool",
+        "XBox"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Skating",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Football",
+        "Shooting",
+        "Squash",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Board Games",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Skating",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Pickleball",
+        "Skating"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Board Games",
+        "Play Station"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Skating",
+        "Swimming",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Handball",
+        "Pickleball",
+        "Skating",
+        "Throwball",
+        "Ultimate Frisbee",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Skating",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Football",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Swimming",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Adventure Sports",
+        "Beach Volleyball",
+        "Box Cricket",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Squash",
+        "Swimming",
+        "Table Tennis",
+        "Tennis",
+        "Throwball",
+        "Ultimate Frisbee",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Foosball",
+        "Pool",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Badminton",
+        "Cricket Nets",
+        "Foosball",
+        "Gym",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Padel",
+        "Pickleball",
+        "Rental",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Board Games"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Skating",
+        "Squash",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Badminton",
+        "Billiards",
+        "Foosball",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Table Tennis",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Skyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Foosball",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Football",
+        "Swimming",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Paintball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Gym",
+        "Snooker",
+        "Steam Bath",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Carrom",
+        "Chess",
+        "Gym",
+        "Sauna",
+        "Snooker",
+        "Steam Bath",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Gym",
+        "Screening",
+        "Snooker",
+        "Squash",
+        "Steam Bath",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Skating",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pool",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Gym",
+        "Physiotherapy",
+        "Squash"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Carrom"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Billiards",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Football",
+        "Padel",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "SideArm Ball Throws",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "SideArm Ball Throws"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Pickleball",
+        "Squash",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Carrom",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Carrom",
+        "Foosball",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Padel",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Pickleball",
+        "Swimming",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket",
+        "Cricket Nets",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Carrom",
+        "Cricket Nets",
+        "Foosball",
+        "Football",
+        "Massage Therapy",
+        "Physiotherapy",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Cricket Match",
+        "Football",
+        "Hockey",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Foosball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Handball",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Pool",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Crossfit",
+        "Taekwondo",
+        "Workout"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Cricket Nets",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Cricket",
+        "Skating",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Play Station",
+        "Pool",
+        "Swimming",
+        "Table Tennis",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Foosball",
+        "Play Station",
+        "Pool",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Foosball",
+        "Pool",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Gym",
+        "Sports Massage",
+        "Swimming",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Boxing",
+        "Gym",
+        "Indoor Cricket",
+        "Kids Play Area",
+        "Pickleball",
+        "Swimming",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Carrom",
+        "Chess",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Rental"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Billiards",
+        "Foosball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Ultimate Frisbee"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Play Station",
+        "Snooker",
+        "VR"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Football",
+        "Swimming",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Foosball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Rifle Shooting"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Skating",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Skating",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Coaching",
+        "Yoga"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Football",
+        "Rifle Shooting",
+        "Shooting"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Carrom",
+        "Football",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Pool",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Rental",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket",
+        "Cricket Nets",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Indoor Cricket",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Indoor Cricket",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Laser Tag",
+        "Pickleball",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Heyball",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pickleball",
+        "Squash"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Table Tennis",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Padel"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Indoor Cricket"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Football",
+        "Indoor Cricket"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Indoor Cricket",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Skating",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Indoor Cricket",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Play Station",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Water Sports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Crossfit",
+        "Football",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Rifle Shooting",
+        "Shooting"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Padel",
+        "Rifle Shooting",
+        "Shooting",
+        "Skating",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Golf",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Cricket Nets",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Yoga",
+        "Zumba"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket",
+        "Football",
+        "Shooting"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Skating"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Squash",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Cricket Nets",
+        "Football",
+        "Padel",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Padel",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pool",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket Nets",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Kids Play Area"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Cricket",
+        "Football",
+        "Pickleball",
+        "Squash",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Squash",
+        "Swimming",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Futsal",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Darts",
+        "Pool",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Futsal"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Play Station",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Futsal",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Carrom",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Snooker",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Football",
+        "Squash",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Cricket",
+        "Equestrian",
+        "Football",
+        "Golf",
+        "Pool",
+        "Shooting",
+        "Skating",
+        "Swimming",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Cricket Nets",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Match",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Archery",
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Pickleball",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Football",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Padel",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Pickleball",
+        "Play Station"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "SideArm Ball Throws"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Pickleball",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Air Hockey",
+        "Badminton",
+        "Beach Volleyball",
+        "Box Cricket",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Office",
+        "Carrom",
+        "Foosball",
+        "Table Tennis",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling",
+        "Box Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Throwball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Cricket Nets",
+        "Pickleball",
+        "Rifle Shooting",
+        "Skating"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Yoga"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Carrom"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Billiards",
+        "Carrom",
+        "Chess",
+        "Play Station",
+        "Snooker",
+        "Swimming",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Padel"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Beach Volleyball",
+        "Box Cricket"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Foosball",
+        "Pickleball",
+        "Pool",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Beach Volleyball",
+        "Box Cricket",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Pickleball",
+        "Skating",
+        "Sports Massage",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Carrom",
+        "Chess",
+        "Foosball",
+        "Hall",
+        "Play Station",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Beach Volleyball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Beach Volleyball",
+        "Box Cricket",
+        "Cricket Match",
+        "Cricket Nets",
+        "Football",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Foosball",
+        "Football",
+        "Pickleball",
+        "Swimming",
+        "Table Tennis",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Car Racing",
+        "Play Station"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket Match"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Table Tennis",
+        "Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Beach Volleyball",
+        "Box Cricket",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Crossfit",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Carrom",
+        "Chess",
+        "Play Station",
+        "Pool",
+        "Snooker",
+        "Table Tennis",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Cricket Nets",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Pickleball",
+        "Squash",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Bowling Machine",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Cricket",
+        "Cricket Nets",
+        "Cue Sports",
+        "Football",
+        "Pickleball",
+        "Swimming",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Cricket",
+        "Table Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Cricket Nets",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Massage Therapy"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Go Karting",
+        "Pool",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Laser Tag"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Snooker",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Kids Play Area",
+        "Play Station",
+        "Snooker",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket Match",
+        "Cricket Nets"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Cricket Nets",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Horse Riding"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Carrom",
+        "Foosball",
+        "Football",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Bubble soccer",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Screening"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Rugby"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Pickleball",
+        "Play Station"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Throwball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Gym",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Table Tennis",
+        "Zapminton"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Beach Volleyball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Box Cricket",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Play Station",
+        "VR",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Swimming",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Carrom",
+        "Chess",
+        "Gym",
+        "Snooker",
+        "Squash",
+        "Steam Bath",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Gym",
+        "Snooker",
+        "Steam Bath",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Pickleball",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Padel"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Carrom",
+        "Chess",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Massage Therapy",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Cricket Nets",
+        "Foosball",
+        "Pickleball",
+        "Play Station",
+        "Table Tennis",
+        "Volleyball",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "Cricket Nets",
+        "Pickleball",
+        "Zapminton"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Archery",
+        "Billiards",
+        "Box Cricket",
+        "Football",
+        "Paintball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Baseball",
+        "Box Cricket",
+        "Football",
+        "Snooker",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Carrom",
+        "Foosball",
+        "Snooker",
+        "Table Tennis",
+        "Trampoline"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Cricket Nets",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Beach Volleyball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Shooting",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Carrom"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Play Station",
+        "Snooker",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Billiards",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Swimming",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Cricket",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Pool"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Beach Volleyball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Play Station",
+        "Snooker",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling Machine",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Swimming",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Pickleball",
+        "Skating"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Snooker",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Carrom",
+        "Chess",
+        "Foosball",
+        "Pool",
+        "Snooker",
+        "Table Tennis",
+        "eSports"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Padel",
+        "Pickleball",
+        "Swimming"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Bowling"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Billiards",
+        "Play Station",
+        "Pool",
+        "Snooker"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Jazzminton",
+        "Pickleball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Beach Volleyball",
+        "Bowling Machine",
+        "Box Cricket",
+        "Cricket Nets",
+        "Cycling",
+        "Football",
+        "Pickleball",
+        "Skating",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Cricket",
+        "Cricket Nets",
+        "Swimming",
+        "Table Tennis",
+        "Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Football",
+        "Pickleball",
+        "Tennis",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Basketball",
+        "Box Cricket",
+        "Cricket Nets",
+        "Football",
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Pickleball",
+        "Volleyball"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Box Cricket",
+        "Play Station"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Basketball",
+        "Pickleball",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Kayaking"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Footpool",
+        "Pool",
+        "Snooker",
+        "Table Tennis"
+      ],
+      "rows": 1
+    },
+    {
+      "sports": [
+        "Badminton",
+        "Box Cricket",
+        "Carrom",
+        "Football",
+        "Pickleball"
+      ],
+      "rows": 1
+    }
+  ],
+  "ratings_all_including_zeros": {
+    "n": 3701,
+    "min": 0,
+    "p25": 3.67,
+    "median": 4.5,
+    "p75": 5.0,
+    "p95": 5.0,
+    "max": 5,
+    "mean": 3.833069440691705,
+    "sample_stddev": 1.6558043143254728
+  },
+  "ratings_rated_only": {
+    "n": 3190,
+    "min": 1,
+    "p25": 4.1,
+    "median": 4.67,
+    "p75": 5.0,
+    "p95": 5.0,
+    "max": 5,
+    "mean": 4.4470815047021945,
+    "sample_stddev": 0.6705173042175591
+  },
+  "ratings_histogram_rated": {
+    "2": 96,
+    "3": 546,
+    "4": 1284,
+    "5": 1253,
+    "1": 11
+  },
+  "rating_counts_all": {
+    "n": 3701,
+    "min": 0,
+    "p25": 1.0,
+    "median": 5.0,
+    "p75": 19.0,
+    "p95": 154.0,
+    "max": 1463,
+    "mean": 29.3544987841124,
+    "sample_stddev": 79.79798632153376
+  },
+  "rating_counts_rated": {
+    "n": 3190,
+    "min": 1,
+    "p25": 3.0,
+    "median": 7.0,
+    "p75": 23.0,
+    "p95": 172.0,
+    "max": 1463,
+    "mean": 34.05673981191222,
+    "sample_stddev": 85.01692733538992
+  },
+  "rating_count_thresholds": {
+    "1": 3190,
+    "5": 1967,
+    "10": 1365,
+    "20": 906,
+    "50": 482,
+    "100": 288
+  },
+  "rating_count_pearson_rated": -0.22393326815856723,
+  "rating_log1p_count_pearson_rated": -0.4040954707391658,
+  "info": {
+    "length": {
+      "n": 3701,
+      "min": 214,
+      "p25": 276.0,
+      "median": 284.0,
+      "p75": 296.0,
+      "p95": 326.0,
+      "max": 414,
+      "mean": 288.70548500405295,
+      "sample_stddev": 19.209210759807586
+    },
+    "labels": {
+      "Ratings:": 3701,
+      "Sports:": 3701,
+      "Phone:": 3701
+    },
+    "tags": {
+      "h3": 3701,
+      "strong": 11103,
+      "br": 14804,
+      "a": 3701
+    },
+    "template_checks": {
+      "h3_equals_name": 3701,
+      "rating_matches_columns": 3701,
+      "sports_match_columns": 3701
+    },
+    "phone_presence": {
+      "field_present": 3701,
+      "has_digits": 3701,
+      "placeholder_or_blank": 0
+    }
+  },
+  "issues": {
+    "unrated_zero_pair": {
+      "count": 511,
+      "rows": [
+        "bangalore:7",
+        "bangalore:8",
+        "bangalore:16",
+        "bangalore:18",
+        "bangalore:33",
+        "bangalore:34",
+        "bangalore:35",
+        "bangalore:40",
+        "bangalore:66",
+        "bangalore:71",
+        "bangalore:72",
+        "bangalore:132",
+        "bangalore:138",
+        "bangalore:141",
+        "bangalore:142",
+        "bangalore:143",
+        "bangalore:159",
+        "bangalore:170",
+        "bangalore:181",
+        "bangalore:199",
+        "bangalore:263",
+        "bangalore:323",
+        "bangalore:333",
+        "bangalore:369",
+        "bangalore:373",
+        "bangalore:456",
+        "bangalore:484",
+        "bangalore:485",
+        "bangalore:489",
+        "bangalore:491",
+        "bangalore:511",
+        "bangalore:514",
+        "bangalore:515",
+        "bangalore:516",
+        "bangalore:520",
+        "bangalore:558",
+        "bangalore:571",
+        "bangalore:627",
+        "bangalore:629",
+        "bangalore:630",
+        "bangalore:634",
+        "bangalore:696",
+        "bangalore:703",
+        "bangalore:708",
+        "bangalore:717",
+        "bangalore:755",
+        "bangalore:775",
+        "bangalore:783",
+        "bangalore:869",
+        "bangalore:897",
+        "bangalore:907",
+        "bangalore:974",
+        "bangalore:976",
+        "bangalore:983",
+        "bangalore:1128",
+        "bangalore:1132",
+        "bangalore:1193",
+        "bangalore:1202",
+        "bangalore:1284",
+        "chennai:42",
+        "chennai:43",
+        "chennai:46",
+        "chennai:63",
+        "chennai:96",
+        "chennai:116",
+        "chennai:224",
+        "chennai:226",
+        "chennai:236",
+        "chennai:262",
+        "chennai:268",
+        "chennai:271",
+        "chennai:290",
+        "chennai:320",
+        "chennai:331",
+        "chennai:342",
+        "chennai:378",
+        "chennai:404",
+        "chennai:447",
+        "chennai:458",
+        "chennai:461",
+        "chennai:544",
+        "chennai:552",
+        "delhi:0",
+        "delhi:3",
+        "delhi:4",
+        "delhi:5",
+        "delhi:6",
+        "delhi:7",
+        "delhi:8",
+        "delhi:10",
+        "delhi:11",
+        "delhi:12",
+        "delhi:13",
+        "delhi:15",
+        "delhi:16",
+        "delhi:21",
+        "delhi:22",
+        "delhi:23",
+        "delhi:24",
+        "delhi:25",
+        "delhi:27",
+        "delhi:34",
+        "delhi:35",
+        "delhi:38",
+        "delhi:47",
+        "delhi:48",
+        "delhi:49",
+        "delhi:50",
+        "delhi:53",
+        "delhi:54",
+        "delhi:55",
+        "delhi:56",
+        "delhi:57",
+        "delhi:58",
+        "delhi:63",
+        "delhi:66",
+        "delhi:67",
+        "delhi:68",
+        "delhi:73",
+        "delhi:74",
+        "delhi:77",
+        "delhi:80",
+        "delhi:81",
+        "delhi:83",
+        "delhi:84",
+        "delhi:86",
+        "delhi:87",
+        "delhi:88",
+        "delhi:89",
+        "delhi:90",
+        "delhi:92",
+        "delhi:93",
+        "delhi:94",
+        "delhi:95",
+        "delhi:98",
+        "delhi:100",
+        "delhi:104",
+        "delhi:108",
+        "delhi:110",
+        "delhi:111",
+        "delhi:113",
+        "delhi:117",
+        "delhi:118",
+        "delhi:119",
+        "delhi:120",
+        "delhi:121",
+        "delhi:122",
+        "delhi:123",
+        "delhi:124",
+        "delhi:125",
+        "delhi:128",
+        "delhi:129",
+        "delhi:130",
+        "delhi:131",
+        "delhi:132",
+        "delhi:133",
+        "delhi:135",
+        "delhi:136",
+        "delhi:138",
+        "delhi:139",
+        "delhi:142",
+        "delhi:145",
+        "delhi:146",
+        "delhi:147",
+        "delhi:154",
+        "delhi:156",
+        "delhi:157",
+        "delhi:160",
+        "delhi:162",
+        "delhi:163",
+        "delhi:164",
+        "delhi:165",
+        "delhi:166",
+        "delhi:168",
+        "delhi:169",
+        "delhi:170",
+        "delhi:171",
+        "delhi:177",
+        "delhi:178",
+        "delhi:179",
+        "delhi:180",
+        "delhi:181",
+        "delhi:182",
+        "delhi:183",
+        "delhi:184",
+        "delhi:185",
+        "delhi:186",
+        "delhi:187",
+        "delhi:191",
+        "delhi:194",
+        "delhi:195",
+        "delhi:196",
+        "delhi:197",
+        "delhi:201",
+        "delhi:205",
+        "delhi:206",
+        "delhi:207",
+        "delhi:208",
+        "delhi:212",
+        "delhi:214",
+        "delhi:215",
+        "delhi:217",
+        "delhi:219",
+        "delhi:220",
+        "delhi:222",
+        "delhi:226",
+        "delhi:227",
+        "delhi:234",
+        "delhi:236",
+        "delhi:239",
+        "delhi:241",
+        "delhi:245",
+        "delhi:246",
+        "delhi:248",
+        "delhi:251",
+        "delhi:252",
+        "delhi:253",
+        "delhi:257",
+        "delhi:259",
+        "delhi:260",
+        "delhi:261",
+        "delhi:264",
+        "delhi:266",
+        "delhi:267",
+        "delhi:270",
+        "delhi:273",
+        "delhi:274",
+        "delhi:275",
+        "delhi:276",
+        "delhi:278",
+        "delhi:279",
+        "delhi:280",
+        "delhi:281",
+        "delhi:282",
+        "delhi:284",
+        "delhi:285",
+        "delhi:286",
+        "delhi:287",
+        "delhi:290",
+        "delhi:291",
+        "delhi:292",
+        "delhi:296",
+        "delhi:300",
+        "delhi:302",
+        "delhi:303",
+        "delhi:304",
+        "delhi:305",
+        "delhi:306",
+        "delhi:308",
+        "delhi:313",
+        "delhi:314",
+        "delhi:315",
+        "delhi:317",
+        "delhi:318",
+        "delhi:319",
+        "delhi:320",
+        "delhi:322",
+        "delhi:324",
+        "delhi:325",
+        "delhi:328",
+        "delhi:329",
+        "delhi:330",
+        "delhi:331",
+        "delhi:332",
+        "delhi:333",
+        "delhi:334",
+        "delhi:335",
+        "delhi:336",
+        "delhi:337",
+        "delhi:338",
+        "delhi:339",
+        "delhi:341",
+        "delhi:342",
+        "delhi:343",
+        "delhi:344",
+        "delhi:345",
+        "delhi:347",
+        "delhi:348",
+        "delhi:349",
+        "delhi:350",
+        "delhi:352",
+        "delhi:357",
+        "delhi:358",
+        "delhi:361",
+        "delhi:363",
+        "delhi:365",
+        "delhi:368",
+        "delhi:370",
+        "delhi:373",
+        "delhi:377",
+        "delhi:378",
+        "delhi:379",
+        "delhi:380",
+        "delhi:385",
+        "delhi:386",
+        "delhi:388",
+        "delhi:389",
+        "delhi:392",
+        "delhi:393",
+        "delhi:396",
+        "delhi:397",
+        "delhi:428",
+        "delhi:434",
+        "delhi:435",
+        "delhi:436",
+        "delhi:437",
+        "delhi:438",
+        "delhi:439",
+        "delhi:441",
+        "delhi:449",
+        "delhi:450",
+        "delhi:451",
+        "delhi:453",
+        "delhi:456",
+        "delhi:458",
+        "delhi:459",
+        "delhi:461",
+        "delhi:464",
+        "delhi:465",
+        "delhi:466",
+        "delhi:470",
+        "delhi:474",
+        "delhi:480",
+        "delhi:482",
+        "delhi:486",
+        "delhi:487",
+        "delhi:491",
+        "delhi:492",
+        "delhi:493",
+        "delhi:494",
+        "delhi:497",
+        "delhi:498",
+        "delhi:499",
+        "delhi:501",
+        "delhi:502",
+        "delhi:504",
+        "delhi:505",
+        "delhi:506",
+        "delhi:507",
+        "delhi:509",
+        "delhi:510",
+        "delhi:512",
+        "delhi:515",
+        "delhi:516",
+        "delhi:519",
+        "delhi:520",
+        "delhi:521",
+        "delhi:522",
+        "delhi:523",
+        "delhi:525",
+        "delhi:529",
+        "delhi:530",
+        "delhi:531",
+        "delhi:532",
+        "delhi:536",
+        "delhi:537",
+        "delhi:539",
+        "delhi:540",
+        "delhi:541",
+        "delhi:545",
+        "delhi:550",
+        "delhi:551",
+        "delhi:552",
+        "delhi:560",
+        "delhi:562",
+        "delhi:563",
+        "delhi:567",
+        "delhi:572",
+        "delhi:573",
+        "delhi:579",
+        "delhi:580",
+        "delhi:582",
+        "delhi:583",
+        "delhi:585",
+        "delhi:586",
+        "delhi:587",
+        "delhi:588",
+        "delhi:590",
+        "delhi:592",
+        "delhi:593",
+        "delhi:594",
+        "delhi:596",
+        "delhi:597",
+        "delhi:598",
+        "delhi:600",
+        "delhi:606",
+        "delhi:612",
+        "delhi:614",
+        "delhi:615",
+        "delhi:618",
+        "delhi:624",
+        "delhi:625",
+        "delhi:627",
+        "delhi:628",
+        "delhi:629",
+        "delhi:631",
+        "delhi:635",
+        "delhi:639",
+        "delhi:640",
+        "delhi:641",
+        "delhi:646",
+        "delhi:648",
+        "delhi:650",
+        "delhi:651",
+        "delhi:652",
+        "delhi:654",
+        "delhi:657",
+        "delhi:659",
+        "delhi:660",
+        "delhi:661",
+        "delhi:667",
+        "delhi:668",
+        "delhi:670",
+        "delhi:671",
+        "delhi:673",
+        "delhi:674",
+        "delhi:678",
+        "delhi:681",
+        "delhi:682",
+        "delhi:685",
+        "delhi:687",
+        "delhi:688",
+        "delhi:689",
+        "delhi:690",
+        "delhi:691",
+        "delhi:692",
+        "delhi:694",
+        "delhi:695",
+        "delhi:696",
+        "delhi:697",
+        "hyderabad:4",
+        "hyderabad:16",
+        "hyderabad:24",
+        "hyderabad:29",
+        "hyderabad:33",
+        "hyderabad:39",
+        "hyderabad:45",
+        "hyderabad:48",
+        "hyderabad:55",
+        "hyderabad:56",
+        "hyderabad:65",
+        "hyderabad:68",
+        "hyderabad:86",
+        "hyderabad:90",
+        "hyderabad:94",
+        "hyderabad:99",
+        "hyderabad:132",
+        "hyderabad:147",
+        "hyderabad:150",
+        "hyderabad:200",
+        "hyderabad:205",
+        "hyderabad:235",
+        "hyderabad:294",
+        "hyderabad:302",
+        "hyderabad:334",
+        "hyderabad:345",
+        "hyderabad:346",
+        "hyderabad:358",
+        "hyderabad:359",
+        "hyderabad:361",
+        "hyderabad:396",
+        "hyderabad:415",
+        "hyderabad:420",
+        "hyderabad:421",
+        "hyderabad:423",
+        "hyderabad:441",
+        "hyderabad:452",
+        "hyderabad:490",
+        "hyderabad:496",
+        "hyderabad:500",
+        "hyderabad:501",
+        "hyderabad:527",
+        "hyderabad:545",
+        "hyderabad:553",
+        "hyderabad:592",
+        "hyderabad:595",
+        "hyderabad:596",
+        "hyderabad:597",
+        "hyderabad:599",
+        "hyderabad:600",
+        "hyderabad:699",
+        "hyderabad:709",
+        "hyderabad:728",
+        "hyderabad:731",
+        "hyderabad:734",
+        "hyderabad:754",
+        "hyderabad:779",
+        "hyderabad:790",
+        "hyderabad:797",
+        "hyderabad:804",
+        "hyderabad:806",
+        "hyderabad:810",
+        "hyderabad:816",
+        "hyderabad:833",
+        "hyderabad:841",
+        "hyderabad:842",
+        "hyderabad:850",
+        "hyderabad:907",
+        "hyderabad:919",
+        "hyderabad:921",
+        "hyderabad:923",
+        "hyderabad:934",
+        "hyderabad:999",
+        "hyderabad:1037",
+        "hyderabad:1039",
+        "hyderabad:1042",
+        "hyderabad:1058",
+        "hyderabad:1068",
+        "hyderabad:1070",
+        "hyderabad:1081",
+        "hyderabad:1085"
+      ]
+    },
+    "missing_venue_id": {
+      "count": 3,
+      "rows": [
+        "bangalore:160",
+        "bangalore:179",
+        "bangalore:706"
+      ]
+    },
+    "repeated_sport_in_record": {
+      "count": 3,
+      "rows": [
+        "bangalore:197",
+        "hyderabad:327",
+        "hyderabad:976"
+      ]
+    }
+  },
+  "query_centers": {
+    "bangalore": {
+      "lat": 12.9715987,
+      "lng": 77.59456269999998
+    },
+    "hyderabad": {
+      "lat": 17.4241053,
+      "lng": 78.4657618
+    },
+    "chennai": {
+      "lat": 13.0474878,
+      "lng": 80.0689252
+    },
+    "delhi": {
+      "lat": 28.6448,
+      "lng": 77.216721
+    }
+  },
+  "collection_timestamp": "unknown; ZIP member times are not source observation dates",
+  "provenance": {
+    "source_type": "third_party_historical",
+    "is_synthetic": false,
+    "source_dataset": "playo-find-venue-master"
+  }
+}

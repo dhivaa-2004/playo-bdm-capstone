@@ -1,0 +1,16 @@
+test_empty_file_does_not_claim_real_data (test_ingest.ImportTests.test_empty_file_does_not_claim_real_data) ... ok
+test_entity_id_stable_and_source_separated (test_ingest.ImportTests.test_entity_id_stable_and_source_separated) ... ok
+test_equivalent_timezones_normalize_identically (test_ingest.ImportTests.test_equivalent_timezones_normalize_identically) ... ok
+test_invalid_counts (test_ingest.ImportTests.test_invalid_counts) ... ok
+test_invalid_ratings (test_ingest.ImportTests.test_invalid_ratings) ... ok
+test_normalization_and_nulls (test_ingest.ImportTests.test_normalization_and_nulls) ... ok
+test_raw_preservation_reconciliation_and_idempotence (test_ingest.ImportTests.test_raw_preservation_reconciliation_and_idempotence) ... ok
+test_real_source_permission_reference_required (test_ingest.ImportTests.test_real_source_permission_reference_required) ... ok
+test_source_origin_not_substring (test_ingest.ImportTests.test_source_origin_not_substring) ... ok
+test_synthetic_cannot_claim_real_url (test_ingest.ImportTests.test_synthetic_cannot_claim_real_url) ... ok
+test_timezone_required (test_ingest.ImportTests.test_timezone_required) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.003s
+
+OK
