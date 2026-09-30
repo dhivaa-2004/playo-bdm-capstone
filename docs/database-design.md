@@ -1,43 +1,30 @@
-# Provisional database design
+# Implemented database design
 
-**No migrations applied.** This design follows observed field categories and the professor's relational/JSONB examples; finalize only after permitted data profiling.
+All historical records are protected from application writes. The schema was inspected through the Supabase plugin on 30 September 2026 before additive revisions.
 
-| Proposed object | Grain/key | Purpose and constraints |
+| Object | Grain / constraints | Access |
 |---|---|---|
-| staging.sources | one documented source | source type and permission/licence reference; private |
-| staging.pipeline_runs | one execution | status, timestamps, parser version, reconciled counts |
-| staging.raw_records | one raw observation | run/source FKs, JSONB payload, raw hash and original-file pointer |
-| staging.quality_issues | one detected issue | raw record FK, rule, severity, reason; private |
-| core.cities | one canonical city | country/state/city composite identity to avoid ambiguous names |
-| core.venues | one venue per provenance namespace | source key unique within source; city FK, archival state |
-| core.venue_observations | one venue at observed time | venue/raw FKs; rating 0–5 or NULL; count >=0 or NULL |
-| core.sports / core.amenities | one canonical label | unique normalized key, original labels retained separately |
-| core.venue_sports / core.venue_amenities | one entity pair | composite PKs and FKs prevent repeated joins |
-| core.venue_timings | one verified schedule interval | nullable structured intervals plus untouched timing text |
-| analytics.venue_features | one versioned venue/snapshot | source separation, features, target, split membership |
-| analytics.model_runs | one fit/evaluation | model version, training hash, parameters, metrics, sample counts |
-| analytics.predictions | one model + venue + feature snapshot | unique composite key; timestamps and stale marker |
-| private.admin_members / private.audit_events | one admin / one action | server-controlled membership, protected mutation trace |
+| source_regions | Region key; display name | Public SELECT |
+| venues | UUID PK, unique stable source key, region FK, valid coordinate bounds, historical-only provenance, unknown date remains NULL | Public SELECT |
+| venue_ratings | Venue PK/FK; 1–5 rating or NULL; nonnegative integer count; count-zero iff NULL target | Public SELECT |
+| activity_labels | Label PK; unclassified activity/service terminology | Public SELECT |
+| venue_activities | Venue/label composite PK and FKs | Public SELECT |
+| model_runs | Run UUID; metrics, split, sensitivity, parameters and versions JSONB; feature/dataset/training hashes | Public SELECT |
+| predictions | Run/venue composite PK/FKs; 1–5 prediction; train/test/unrated check; feature hash | Public SELECT |
+| workspace_records | UUID; auth owner FK; optional venue FK; constrained name/note; archive flag; timestamps | Admin AND owner CRUD |
+| workspace_audit | Event ID; owner/record IDs retained even after workspace deletion; trigger-generated action and timestamp | Admin AND owner SELECT |
+| quality_reports | Archive hash PK; aggregate quality JSONB, parser version and load time | Public SELECT; ingestion trigger writes |
+| private.ingestion_runs | Archive hash PK, parser and aggregate quality evidence | Database owner |
+| private.raw_lineage | Archive/file/row composite PK; venue FK; member/record hashes | Database owner |
+| private.import_chunks | Archive/part composite PK; sanitized staging JSONB | Database owner |
+| private.schema_migrations | Original application migration ledger | Database owner |
+| private.admin_members | Auth user PK/FK; grant time | Database owner writes; authenticated user sees only own membership |
 
-Entity identity must not depend solely on venue name. Stable provider keys take priority. Fuzzy matches become review candidates rather than silent merges. Synthetic identities stay in their own namespace. Capture time is not venue age or transaction time.
+Public views `feature_store_v1`, `dataset_status`, `region_statistics`, `region_directory`, `activity_statistics` use security invoker. Public RPCs are also security invoker. `quality_summary` was changed from security definer to invoker; a trigger refreshes its public aggregate report. Private triggers use locked search paths and fixed table targets.
 
-Normalization: sports/amenities use junction tables; ratings are observations, not repeated static columns; raw variable metadata stays JSONB. Build aggregate views for the UI without denormalizing source evidence. Use UTC timestamps with original local timing text preserved.
+The restrictive `approved_admin` policy combines with ownership policies, preventing signup-based privilege escalation. Membership is not taken from editable user metadata. Historical tables have SELECT-only grants, with no INSERT/UPDATE/DELETE policies for public/application roles.
 
-## Planned relationship diagram
+Indexes cover region, activity/venue junction, archive, prediction venue FK, workspace owner/update time and venue FK, audit owner/time and private lineage venue FK. The existing lower-name pattern index does not accelerate leading-wildcard ILIKE; at this dataset size measured search remained small (one sampled RPC: 17.874 ms). No claim of measured index speedup is made. A trigram extension is not needed for the current volume.
 
-```mermaid
-erDiagram
-  SOURCES ||--o{ RAW_RECORDS : supplies
-  PIPELINE_RUNS ||--o{ RAW_RECORDS : imports
-  CITIES ||--o{ VENUES : contains
-  VENUES ||--o{ VENUE_OBSERVATIONS : has
-  RAW_RECORDS ||--o{ VENUE_OBSERVATIONS : supports
-  VENUES ||--o{ VENUE_SPORTS : offers
-  SPORTS ||--o{ VENUE_SPORTS : identifies
-  VENUES ||--o{ PREDICTIONS : receives
-  MODEL_RUNS ||--o{ PREDICTIONS : produces
-```
-
-## Migration acceptance
-
-Run on an isolated test database/schema first, then verify FKs, unique keys, numeric checks, NULL behavior, rollback, role-based denial and intentional safe reads. Record migration checksums. Do not run DROP/TRUNCATE examples against production. Benchmark selected queries before/after appropriate indexes; a sequential scan can be correct for a small table.
+## Migration history
+Original changes were applied through the owner SQL interface and recorded in private.schema_migrations (001, 003, 002). Additions are recorded both there and in native Supabase migration history. Never use `db reset` against this project. Native migration history alone does not represent the original baseline.

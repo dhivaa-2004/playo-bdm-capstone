@@ -1,0 +1,30 @@
+{
+  "dataset_status": {
+    "status": 200,
+    "rows": 1,
+    "counts": {
+      "venues": 3697,
+      "rated": 3186,
+      "unrated": 511,
+      "regions": 4,
+      "activity_labels": 89,
+      "synthetic": 0
+    }
+  },
+  "activity_statistics": {
+    "status": 200,
+    "rows": 89
+  },
+  "region_directory": {
+    "status": 200,
+    "rows": 4
+  },
+  "quality_reports": {
+    "status": 200,
+    "rows": 1
+  },
+  "model_runs": {
+    "status": 200,
+    "rows": 1
+  }
+}

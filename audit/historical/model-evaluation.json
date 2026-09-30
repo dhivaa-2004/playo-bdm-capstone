@@ -1,0 +1,164 @@
+{
+  "run_id": "18a83a41-064d-4b9d-a4ad-054b37c5520e",
+  "feature_version": "historical-v1",
+  "dataset_hash": "aa02a50be5c2270502479d61b601d2933c96de4480cb6a2dc49ca7f1e9668b1f",
+  "training_hash": "d3918ac9c8282a60cc689670bc7f44c00a417386c7fca1b2e2f5ac8e32f624fd",
+  "model_name": "random_forest",
+  "metrics": {
+    "dummy_mean": {
+      "n": 639,
+      "mae": 0.5422199611313563,
+      "rmse": 0.6671925478498182,
+      "r2": -0.0003606234603981129,
+      "training_cv_mae": 0.5293372974775556,
+      "training_cv_mae_std": 0.006786818991599499
+    },
+    "dummy_median": {
+      "n": 639,
+      "mae": 0.5169014084507042,
+      "rmse": 0.7065280225407679,
+      "r2": -0.12179370384523436,
+      "training_cv_mae": 0.5077676412804808,
+      "training_cv_mae_std": 0.013815624726078685
+    },
+    "ridge": {
+      "n": 639,
+      "mae": 0.5028279216747309,
+      "rmse": 0.6447722631925604,
+      "r2": 0.06574182159898379,
+      "training_cv_mae": 0.4991354661142795,
+      "training_cv_mae_std": 0.00687135634281351
+    },
+    "random_forest": {
+      "n": 639,
+      "mae": 0.4655453425046651,
+      "rmse": 0.6101946694533835,
+      "r2": 0.1632590310169365,
+      "training_cv_mae": 0.4599634033771219,
+      "training_cv_mae_std": 0.015121605176428148
+    }
+  },
+  "split_summary": {
+    "seed": 42,
+    "train_rows": 2547,
+    "test_rows": 639,
+    "unrated_rows": 511,
+    "train_groups": 2528,
+    "test_groups": 632,
+    "group_overlap": 0,
+    "selection": "minimum five-fold grouped training-CV MAE; test not used for selection"
+  },
+  "sensitivity": {
+    "regions": {
+      "bangalore": {
+        "n": 261,
+        "mae": 0.4764417354842678,
+        "rmse": 0.6039935336979196,
+        "r2": 0.17245603399122578
+      },
+      "chennai": {
+        "n": 109,
+        "mae": 0.3939707933835689,
+        "rmse": 0.5828778290151582,
+        "r2": 0.13784402497495052
+      },
+      "delhi": {
+        "n": 64,
+        "mae": 0.4389800282926616,
+        "rmse": 0.5906415385850698,
+        "r2": -0.01075179060235354
+      },
+      "hyderabad": {
+        "n": 205,
+        "mae": 0.4980226468758428,
+        "rmse": 0.6376385420091133,
+        "r2": 0.14208851315630644
+      }
+    },
+    "rating_count_thresholds": {
+      "1": {
+        "n": 639,
+        "mae": 0.4655453425046651,
+        "rmse": 0.6101946694533835,
+        "r2": 0.1632590310169365
+      },
+      "5": {
+        "n": 394,
+        "mae": 0.4949843451359096,
+        "rmse": 0.6531667969813495,
+        "r2": 0.0040882346212013365
+      },
+      "10": {
+        "n": 281,
+        "mae": 0.4709998920105247,
+        "rmse": 0.6141557670933135,
+        "r2": 0.0019841538238535295
+      },
+      "20": {
+        "n": 180,
+        "mae": 0.45223753329854177,
+        "rmse": 0.5807254453831199,
+        "r2": -0.07877295677119411
+      },
+      "50": {
+        "n": 104,
+        "mae": 0.43315101726833427,
+        "rmse": 0.5684939457734385,
+        "r2": -0.07666051754872982
+      },
+      "100": {
+        "n": 63,
+        "mae": 0.43023111246431106,
+        "rmse": 0.5668762627720271,
+        "r2": -0.07687290708939232
+      }
+    }
+  },
+  "parameters": {
+    "dummy_mean": {
+      "constant": null,
+      "quantile": null,
+      "strategy": "mean"
+    },
+    "dummy_median": {
+      "constant": null,
+      "quantile": null,
+      "strategy": "median"
+    },
+    "ridge": {
+      "alpha": 10.0,
+      "copy_X": true,
+      "fit_intercept": true,
+      "max_iter": null,
+      "positive": false,
+      "random_state": null,
+      "solver": "auto",
+      "tol": 0.0001
+    },
+    "random_forest": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "criterion": "squared_error",
+      "max_depth": 12,
+      "max_features": 1.0,
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 15,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 200,
+      "n_jobs": 2,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "versions": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5"
+  }
+}

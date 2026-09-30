@@ -1,3 +1,5 @@
+> Planning reference from the audit phase. Implemented state and verification are documented in README.md, status.md and database-design.md; these supersede any pending or proposed statements below.
+
 # Offline input contract, version 0.1
 
 Each non-empty line is one JSON object with these fields:

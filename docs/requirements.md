@@ -1,3 +1,5 @@
+> Planning reference from the audit phase. Implemented state and verification are documented in README.md, status.md and database-design.md; these supersede any pending or proposed statements below.
+
 # Requirement matrix
 
 Mappings are plans, not claims of completion. Later direct user instructions take priority; professor materials define academic requirements.

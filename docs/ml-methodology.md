@@ -1,25 +1,9 @@
-# ML decision gate and evaluation plan
+# Implemented rating-estimation methodology
 
-No target/model is finalized, trained or evaluated. The course's core task requires supervised classification or regression plus prediction write-back; clustering alone is insufficient for that requirement.
+See [frozen feature/evaluation protocol](feature-store-and-evaluation.md) and `audit/historical/model-evaluation.json` for executed details. This supersedes the earlier provisional target plan.
 
-## Candidate task
+Target avgRating; 3,186 rated historical records. Entity-grouped split: 2,547 train / 639 test, with zero group overlap; 511 unrated records reserved for inference. Features: region, coordinates and activity indicators. All preprocessing is fit inside each training fold. Exclude target-derived HTML/truncated rating and identifiers/names/links/icons. Rating count is a sensitivity variable, not an input.
 
-If enough independent venues have permitted observed ratings, test rating regression from non-target descriptive characteristics. This is a hypothesis about associated ratings, not a forecast of revenue, bookings, demand or future customer experience.
+Five-fold grouped training CV compared mean, median, Ridge and random forest. Random forest selected using training CV only. The held-out MAE is 0.465545, RMSE 0.610195 and R² 0.163259. Median baseline MAE 0.516901. Most rating variation remains unexplained. Predictions are clipped to the rating range; no full-data refit was made.
 
-Candidate predictors after profiling: verified sport/amenity counts, city category, genuine hours where parseable, description length/missingness. Exclude rating and rating-derived categories/rankings, post-outcome fields and any aggregate computed from holdout targets. Review rating count for timing/availability and potential proxy leakage before including it.
-
-If the task is a high-rating classifier, its threshold is an explicitly justified modelling choice. Remove the source rating from inputs. Do not define a label directly from a predictor and then report rediscovery of that rule as a useful prediction.
-
-## Evaluation
-
-1. Group all observations of the same venue into one split. If genuine temporal outcomes exist, use time-ordered splits and ensure all features predate the outcome.
-2. Keep a reproducible held-out test set. Fit imputers, encoders, scaling and tuning only on training data/folds.
-3. Compare a dummy baseline against a small interpretable model, then a justified tree model. Do not promise that the fitted model will outperform baseline.
-4. For regression report MAE, RMSE, R², test count and uncertainty where supportable. For classification report per-class precision/recall/F1, confusion matrix and class balance.
-5. Evaluate source-derived and synthetic populations separately. A synthetic-only score measures behavior on the generator, not Playo performance. Split before any expansion based on real records; keep synthetic derivatives with their source group.
-6. Store model/version, dataset hash, seed, features, split IDs, metrics and predictions in PostgreSQL. Feature version is part of prediction identity.
-7. If sample size/coverage is inadequate, report the limitation instead of manufacturing accuracy. Keep source-linked analysis and simulation results distinct.
-
-## Transactional-data issue
-
-The course's practical examples use transactions; venue listing snapshots are not booking transactions. Do not rename them as such. If transactional analysis is required for assessment, use permissioned transactions or a separate explicitly simulated booking demonstration with instructor acceptance. The production core must not imply access to actual Playo bookings.
+Feature hashes, dataset/training hashes, package versions, parameters and subset sensitivity are persisted. The current website revision does not retrain the model or replace it with a heuristic. Synthetic records, demand, bookings and revenue claims are excluded.

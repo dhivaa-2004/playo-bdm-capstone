@@ -11,3 +11,10 @@ artifacts/
 dist/
 *.pem
 *.key
+
+*.tsbuildinfo
+.wrangler/
+.sites-runtime/
+.next/
+
+supabase/.temp/

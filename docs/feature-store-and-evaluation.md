@@ -1,0 +1,11 @@
+# Historical feature store and evaluation protocol v1
+
+Frozen before model fitting. SQL view `public.feature_store_v1` has one row per exact-deduplicated historical candidate venue. Inputs: source region, latitude, longitude and sorted activity/service labels. `target_avg_rating` is the supervised target; NULL unrated venues are prediction-only. Rating count is used only for reliability strata, never as an initial model input. Name, identifiers, URLs, info, icon, truncated rating and source hashes are excluded from predictors.
+
+A conservative entity group connects same-region normalized-name matches OR identical coordinates transitively. This groups 3,697 rows into 3,667 groups without merging candidate records. GroupShuffleSplit uses seed 42 and a 20% held-out group share. No group appears in train and test. Regional balance is reported rather than forced using target information.
+
+Fit categorical vocabularies, coordinate scaling and models on training rows only. Compare dummy mean, dummy median, Ridge regression and a prespecified RandomForest (200 trees, min_samples_leaf=15, max_depth=12). Select the deployable candidate by five-fold grouped CV MAE within training data, including baselines. Evaluate all prespecified models once on the held-out test set and report MAE, RMSE and R-squared. Do not select or tune with test performance. Publish region and rating-count >=1/5/10/20/50/100 sensitivity with sample sizes. Small subgroups have unstable metrics.
+
+Use the training-fitted selected model for all stored predictions: train outputs are in-sample, test outputs are held-out, and unrated outputs have no observed labels. Do not refit on test data in this experiment. Store run ID, SQL feature version, dataset/training hashes, library versions, parameters, split assignments and per-row feature hash. Immutable source rows keep predictions reproducible. User workspace CRUD is separate and never alters empirical features.
+
+Python reads the SQL feature view through the Supabase Data API over HTTPS when configured, or direct PostgreSQL when DATABASE_URL is configured. Any file-mode test is labelled offline and is not proof of a database-backed run. Raw historical files and fitted model binaries stay outside public git. Generated load/writeback SQL contains sanitized data and is also ignored.

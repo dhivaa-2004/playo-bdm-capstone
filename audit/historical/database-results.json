@@ -1,0 +1,70 @@
+{
+  "counts": [
+    {
+      "venues": 3697,
+      "rated": 3186,
+      "unrated": 511,
+      "regions": 4,
+      "activity_labels": 89,
+      "synthetic": 0
+    }
+  ],
+  "regions": [
+    {
+      "region": "bangalore",
+      "venues": 1358,
+      "rated": 1299,
+      "unrated": 59,
+      "mean_rating": 4.34412625096228,
+      "median_rating": 4.49,
+      "rating_variance": 0.443476027191712,
+      "rating_stddev": 0.665939957647618,
+      "q1": 4,
+      "q3": 5,
+      "rating_count_correlation": -0.227003185941221,
+      "median_rating_count": 13
+    },
+    {
+      "region": "chennai",
+      "venues": 556,
+      "rated": 533,
+      "unrated": 23,
+      "mean_rating": 4.63786116322702,
+      "median_rating": 5,
+      "rating_variance": 0.356899552116689,
+      "rating_stddev": 0.597410706396102,
+      "q1": 4.45,
+      "q3": 5,
+      "rating_count_correlation": -0.170711883837152,
+      "median_rating_count": 4
+    },
+    {
+      "region": "delhi",
+      "venues": 698,
+      "rated": 350,
+      "unrated": 348,
+      "mean_rating": 4.55037142857143,
+      "median_rating": 5,
+      "rating_variance": 0.499741122390504,
+      "rating_stddev": 0.706923703372934,
+      "q1": 4.38,
+      "q3": 5,
+      "rating_count_correlation": -0.316293130361171,
+      "median_rating_count": 1
+    },
+    {
+      "region": "hyderabad",
+      "venues": 1085,
+      "rated": 1004,
+      "unrated": 81,
+      "mean_rating": 4.44377490039841,
+      "median_rating": 4.685,
+      "rating_variance": 0.450920033028404,
+      "rating_stddev": 0.671505795230692,
+      "q1": 4.07,
+      "q3": 5,
+      "rating_count_correlation": -0.202945250361198,
+      "median_rating_count": 6
+    }
+  ]
+}

@@ -1,3 +1,5 @@
+> Planning reference from the audit phase. Implemented state and verification are documented in README.md, status.md and database-design.md; these supersede any pending or proposed statements below.
+
 # Academic coverage matrix
 
 The course assigns 20 marks to SQL-Driven EDA & Machine Learning Pipeline and 10 marks to the Technical PRD presentation. Lab exercises are separately assessed; broad course coverage does not turn every optional technology into a mandatory core feature.

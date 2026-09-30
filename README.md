@@ -1,24 +1,91 @@
 # Playo BDM Capstone
 
-Historical third-party Playo-related data audit and an early offline ingestion foundation for MBA Business Data Management (23BA044E).
+Independent MBA Business Data Management study using historical third-party Playo-related records. Supabase is the application's data source. This is not an official Playo product or a source of current booking availability.
 
-**In progress: not a completed or deployed application.**
+**Status:** historical ETL, database, SQL feature store, grouped ML evaluation and prediction write-back are implemented. Website integration and admin hardening are implemented; production and browser acceptance evidence is tracked in [status](docs/status.md). No synthetic expansion or PPT has been produced.
 
-See [the complete audit and proposal](docs/historical-data-audit.md) and [current status](docs/status.md). The historical export has 3,701 raw rows, 3,697 candidates after exact deduplication, and 3,186 rated candidates. No synthetic expansion has been generated. Current Playo pages were reviewed only as domain/schema references; no collection job is enabled.
+## 1. Project Overview
+Explore 3,697 exact-deduplicated historical candidate venue records across four source regions, with 89 activity/service labels. They are not guaranteed distinct real-world businesses.
 
-## Reproduce the audit
+## 2. Business Problem
+Understand geographic coverage, activity offerings, rating evidence and dataset limitations, and test whether available attributes contain a modest rating-estimation signal. The dataset cannot measure bookings, demand, revenue or price.
 
-Python 3.10+; standard library only. Supply your local copy of the archive; raw data and contact details are not bundled.
+## 3. Objectives
+Preserve provenance; normalize the empirical dataset; perform SQL EDA; evaluate leakage-safe regression against dummy baselines; present live database results and separately controlled curation records.
+
+## 4. Data Source
+User-supplied `playo-find-venue-master.zip`, a historical third-party export. Its observation dates are unknown. Current public Playo pages were reviewed only as domain/schema references. No automated collection was performed. Raw archives, source files and phone/contact HTML are excluded from this public repository; independent data redistribution rights were not established.
+
+## 5. Data Audit
+3,701 raw rows → four exact duplicate extras removed → 3,697 records: 3,186 rated and 511 unrated. Zero/count-zero ratings become missing targets. Three missing provider IDs use deterministic fallback identities. See [audit](docs/historical-data-audit.md), which is a dated pre-implementation artifact, and [gap analysis](docs/current-required-gap.md).
+
+## 6. Architecture
+Immutable private archive → Python normalization → Supabase/PostgreSQL → SQL EDA and versioned feature view → Python ML → PostgreSQL predictions → React/TypeScript dashboard. Admin workspace notes remain outside the empirical pipeline.
+
+## 7. PostgreSQL / Supabase
+Existing project: `qztngersjtzropfjbcnl`. Normalized venues, ratings, source regions and activity junctions; private ingestion/lineage; model runs and predictions; admin-owned workspace and audit. All tables have RLS. Views use `security_invoker=true`. [Database design](docs/database-design.md) describes keys and access.
+
+## 8. SQL EDA
+Database-side counts, joins, grouping, conditional aggregates, CTEs, window examples, mean, median, quartiles, sample variance/standard deviation and Pearson correlation. Public functions return bounded search results and aggregates. See `sql/eda/` and migrations.
+
+## 9. Feature Store
+`public.feature_store_v1`, one record per historical candidate. Inputs: source region, latitude, longitude and activity indicators. Target: `avgRating`, NULL when unrated. Entity grouping conservatively joins same-region normalized names or exact coordinates. Exclude `info`, truncated `rating`, identifiers, URLs, names, icons and ratingCount from initial predictors. Rating count is used only for sensitivity. [Protocol](docs/feature-store-and-evaluation.md).
+
+## 10. Machine Learning
+Run `18a83a41-064d-4b9d-a4ad-054b37c5520e`: seed 42, 2,547 training records and 639 held-out records, with zero entity-group overlap. Five-fold grouped training CV selected a random forest against mean, median and Ridge baselines. Held-out MAE **0.4655 stars**, RMSE **0.6102**, R² **0.1633**; median baseline MAE **0.5169**. This is modest explanatory performance. Regional and rating-count-threshold sensitivity and package versions are recorded in `audit/historical/model-evaluation.json`. No retraining was performed for the website revision.
+
+## 11. Prediction Write-back
+3,697 persisted outputs: 2,547 in-sample training, 639 held-out test, 511 unrated inference. Only test rows support evaluation. Each output has a venue ID, run ID, split and feature hash. Run metadata carries feature version, dataset/training hashes and parameters. Python generated atomic write-back SQL; it was applied through the database-owner SQL interface. A direct psycopg write-back session has not been verified.
+
+## 12. Website
+Source: `frontend/`. Required routes: `/`, `/venues`, `/venues/:id`, `/sports`, `/cities`, `/analytics`, `/predictions`, `/data-quality`, `/data-management`, `/admin`. Existing `/models`, `/quality`, `/workspace` aliases remain. Explorer has SQL search, filters, stable sorting and pagination represented in its URL. Activities and source regions are queried from the database, not baked-in listings. No raw HTML/phones, synthetic fills, chatbot or booking features.
+
+## 13. Authentication / RLS
+Supabase Auth with HttpOnly, SameSite=Strict cookies; Secure on HTTPS; one-hour session cap and explicit re-login after expiry. Same-origin checks protect writes. No service-role key is used. Membership in `private.admin_members` is server-controlled and checked by a security-invoker RPC and restrictive RLS policy. Both admin membership and record ownership are required. Signup never grants admin. The designated administrator has confirmed their account and received protected admin membership. [Operations](docs/operations.md).
+
+## 14. Data Quality
+Raw files remain unchanged and private. Lineage preserves every raw row and archive/member/record hashes. Public quality reports contain aggregate audit evidence, refreshed by an ingestion trigger. No synthetic records are loaded; missing historical fields remain missing. Source regions do not establish municipal boundaries or represent India as a whole.
+
+## 15. Repository Structure
+- `pipeline/`: historical parser and SQL-view reader; earlier generic importer retained as a prototype.
+- `ml/`: baseline and grouped regression experiment.
+- `sql/migrations/`: original schema, dashboard and chunked import definitions.
+- `supabase/migrations/`: additive admin and quality-report migrations created with Supabase CLI.
+- `sql/eda/`, `sql/tests/`: SQL analysis and transaction-scoped access tests.
+- `frontend/`: dashboard, API routes, build files and pnpm lockfile.
+- `docs/`, `audit/historical/`: methodology and non-sensitive aggregate evidence.
+- Ignored: raw data, generated row-level artifacts, model binary, actual environment files and dependencies.
+
+## 16. Local Setup
+Python 3.10+ for ingestion tests; use the recorded model package versions for reproducing the ML experiment. Node 22+ and the frontend's pinned package manager for the website.
 
 ```sh
-python scripts/audit_historical.py /path/to/playo-find-venue-master.zip --output audit/historical
+python -m venv .venv
+. .venv/bin/activate
+pip install -r requirements.txt
 python -m unittest discover -s tests -v
+# Supply your own permitted archive; never commit it.
+python scripts/audit_historical.py /path/to/playo-find-venue-master.zip --output audit/historical
+cd frontend
+cp .env.example .env
+# Populate the local environment securely.
+pnpm install --frozen-lockfile
+pnpm dev
 ```
 
-The audit never runs archive scripts. It exports aggregate metrics and row locators. SHA-256 hashes identify the input and its members. `audit/historical/audit.json` is the checked output for the supplied archive.
+The existing hosted database is already loaded. Do not reset it or replay all migrations blindly. For a separate empty project, apply original migrations in dependency order 001, 003, 002, then the timestamped additions. The historical parser and model script have `--help` for explicit input/output paths. Reproduction is separate from the existing approved experiment.
 
-`pipeline/` is an earlier generic JSONL ingestion prototype, not yet adapted to `third_party_historical`. Architecture and feature plans are provisional. Latest audit decisions supersede older acquisition assumptions.
+## 17. Environment Variables
+`SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` configure server requests. Optional `DATABASE_URL` enables the psycopg SQL-view reader; otherwise the Python pipeline reads PostgREST with pagination. Actual keys, passwords, access tokens and `.env` files must never be committed. Production values are stored in hosting environment settings.
 
-Planned flow: immutable historical source → Python cleaning → Supabase PostgreSQL → SQL EDA → feature views → ML → prediction write-back → authenticated live dashboard.
+## 18. Testing
+16 Python unit tests passed on 30 September 2026. Live SQL tests passed for anonymous reads/write denial, permitted admin CRUD, non-admin denial, self-promotion denial, cross-admin isolation, immutable historical data and audit events; fixtures rolled back. TypeScript and production builds passed. See [test evidence](docs/test-results.md) for exact scope, advisor findings and browser limitations. Database tests do not imply real-user browser auth/CRUD acceptance.
 
-Keep secrets in deployment environment variables; `.env.example` contains placeholders only. Never commit `.env`, credentials, access tokens, database passwords or service-role keys. Auth/RLS implementation is pending before production data access.
+## 19. Deployment
+The existing Sites project is reused, with Supabase runtime variables configured separately. Deployment state and verified URL are recorded in [status](docs/status.md). Source and build must match; secrets and raw archives are excluded. Public site access never makes admin endpoints writable.
+
+## 20. Limitations
+Unknown collection dates; geographic selection bias; sparse ratings; no verified current availability; no booking/revenue/timing/amenity evidence; uncertain entity identity; modest predictive power. In-sample predictions and unrated inference are not accuracy evidence. There is no full-data refit or operational model monitoring. Auth sessions currently require re-login on expiry.
+
+## 21. Future Work
+Finish browser acceptance of filters and administrator create/edit/archive flows. Optional 400 fictional demonstration records remain deferred and would require separate provenance, badges and exclusion from empirical KPIs/ML. Consider session refresh and additional empirical features only with authorized sources. PPT work remains deferred.
