@@ -18,3 +18,11 @@ The intended administrator registered and confirmed their email. Protected admin
 ## Sidebar navigation correction — 2026-09-30
 
 Replaced client-router links with native document navigation for sidebar, cards, detail links and venue filters/pagination. TypeScript check passed. Browser clicks verified Venue explorer at /venues and SQL analysis at /analytics with the matching headings. Preview database access remains restricted; this navigation check does not claim a production data/CRUD test.
+
+## Public access and independent hosting — 30 September 2026
+
+Latest requested architecture: public dashboard and venue submissions without sign-in; GitHub source; existing Supabase database; standalone Cloudflare Worker. Public submission migration is applied and permission tests pass. Historical rows and ML remain unchanged. Frontend auth forms and private-workspace API access have been removed; private records remain protected in the database. The new form writes a separately labelled user_submitted/unverified record and the separate directory reads it. TypeScript, validation tests, standalone build and deploy dry-run pass.
+
+Cloudflare account deployment is BLOCKED by its browser security-verification loop. No new independent URL or automatic GitHub deployment connection has been established. The older Sites version is still the last verified public URL; it has not been silently replaced or unpublished. Follow cloudflare-deployment.md to connect the prepared GitHub source. Final live save/read acceptance remains required.
+
+Preview browser verified the public dashboard and Add a venue route with no sign-in controls. Form fields render; submission stays disabled when the preview cannot load live region/activity directories. The preview currently reports Database unavailable, so no browser save is claimed. The database rollback tests and 16 existing Python tests pass.

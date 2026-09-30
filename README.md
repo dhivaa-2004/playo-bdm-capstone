@@ -2,7 +2,9 @@
 
 Independent MBA Business Data Management study using historical third-party Playo-related records. Supabase is the application's data source. This is not an official Playo product or a source of current booking availability.
 
-**Status:** historical ETL, database, SQL feature store, grouped ML evaluation and prediction write-back are implemented. Website integration and admin hardening are implemented; production and browser acceptance evidence is tracked in [status](docs/status.md). No synthetic expansion or PPT has been produced.
+**Latest change:** Public access without sign-in and separate venue submissions are implemented. Independent Cloudflare deployment is prepared; account connection and final live acceptance are pending. See [Cloudflare setup](docs/cloudflare-deployment.md) and [public submissions](docs/public-submissions.md).
+
+**Previous implementation status:** historical ETL, database, SQL feature store, grouped ML evaluation and prediction write-back are implemented. Website integration and admin hardening are implemented; production and browser acceptance evidence is tracked in [status](docs/status.md). No synthetic expansion or PPT has been produced.
 
 ## 1. Project Overview
 Explore 3,697 exact-deduplicated historical candidate venue records across four source regions, with 89 activity/service labels. They are not guaranteed distinct real-world businesses.
@@ -38,10 +40,10 @@ Run `18a83a41-064d-4b9d-a4ad-054b37c5520e`: seed 42, 2,547 training records and 
 3,697 persisted outputs: 2,547 in-sample training, 639 held-out test, 511 unrated inference. Only test rows support evaluation. Each output has a venue ID, run ID, split and feature hash. Run metadata carries feature version, dataset/training hashes and parameters. Python generated atomic write-back SQL; it was applied through the database-owner SQL interface. A direct psycopg write-back session has not been verified.
 
 ## 12. Website
-Source: `frontend/`. Required routes: `/`, `/venues`, `/venues/:id`, `/sports`, `/cities`, `/analytics`, `/predictions`, `/data-quality`, `/data-management`, `/admin`. Existing `/models`, `/quality`, `/workspace` aliases remain. Explorer has SQL search, filters, stable sorting and pagination represented in its URL. Activities and source regions are queried from the database, not baked-in listings. No raw HTML/phones, synthetic fills, chatbot or booking features.
+Source: `frontend/`. New public routes: `/add-venue`, `/submitted-venues`; historical routes: `/`, `/venues`, `/venues/:id`, `/sports`, `/cities`, `/analytics`, `/predictions`, `/data-quality`, `/data-management`, `/admin`. Existing `/models`, `/quality`, `/workspace` aliases remain. Explorer has SQL search, filters, stable sorting and pagination represented in its URL. Activities and source regions are queried from the database, not baked-in listings. No raw HTML/phones, synthetic fills, chatbot or booking features.
 
 ## 13. Authentication / RLS
-Supabase Auth with HttpOnly, SameSite=Strict cookies; Secure on HTTPS; one-hour session cap and explicit re-login after expiry. Same-origin checks protect writes. No service-role key is used. Membership in `private.admin_members` is server-controlled and checked by a security-invoker RPC and restrictive RLS policy. Both admin membership and record ownership are required. Signup never grants admin. The designated administrator has confirmed their account and received protected admin membership. [Operations](docs/operations.md).
+The current public frontend has no sign-in and cannot access private curation records. Same-origin checks and database column grants/RLS protect venue submissions; no service-role key is used. Historical tables remain read-only to the application. Earlier admin membership and private records are retained, protected, for database-owner administration. [Operations](docs/operations.md).
 
 ## 14. Data Quality
 Raw files remain unchanged and private. Lineage preserves every raw row and archive/member/record hashes. Public quality reports contain aggregate audit evidence, refreshed by an ingestion trigger. No synthetic records are loaded; missing historical fields remain missing. Source regions do not establish municipal boundaries or represent India as a whole.
@@ -88,4 +90,4 @@ The existing Sites project is reused, with Supabase runtime variables configured
 Unknown collection dates; geographic selection bias; sparse ratings; no verified current availability; no booking/revenue/timing/amenity evidence; uncertain entity identity; modest predictive power. In-sample predictions and unrated inference are not accuracy evidence. There is no full-data refit or operational model monitoring. Auth sessions currently require re-login on expiry.
 
 ## 21. Future Work
-Finish browser acceptance of filters and administrator create/edit/archive flows. Optional 400 fictional demonstration records remain deferred and would require separate provenance, badges and exclusion from empirical KPIs/ML. Consider session refresh and additional empirical features only with authorized sources. PPT work remains deferred.
+Finish independent Cloudflare deployment and public submission browser acceptance. Optional 400 fictional demonstration records remain deferred and would require separate provenance, badges and exclusion from empirical KPIs/ML. Consider session refresh and additional empirical features only with authorized sources. PPT work remains deferred.

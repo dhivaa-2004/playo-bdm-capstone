@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "playo-venue-observatory",
+  "main": "worker.ts",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "assets": {"directory": "./dist/client"},
+  "vars": {"SUPABASE_URL": "https://qztngersjtzropfjbcnl.supabase.co"},
+  "observability": {"enabled": true}
+}
