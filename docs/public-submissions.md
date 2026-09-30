@@ -24,4 +24,6 @@ Community rows never enter the historical feature store, KPIs, evaluation splits
 - Forged provenance/status, public update/delete and historical modification remain unavailable.
 - The map RPC returns all 3,697 historical coordinate records and the current model run contains the explanation payload.
 - TypeScript and the standalone production build pass.
-- The final live form submission, approval visibility and cleanup are tracked in `test-results.md`.
+- A clearly labelled production form submission reached Supabase as `pending` and was moderated.
+- The exact demonstration UUID was deleted after testing; no matching test row remains.
+- Public approval visibility is additionally proven by the rollback-scoped RLS acceptance test in `test-results.md`.

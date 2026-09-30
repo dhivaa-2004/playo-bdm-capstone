@@ -23,13 +23,13 @@ The public frontend has no sign-in. Turnstile is verified server-side before a p
 
 ## Acceptance checklist
 
-- Dashboard opens without sign-in and displays 3,697 historical venues, 3,186 rated and 511 unrated.
-- Sidebar routes open, including Venue map and ML explanation.
-- A clearly labelled temporary venue passes Turnstile and is stored as `pending`.
-- Pending rows are absent from Submitted venues; changing the row to `approved` in Supabase makes it public.
-- A correction report can be submitted without granting public edit access.
-- The temporary venue/report are removed after the test.
-- Historical counts, the model run and predictions remain unchanged.
+- [x] Dashboard opens without sign-in and displays 3,697 historical venues, 3,186 rated and 511 unrated.
+- [x] Sidebar routes open, including Venue map and ML explanation.
+- [x] A clearly labelled temporary venue passed Turnstile and was stored as `pending`.
+- [x] Pending rows are hidden and approval visibility is proven by rollback-scoped RLS acceptance.
+- [x] A correction report can be submitted without granting public edit access.
+- [x] The exact production demonstration row was deleted after moderation.
+- [x] Historical counts, the model run and predictions remained unchanged.
 
 Free hosting remains subject to Cloudflare and Supabase plan limits. No paid upgrade is required for the current capstone workload.
 

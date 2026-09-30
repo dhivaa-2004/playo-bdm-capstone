@@ -2,9 +2,9 @@
 
 Independent MBA Business Data Management study using historical third-party Playo-related records. Supabase is the application's data source. This is not an official Playo product or a source of current booking availability.
 
-**Latest change:** The public, no-sign-in application is deployed independently at [playo-venue-observatory.dhivaa2004.workers.dev](https://playo-venue-observatory.dhivaa2004.workers.dev). Community submissions now use Turnstile, duplicate warnings and pending moderation; approved entries, correction reports, the venue map and the model explanation remain separate from the historical empirical dataset. See [deployment](docs/cloudflare-deployment.md) and [public submissions](docs/public-submissions.md).
+**Current release:** The complete public, no-sign-in application is deployed independently at [playo-venue-observatory.dhivaa2004.workers.dev](https://playo-venue-observatory.dhivaa2004.workers.dev). Historical ETL, the normalized database, SQL EDA, feature store, grouped ML evaluation, prediction write-back, dashboard, venue map, moderated community submissions, correction reports, Turnstile protection and automated Cloudflare deployment are implemented. See [current status](docs/status.md) and [verification evidence](docs/test-results.md).
 
-**Previous implementation status:** historical ETL, database, SQL feature store, grouped ML evaluation and prediction write-back are implemented. Website integration and admin hardening are implemented; production and browser acceptance evidence is tracked in [status](docs/status.md). No synthetic expansion or PPT has been produced.
+**Team handoff:** Start with the [teammate guide](docs/team-guide.md), or download the final [presentation](deliverables/Playo_BDM_Capstone_Team_Presentation.pptx), [Word study guide](deliverables/Playo_BDM_Capstone_Teammate_Guide.docx) or [PDF study guide](deliverables/Playo_BDM_Capstone_Teammate_Guide.pdf). All presentation and guide text uses Arial; the supplied ER diagram is included and explained.
 
 ## 1. Project Overview
 Explore 3,697 exact-deduplicated historical candidate venue records across four source regions, with 89 activity/service labels. They are not guaranteed distinct real-world businesses.
@@ -56,6 +56,8 @@ Raw files remain unchanged and private. Lineage preserves every raw row and arch
 - `sql/eda/`, `sql/tests/`: SQL analysis and transaction-scoped access tests.
 - `frontend/`: dashboard, API routes, build files and pnpm lockfile.
 - `docs/`, `audit/historical/`: methodology and non-sensitive aggregate evidence.
+- `docs/assets/`: verified production screenshots and the supplied ER diagram used in the team materials.
+- `deliverables/`: final Arial presentation and teammate study guide in Word/PDF formats.
 - Ignored: raw data, generated row-level artifacts, model binary, actual environment files and dependencies.
 
 ## 16. Local Setup
@@ -81,7 +83,7 @@ The existing hosted database is already loaded. Do not reset it or replay all mi
 `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` configure the production Worker. Optional `DATABASE_URL` enables the psycopg SQL-view reader; otherwise the Python pipeline reads PostgREST with pagination. Actual keys, passwords, access tokens and `.env` files must never be committed. Production secrets are stored as Cloudflare Worker secrets; GitHub Actions creates or reuses the Turnstile widget during deployment.
 
 ## 18. Testing
-16 Python unit tests and seven frontend validation tests pass. Live, rollback-scoped SQL acceptance verifies pending visibility, approval visibility, correction reports, public-write hardening, 3,697 map points and stored model explanation. TypeScript and production builds pass. GitHub Actions runs tests/build/deploy plus scheduled production smoke checks. See [test evidence](docs/test-results.md). The final production form-write acceptance is tracked separately from transaction-scoped database verification.
+16 Python unit tests and seven frontend validation tests pass. Live, rollback-scoped SQL acceptance verifies pending visibility, approval visibility, correction reports, public-write hardening, 3,697 map points and stored model explanation. The production form also created a clearly labelled pending row in Supabase; that exact demonstration row was moderated and then deleted, leaving no test residue. TypeScript, the production build, GitHub Actions deployment and production route health checks pass. See [test evidence](docs/test-results.md).
 
 ## 19. Deployment
 GitHub `main` is the source of truth. GitHub Actions tests and deploys the generated Worker to Cloudflare; Supabase remains the database. Production: [playo-venue-observatory.dhivaa2004.workers.dev](https://playo-venue-observatory.dhivaa2004.workers.dev). Source and build must match; secrets and raw archives are excluded. Public site access never makes private database tables writable.
@@ -91,3 +93,6 @@ Unknown collection dates; geographic selection bias; sparse ratings; no verified
 
 ## 21. Future Work
 Optional 400 fictional demonstration records remain deferred and would require separate provenance, badges and exclusion from empirical KPIs/ML. Additional empirical features should be added only from authorized sources. No synthetic expansion is required for the current project.
+
+## 22. Honest Project Positioning
+This is an academic observatory built from a historical third-party Playo-related dataset. The current Playo website was used only as a domain/schema reference; it was not scraped. Historical rows, community submissions and any future synthetic demonstration data must remain visibly separate. The model estimates recorded historical ratings from limited attributes and must not be described as predicting demand, bookings, revenue or current venue quality.

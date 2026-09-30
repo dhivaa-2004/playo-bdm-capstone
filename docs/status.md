@@ -1,6 +1,6 @@
 # Current status
 
-Updated 30 September 2026. The historical audit, ETL, normalized Supabase database, SQL EDA, feature store, grouped ML experiment, prediction write-back and public dashboard are implemented. The empirical dataset remains 3,697 exact-deduplicated historical records, with zero synthetic records.
+Updated 30 September 2026. The historical audit, ETL, normalized Supabase database, SQL EDA, feature store, grouped ML experiment, prediction write-back, public dashboard, venue map, moderated community workflow, correction reports and independent Cloudflare deployment are implemented. The empirical dataset remains 3,697 exact-deduplicated historical records, with zero synthetic records.
 
 ## Production architecture
 
@@ -24,4 +24,4 @@ Public writes do not use a service-role key. Turnstile is verified server-side. 
 
 ## Verification state
 
-Frontend tests, TypeScript, production build and rollback-scoped database acceptance pass. Database acceptance proves pending visibility rules, approval visibility, correction-report writes, map output and model-explanation storage, then rolls fixtures back. Final production form submission, public approval visibility and test-record cleanup are recorded in `test-results.md` once completed.
+Frontend tests, TypeScript, production build, GitHub Actions deployment, production route smoke checks and rollback-scoped database acceptance pass. Database acceptance proves pending visibility rules, approval visibility, correction-report writes, map output and model-explanation storage, then rolls fixtures back. A clearly labelled production form submission reached Supabase as `pending`, was moderated, and its exact UUID was deleted after testing. No demonstration row remains. Final team presentation and screenshot-led guide are available in `deliverables/`.

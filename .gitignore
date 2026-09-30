@@ -16,5 +16,6 @@ dist/
 .wrangler/
 .sites-runtime/
 .next/
+.chart-data-*/
 
 supabase/.temp/
