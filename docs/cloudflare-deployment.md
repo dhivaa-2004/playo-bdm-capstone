@@ -1,49 +1,36 @@
 # Independent Cloudflare deployment
 
-The updated frontend runs as a standalone Cloudflare Worker. Supabase remains the database. No ChatGPT session, hosting account, connector or Sites build service is required. The existing hosted version is a separate older deployment until cutover.
+Production runs as a standalone Cloudflare Worker at <https://playo-venue-observatory.dhivaa2004.workers.dev>. Supabase remains the PostgreSQL database. The application does not depend on ChatGPT hosting or a ChatGPT session.
 
-## Connect the existing repository
+## Automated release
 
-In your own Cloudflare account, open Workers & Pages → Create application → Import a repository. Choose `dhivaa-2004/playo-bdm-capstone` and configure:
+GitHub `main` is the source of truth. `.github/workflows/deploy-cloudflare.yml` performs this release sequence:
 
-| Setting | Value |
-|---|---|
-| Worker name | `playo-venue-observatory` |
-| Production branch | `main` |
-| Root directory | `frontend` |
-| Build command | `pnpm run build` |
-| Deploy command | `pnpm run deploy` |
-| Node version build variable | `NODE_VERSION=24.19.0` |
-| pnpm version build variable | `PNPM_VERSION=11.25.0` |
+1. install the pinned pnpm/Node toolchain and dependencies;
+2. run frontend tests, TypeScript and the production build;
+3. create or reuse the `playo-venue-submissions` Turnstile widget;
+4. store Turnstile site/secret keys as Worker secrets;
+5. deploy the generated Worker with existing runtime variables preserved;
+6. check the production health endpoint.
 
-The committed packageManager and lockfile pin pnpm/dependencies. The build service normally installs dependencies automatically. If using a custom install command, use `pnpm install --frozen-lockfile`.
+The GitHub repository needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets. The Worker needs `SUPABASE_PUBLISHABLE_KEY`; the project URL is non-secret configuration. Never store a service-role key, database password or token in source.
 
-The generated Worker configuration is `dist/server/wrangler.json`. `pnpm run deploy` uses that generated file, not the unbuilt source configuration. The source Worker name must match the dashboard name.
+`production-smoke.yml` also checks the home page, form, map and health endpoint daily and can be run manually.
 
-## Runtime configuration
+## Runtime and security
 
-`SUPABASE_URL` is already set in wrangler.jsonc to the existing project URL.
+The public frontend has no sign-in. Turnstile is verified server-side before a public submission or correction report is written. Column-limited grants, RLS and database triggers remain the final data boundary. Cloudflare structured logs record route, request ID, status and safe error classification without venue text or credentials.
 
-Add `SUPABASE_PUBLISHABLE_KEY` as a Worker runtime **secret**, using the publishable key from the existing Supabase project Settings → API Keys. Do not use the service-role key, database password or an account access token. No actual key belongs in GitHub. Build variables alone are not runtime bindings.
+## Acceptance checklist
 
-Deploy/redeploy after adding the runtime binding. Open the exact workers.dev URL Cloudflare returns. No custom domain purchase is needed. GitHub pushes to main should trigger subsequent builds once connected.
+- Dashboard opens without sign-in and displays 3,697 historical venues, 3,186 rated and 511 unrated.
+- Sidebar routes open, including Venue map and ML explanation.
+- A clearly labelled temporary venue passes Turnstile and is stored as `pending`.
+- Pending rows are absent from Submitted venues; changing the row to `approved` in Supabase makes it public.
+- A correction report can be submitted without granting public edit access.
+- The temporary venue/report are removed after the test.
+- Historical counts, the model run and predictions remain unchanged.
 
-## Acceptance after deploy
+Free hosting remains subject to Cloudflare and Supabase plan limits. No paid upgrade is required for the current capstone workload.
 
-1. Open the URL in a private browser window. Dashboard opens without sign-in.
-2. Confirm historical counts: 3,697 venues, 3,186 rated, 511 unrated.
-3. Open each navigation destination. Search/filter/page the historical explorer.
-4. Add a genuine public venue using the new form. Record its returned UUID.
-5. Refresh Submitted venues and confirm that UUID in Supabase `public.submitted_venues`. The row must be user_submitted, unverified and non-synthetic.
-6. Confirm historical counts and the stored ML run have not changed.
-7. Check Cloudflare logs and free-plan usage. Only after this succeeds, retire the old hosting through its normal reversible unpublish controls.
-
-The application no longer performs sign-in, so Supabase Auth redirect URLs are not used by this frontend. Existing private workspace records and admin membership remain protected in Supabase; the public app cannot read or alter them.
-
-## Free-plan scope and current blocker
-
-Cloudflare Workers Free currently allows 100,000 requests/day across the account and 10 ms CPU/request. Supabase has its own quotas and inactivity policies. Free hosting is subject to these limits, not an unlimited guarantee. No paid upgrade is requested. The production bundle passed Wrangler dry-run (about 274 KiB gzipped); production CPU and full live behaviour must be verified after the account deployment.
-
-On 30 September 2026 Cloudflare's dashboard repeatedly presented a security-verification page to the agent browser. No Cloudflare deployment or GitHub build connection was completed by the agent. The user must complete the account connection; no credentials should be pasted into chat.
-
-Sources: https://developers.cloudflare.com/workers/ci-cd/builds/ and https://developers.cloudflare.com/workers/platform/limits/ .
+Sources: <https://developers.cloudflare.com/workers/ci-cd/builds/>, <https://developers.cloudflare.com/workers/observability/logs/>, <https://developers.cloudflare.com/turnstile/get-started/server-side-validation/>.

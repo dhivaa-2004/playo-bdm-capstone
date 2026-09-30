@@ -3,23 +3,21 @@
 | Check | Executed result |
 |---|---|
 | Python ingestion unit tests | 16/16 passed |
+| Frontend validation tests | 7/7 passed, including venue, Turnstile and correction-report input rules |
 | Live database counts | 3,697 historical; 3,186 rated; 511 unrated; zero synthetic |
-| Database public API | Five read endpoints returned HTTP 200; 89 activities, four regions, one quality report and one model run |
-| Role/RLS transaction tests | Anonymous SELECT permitted; INSERT/UPDATE/DELETE denied; admin owner CRUD allowed; non-admin and self-elevation denied; cross-admin rows inaccessible; historical updates denied; three audit events; rollback |
-| Public SQL RPC tests as anon | Search v2 returned 20 paginated rows; quality and prediction aggregates returned expected counts |
-| Model predictions | 2,547 train; 639 test; 511 inference, same existing model run |
-| Query-plan sample | Search RPC with court/Chennai/rating sort: 17.874 ms execution; not a load benchmark or speedup comparison |
-| TypeScript | tsc --noEmit passed |
-| Worker production build | Passed; 4 app/API routes, catch-all maps required pages |
-| Credential scan | Actual publishable key absent from tracked source and built artifacts |
-| Security advisor after fixes | Zero WARN/ERROR; four INFO notices for deliberately default-denied private tables |
-| Performance advisor | Four INFO unused-index notices; recently created indexes and small dataset; not evidence to delete FK indexes |
-| Browser preview | Shell/routing and explicit error state visible. Outbound server fetch returned an internal runtime error; live-data interaction and responsive acceptance not passed |
-| Production publication | Native deployment succeeded; external API tests blocked by edge HTTP 403 / 1010; live data not verified through the deployed server |
-| Real-user auth and UI CRUD | Not executed: no application Auth user or administrator exists yet |
+| Moderation transaction | Pending submission hidden; approved submission visible; fixture rolled back |
+| Correction-report transaction | Public report insert accepted; fixture rolled back |
+| Public-write hardening | No public SECURITY DEFINER write functions; browser columns limited by grants/RLS; validation triggers cover hidden pending rows |
+| Venue map data | RPC returns 3,697 historical coordinate points |
+| ML explanation | Current model run stores grouped feature-importance categories and evaluation context |
+| TypeScript | `tsc --noEmit` passed |
+| Worker production build | Passed |
+| Security advisor | No public-table security errors; four INFO notices are deliberately default-denied private tables; Auth leaked-password warning is not used by the no-login frontend |
+| Performance advisor | INFO-only unused-index notices; new/FK indexes retained |
+| GitHub/Cloudflare release | Pending verification of the latest pushed revision |
+| Production route smoke | Pending verification of the latest deployment |
+| Complete production write flow | Pending: Turnstile form → pending Supabase row → approval/public visibility → exact cleanup |
 
-Fixtures in SQL tests are disposable, transaction-scoped and never presented as historical data. Test rollback left zero application users and workspace records. No secrets or raw HTML/phone fields are included in test output.
+Rollback-scoped fixtures never remain in production and are never presented as historical data. The complete production write test uses a clearly labelled temporary community row and removes it after approval visibility is confirmed. Historical counts and model data must remain unchanged.
 
-Advisor references: [private tables without policies](https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy), [unused indexes](https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index). The public quality-report SECURITY DEFINER warnings were resolved by replacing privileged reads with a public aggregate report and invoker RPC.
-
-Browser QA remains a limitation, not a passing test. Production HTTP verification is recorded separately in status.md and audit/historical/production-smoke.json when available.
+Advisor references: [private tables without policies](https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy), [unused indexes](https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index).

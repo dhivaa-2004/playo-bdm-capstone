@@ -1,22 +1,27 @@
 # Public venue submissions
 
-The dashboard, historical explorer and submission form require no sign-in. The website's legacy auth endpoint returns 410 for login/signup attempts; no session is required for public use.
+The dashboard and submission/report forms require no sign-in. `/add-venue` sends a whitelisted payload through the same-origin Worker after Cloudflare Turnstile verification. Name, source region, locality and 1–15 known activities are required. Address, description and paired coordinates are optional. Telephone/contact, ratings, review counts, moderation fields and provenance are not collected from the visitor.
 
-`/add-venue` writes to `public.submitted_venues` through a same-origin backend route using only the publishable key. Name, source region, locality and 1–15 known activities are required. Address, description and paired coordinates are optional. No telephone/contact, rating, review count or invented prediction field is collected.
+## Moderation and provenance
 
-`/submitted-venues` reads saved database rows, with name/region search and 20-row pagination. Every card visibly says User-submitted · Unverified. Historical Venue explorer links to this separate directory. `/data-management` and `/workspace` are aliases of the public form; `/admin` resolves to public data quality without revealing private records.
+Every new row starts with immutable provenance `source_type=user_submitted`, `source_dataset=public_venue_submissions`, `is_synthetic=false` and `verification_status=pending`. Pending and rejected rows are hidden by RLS. Only records changed to `approved` by the database owner appear at `/submitted-venues`, where they are visibly labelled as user-submitted community data.
 
-The database assigns immutable provenance: source_type=user_submitted, source_dataset=public_venue_submissions, is_synthetic=false, verification_status=unverified and a server submission timestamp. These are user claims, not verified real-world or current Playo records. Only genuine public venue information should be submitted; test fixtures must not be left in production.
+Community rows never enter the historical feature store, KPIs, evaluation splits, model training or predictions. Approval means accepted for public display, not independently verified current Playo data.
 
-RLS permits public reads and insert of only the eight editable form columns. Anonymous and ordinary authenticated clients cannot update/delete records, forge provenance, set timestamps or modify historical data. A unique normalized name/region/locality index prevents exact repeat submissions. A serialized database trigger validates activity membership and caps submissions at 200 per UTC day and 10,000 total. These are small-project storage safeguards, not comprehensive bot protection. An open form can still receive inaccurate entries. The database owner can correct/remove an entry using Supabase; unrestricted anonymous edit/delete is intentionally absent.
+## Abuse and quality controls
 
-New rows are available after save/refresh. This does not claim WebSocket push, automatic ML scoring or automatic retraining. All primary SQL KPIs, the feature store, evaluation splits and stored predictions remain historical-only because the new table is separate and not referenced by those queries.
+- Turnstile is validated server-side; tokens are single-use and time-limited by Cloudflare.
+- The form warns when normalized venue name + region + locality resembles an existing submission.
+- The database prevents the exact normalized triple, validates activities and applies submission caps.
+- Column grants and RLS allow only the public form columns to be inserted. Public update/delete is denied.
+- `/report` accepts correction/duplicate reports for a historical or submitted venue while giving visitors no edit access.
+- Cloudflare logs record structured failures without storing venue text in log messages.
 
 ## Verification on 30 September 2026
 
-- Five frontend input-validation tests pass.
-- Anonymous insertion with server-assigned provenance passes in a rolled-back transaction.
-- Anonymous update/delete, forged provenance, invalid activities and historical insertion are rejected.
-- TypeScript and standalone production build pass; Wrangler deploy dry-run passes.
-- Supabase advisor reports no new table/RLS warnings. Existing private default-deny tables are informational. Supabase Auth has an existing leaked-password protection warning; this frontend no longer uses password authentication.
-- Browser checks and independent-host live acceptance are documented in current status, not inferred from SQL tests.
+- Seven frontend validation tests pass.
+- Rollback-scoped database acceptance proves pending rows are hidden, approved rows are visible and correction reports save.
+- Forged provenance/status, public update/delete and historical modification remain unavailable.
+- The map RPC returns all 3,697 historical coordinate records and the current model run contains the explanation payload.
+- TypeScript and the standalone production build pass.
+- The final live form submission, approval visibility and cleanup are tracked in `test-results.md`.

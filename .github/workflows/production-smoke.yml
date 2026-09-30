@@ -1,0 +1,22 @@
+name: Production health monitor
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check public routes and database
+        run: |
+          set -euo pipefail
+          base="https://playo-venue-observatory.dhivaa2004.workers.dev"
+          curl --fail --silent --show-error --max-time 20 "$base/" >/dev/null
+          curl --fail --silent --show-error --max-time 20 "$base/add-venue" >/dev/null
+          curl --fail --silent --show-error --max-time 20 "$base/map" >/dev/null
+          curl --fail --silent --show-error --max-time 20 "$base/api/data?kind=health" >/dev/null

@@ -41,8 +41,54 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build Worker
-        run: pnpm run build
+      - name: Ensure production Turnstile widget
+        shell: bash
+        run: |
+          set -euo pipefail
+          api="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/challenges/widgets"
+          auth="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+          name="playo-venue-submissions"
+          response="$(curl --fail --silent --show-error --get "$api" -H "$auth" \
+            --data-urlencode "filter=name:$name" --data-urlencode "per_page=20")"
+          sitekey="$(printf '%s' "$response" | jq -r '.result[0].sitekey // empty')"
+          secret="$(printf '%s' "$response" | jq -r '.result[0].secret // empty')"
+          if [ -z "$sitekey" ]; then
+            response="$(curl --fail --silent --show-error "$api" -H "$auth" \
+              -H 'Content-Type: application/json' \
+              --data '{"domains":["playo-venue-observatory.dhivaa2004.workers.dev"],"mode":"managed","name":"playo-venue-submissions","clearance_level":"no_clearance"}')"
+            sitekey="$(printf '%s' "$response" | jq -r '.result.sitekey // empty')"
+            secret="$(printf '%s' "$response" | jq -r '.result.secret // empty')"
+          elif [ -z "$secret" ]; then
+            response="$(curl --fail --silent --show-error "$api/$sitekey" -H "$auth")"
+            secret="$(printf '%s' "$response" | jq -r '.result.secret // empty')"
+          fi
+          test -n "$sitekey" && test -n "$secret"
+          echo "::add-mask::$secret"
+          echo "TURNSTILE_SITE_KEY=$sitekey" >> "$GITHUB_ENV"
+          echo "TURNSTILE_SECRET_KEY=$secret" >> "$GITHUB_ENV"
+
+      - name: Test and build Worker
+        run: |
+          pnpm test
+          pnpm typecheck
+          pnpm build
+
+      - name: Store Turnstile bindings in Worker
+        run: |
+          printf '%s' "$TURNSTILE_SITE_KEY" | pnpm exec wrangler secret put TURNSTILE_SITE_KEY --config wrangler.jsonc
+          printf '%s' "$TURNSTILE_SECRET_KEY" | pnpm exec wrangler secret put TURNSTILE_SECRET_KEY --config wrangler.jsonc
 
       - name: Deploy to Cloudflare
         run: pnpm exec wrangler deploy --config dist/server/wrangler.json --keep-vars
+
+      - name: Verify production health
+        working-directory: .
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent --show-error --max-time 20 \
+              "https://playo-venue-observatory.dhivaa2004.workers.dev/api/data?kind=health" >/dev/null; then
+              exit 0
+            fi
+            sleep 8
+          done
+          exit 1

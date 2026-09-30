@@ -1,28 +1,27 @@
 # Current status
 
-Updated 30 September 2026. The historical audit is approved and the existing empirical data/model are preserved.
+Updated 30 September 2026. The historical audit, ETL, normalized Supabase database, SQL EDA, feature store, grouped ML experiment, prediction write-back and public dashboard are implemented. The empirical dataset remains 3,697 exact-deduplicated historical records, with zero synthetic records.
 
-Completed: Python historical ETL; 3,697 normalized Supabase records with 3,701-row private lineage; SQL EDA and versioned feature store; entity-grouped baseline/regression experiment; 3,697 prediction rows; admin membership and owner RLS; database-backed route implementation; timestamped additive migrations; comprehensive README and operations documentation.
+## Production architecture
 
-Security and database/API tests, 16 Python tests, TypeScript and production build passed. Zero synthetic records. No PPT created. See test-results.md for scope.
+- Source: <https://github.com/dhivaa-2004/playo-bdm-capstone>
+- Hosting: <https://playo-venue-observatory.dhivaa2004.workers.dev>
+- Database: Supabase project `qztngersjtzropfjbcnl`
+- Release: GitHub Actions tests, builds and deploys `main` to Cloudflare Workers
+- Access: public dashboard with no application sign-in
 
-Production publication succeeded (version 2, including the navigation correction): https://playo-venue-observatory.dhivabalaguru.chatgpt.site . Native hosting status is succeeded with environment revision 1. Deployment success does not establish passing application acceptance. The local checkout includes the current pipeline, model methodology, migrations and frontend source. An earlier GitHub publication attempt stopped at an approval usage limit before any branch update. This source update contains the completed implementation and navigation correction.
+## Implemented community workflow
 
-Production HTTP smoke requests were rejected by the edge with HTTP 403 / error 1010 before application verification. Testing stopped; no alternate client or network bypass was attempted.
+Public venue submissions use Turnstile, server and database validation, normalized duplicate warnings, restricted column grants and RLS. Every new record starts `pending`; only records manually changed to `approved` in Supabase are publicly readable. Visitors can submit correction/duplicate reports but cannot directly edit or delete venues. Community data remains separate from historical analysis and ML.
 
-Remaining acceptance: preview outbound database fetch currently fails with an internal runtime error; responsive live-data UI checks are incomplete. Administrator onboarding is complete and the user supplied a screenshot of successful login and live dashboard data. Actual browser create/edit/archive acceptance remains unverified. Do not call the capstone fully complete until these checks are resolved.
+## Implemented analytical additions
 
-## Auth follow-up — 30 September 2026
-The intended administrator registered and confirmed their email. Protected admin membership was granted and public.is_admin() verified true under the account identity. Supabase Auth Site URL was changed from localhost:3000 to the deployed website and verified after reload. The user subsequently supplied a successful signed-in dashboard screenshot. CRUD acceptance remains pending.
+The venue map displays all 3,697 historical coordinates with region filtering; coordinate-less records would remain available through the normal explorer. The ML explanation page shows baselines, held-out MAE/RMSE/R², grouped evaluation, feature-importance categories and an explicit non-causal estimate warning.
 
-## Sidebar navigation correction — 2026-09-30
+## Security and observability
 
-Replaced client-router links with native document navigation for sidebar, cards, detail links and venue filters/pagination. TypeScript check passed. Browser clicks verified Venue explorer at /venues and SQL analysis at /analytics with the matching headings. Preview database access remains restricted; this navigation check does not claim a production data/CRUD test.
+Public writes do not use a service-role key. Turnstile is verified server-side. Database triggers enforce valid activities, field rules and caps, including pending rows hidden from public RLS. Cloudflare structured logs record safe request/error metadata. A scheduled production smoke workflow checks the public home, form, map and health routes.
 
-## Public access and independent hosting — 30 September 2026
+## Verification state
 
-Latest requested architecture: public dashboard and venue submissions without sign-in; GitHub source; existing Supabase database; standalone Cloudflare Worker. Public submission migration is applied and permission tests pass. Historical rows and ML remain unchanged. Frontend auth forms and private-workspace API access have been removed; private records remain protected in the database. The new form writes a separately labelled user_submitted/unverified record and the separate directory reads it. TypeScript, validation tests, standalone build and deploy dry-run pass.
-
-Cloudflare account deployment is BLOCKED by its browser security-verification loop. No new independent URL or automatic GitHub deployment connection has been established. The older Sites version is still the last verified public URL; it has not been silently replaced or unpublished. Follow cloudflare-deployment.md to connect the prepared GitHub source. Final live save/read acceptance remains required.
-
-Preview browser verified the public dashboard and Add a venue route with no sign-in controls. Form fields render; submission stays disabled when the preview cannot load live region/activity directories. The preview currently reports Database unavailable, so no browser save is claimed. The database rollback tests and 16 existing Python tests pass.
+Frontend tests, TypeScript, production build and rollback-scoped database acceptance pass. Database acceptance proves pending visibility rules, approval visibility, correction-report writes, map output and model-explanation storage, then rolls fixtures back. Final production form submission, public approval visibility and test-record cleanup are recorded in `test-results.md` once completed.

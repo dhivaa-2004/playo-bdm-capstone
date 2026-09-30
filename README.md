@@ -2,7 +2,7 @@
 
 Independent MBA Business Data Management study using historical third-party Playo-related records. Supabase is the application's data source. This is not an official Playo product or a source of current booking availability.
 
-**Latest change:** Public access without sign-in and separate venue submissions are implemented. Independent Cloudflare deployment is prepared; account connection and final live acceptance are pending. See [Cloudflare setup](docs/cloudflare-deployment.md) and [public submissions](docs/public-submissions.md).
+**Latest change:** The public, no-sign-in application is deployed independently at [playo-venue-observatory.dhivaa2004.workers.dev](https://playo-venue-observatory.dhivaa2004.workers.dev). Community submissions now use Turnstile, duplicate warnings and pending moderation; approved entries, correction reports, the venue map and the model explanation remain separate from the historical empirical dataset. See [deployment](docs/cloudflare-deployment.md) and [public submissions](docs/public-submissions.md).
 
 **Previous implementation status:** historical ETL, database, SQL feature store, grouped ML evaluation and prediction write-back are implemented. Website integration and admin hardening are implemented; production and browser acceptance evidence is tracked in [status](docs/status.md). No synthetic expansion or PPT has been produced.
 
@@ -40,10 +40,10 @@ Run `18a83a41-064d-4b9d-a4ad-054b37c5520e`: seed 42, 2,547 training records and 
 3,697 persisted outputs: 2,547 in-sample training, 639 held-out test, 511 unrated inference. Only test rows support evaluation. Each output has a venue ID, run ID, split and feature hash. Run metadata carries feature version, dataset/training hashes and parameters. Python generated atomic write-back SQL; it was applied through the database-owner SQL interface. A direct psycopg write-back session has not been verified.
 
 ## 12. Website
-Source: `frontend/`. New public routes: `/add-venue`, `/submitted-venues`; historical routes: `/`, `/venues`, `/venues/:id`, `/sports`, `/cities`, `/analytics`, `/predictions`, `/data-quality`, `/data-management`, `/admin`. Existing `/models`, `/quality`, `/workspace` aliases remain. Explorer has SQL search, filters, stable sorting and pagination represented in its URL. Activities and source regions are queried from the database, not baked-in listings. No raw HTML/phones, synthetic fills, chatbot or booking features.
+Source: `frontend/`. Public routes include `/`, `/venues`, `/venues/:id`, `/sports`, `/cities`, `/analytics`, `/map`, `/predictions`, `/data-quality`, `/add-venue`, `/submitted-venues` and `/report`. Existing compatibility aliases remain. Explorer has SQL search, filters, stable sorting and pagination represented in its URL. The map displays database coordinates without hiding coordinate-less records from the normal list. Activities and source regions are queried from the database, not baked-in listings. No raw HTML/phones, synthetic fills, chatbot or booking features.
 
 ## 13. Authentication / RLS
-The current public frontend has no sign-in and cannot access private curation records. Same-origin checks and database column grants/RLS protect venue submissions; no service-role key is used. Historical tables remain read-only to the application. Earlier admin membership and private records are retained, protected, for database-owner administration. [Operations](docs/operations.md).
+The public frontend has no sign-in and cannot access private curation records. Turnstile, validation, column-limited grants, triggers and RLS protect public submission/report inserts; no service-role key is used. New venues start as `pending`, and only database-owner-approved records can be read publicly. Historical tables remain read-only to the application. [Operations](docs/operations.md).
 
 ## 14. Data Quality
 Raw files remain unchanged and private. Lineage preserves every raw row and archive/member/record hashes. Public quality reports contain aggregate audit evidence, refreshed by an ingestion trigger. No synthetic records are loaded; missing historical fields remain missing. Source regions do not establish municipal boundaries or represent India as a whole.
@@ -78,16 +78,16 @@ pnpm dev
 The existing hosted database is already loaded. Do not reset it or replay all migrations blindly. For a separate empty project, apply original migrations in dependency order 001, 003, 002, then the timestamped additions. The historical parser and model script have `--help` for explicit input/output paths. Reproduction is separate from the existing approved experiment.
 
 ## 17. Environment Variables
-`SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` configure server requests. Optional `DATABASE_URL` enables the psycopg SQL-view reader; otherwise the Python pipeline reads PostgREST with pagination. Actual keys, passwords, access tokens and `.env` files must never be committed. Production values are stored in hosting environment settings.
+`SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`, `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` configure the production Worker. Optional `DATABASE_URL` enables the psycopg SQL-view reader; otherwise the Python pipeline reads PostgREST with pagination. Actual keys, passwords, access tokens and `.env` files must never be committed. Production secrets are stored as Cloudflare Worker secrets; GitHub Actions creates or reuses the Turnstile widget during deployment.
 
 ## 18. Testing
-16 Python unit tests passed on 30 September 2026. Live SQL tests passed for anonymous reads/write denial, permitted admin CRUD, non-admin denial, self-promotion denial, cross-admin isolation, immutable historical data and audit events; fixtures rolled back. TypeScript and production builds passed. See [test evidence](docs/test-results.md) for exact scope, advisor findings and browser limitations. Database tests do not imply real-user browser auth/CRUD acceptance.
+16 Python unit tests and seven frontend validation tests pass. Live, rollback-scoped SQL acceptance verifies pending visibility, approval visibility, correction reports, public-write hardening, 3,697 map points and stored model explanation. TypeScript and production builds pass. GitHub Actions runs tests/build/deploy plus scheduled production smoke checks. See [test evidence](docs/test-results.md). The final production form-write acceptance is tracked separately from transaction-scoped database verification.
 
 ## 19. Deployment
-The existing Sites project is reused, with Supabase runtime variables configured separately. Deployment state and verified URL are recorded in [status](docs/status.md). Source and build must match; secrets and raw archives are excluded. Public site access never makes admin endpoints writable.
+GitHub `main` is the source of truth. GitHub Actions tests and deploys the generated Worker to Cloudflare; Supabase remains the database. Production: [playo-venue-observatory.dhivaa2004.workers.dev](https://playo-venue-observatory.dhivaa2004.workers.dev). Source and build must match; secrets and raw archives are excluded. Public site access never makes private database tables writable.
 
 ## 20. Limitations
-Unknown collection dates; geographic selection bias; sparse ratings; no verified current availability; no booking/revenue/timing/amenity evidence; uncertain entity identity; modest predictive power. In-sample predictions and unrated inference are not accuracy evidence. There is no full-data refit or operational model monitoring. Auth sessions currently require re-login on expiry.
+Unknown collection dates; geographic selection bias; sparse ratings; no verified current availability; no booking/revenue/timing/amenity evidence; uncertain entity identity; modest predictive power. In-sample predictions and unrated inference are not accuracy evidence. There is no full-data refit or operational model monitoring. Community submissions are claims reviewed by the database owner and are not merged into empirical KPIs or ML.
 
 ## 21. Future Work
-Finish independent Cloudflare deployment and public submission browser acceptance. Optional 400 fictional demonstration records remain deferred and would require separate provenance, badges and exclusion from empirical KPIs/ML. Consider session refresh and additional empirical features only with authorized sources. PPT work remains deferred.
+Optional 400 fictional demonstration records remain deferred and would require separate provenance, badges and exclusion from empirical KPIs/ML. Additional empirical features should be added only from authorized sources. No synthetic expansion is required for the current project.
