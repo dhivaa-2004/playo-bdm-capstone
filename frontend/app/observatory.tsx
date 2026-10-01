@@ -36,7 +36,7 @@ function Metric({label,value,foot,icon:Icon,accent=false}:any){return <div class
 function PageVisualImage({src,alt,kind}:{src:string,alt:string,kind:'photo'|'diagram'}){
  // These local assets are already resized and optimized, so runtime image processing is unnecessary.
  // eslint-disable-next-line @next/next/no-img-element
- return <img src={src} alt={alt} loading="lazy" decoding="async" fetchPriority="low" width={kind==='photo'?1200:480} height={kind==='photo'?500:240}/>;
+ return <img src={src} alt={alt} loading={kind==='photo'?'eager':'lazy'} decoding="async" fetchPriority={kind==='photo'?'high':'low'} width={kind==='photo'?1200:480} height={kind==='photo'?500:240}/>;
 }
 export default function Observatory(){
  const rawPath=usePathname()||'/';const path=({'/predictions':'/models','/data-quality':'/quality','/data-management':'/add-venue','/workspace':'/add-venue','/admin':'/quality'} as Record<string,string>)[rawPath]||rawPath;const sp=useSearchParams();const query=sp.toString();

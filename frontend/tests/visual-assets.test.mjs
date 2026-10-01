@@ -25,6 +25,6 @@ test('page visuals are local, referenced and kept within the performance budget'
  const rasterBytes=(await stat(new URL('../public/images/sports-courts.webp',import.meta.url))).size+(await stat(new URL('../public/images/badminton-racket.webp',import.meta.url))).size;
  assert.ok(rasterBytes<300000,'loaded overview photographs should stay below 300 KB combined');
  assert.match(source,/Illustrative image · not a listed or verified venue/);
- assert.match(source,/loading="lazy"/);
- assert.match(source,/fetchPriority="low"/);
+ assert.match(source,/loading=\{kind==='photo'\?'eager':'lazy'\}/);
+ assert.match(source,/fetchPriority=\{kind==='photo'\?'high':'low'\}/);
 });
