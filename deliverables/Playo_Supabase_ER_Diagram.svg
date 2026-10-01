@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="5400" height="3500" viewBox="0 0 5400 3500">
+  <defs>
+    <marker id="arrow-fk" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#52667A"/>
+    </marker>
+    <marker id="arrow-logical" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 Z" fill="#94A3B8"/>
+    </marker>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FAFC"/><stop offset="1" stop-color="#F5F3EE"/>
+    </linearGradient>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; }
+      .title { font-size: 44px; font-weight: 700; fill: #102A43; }
+      .subtitle { font-size: 20px; fill: #52667A; }
+      .table-title { font-size: 23px; font-weight: 700; fill: #FFFFFF; }
+      .table-meta { font-size: 16px; fill: #FFFFFF; opacity: 0.88; }
+      .field-name { font-size: 17px; font-weight: 700; fill: #1E293B; }
+      .field-type { font-size: 16px; fill: #52667A; }
+      .field-key { font-size: 14px; font-weight: 700; }
+      .relation-label { font-size: 14px; font-weight: 700; fill: #52667A; }
+      .legend-text { font-size: 17px; fill: #334155; }
+      .note { font-size: 16px; fill: #52667A; }
+    </style>
+  </defs>
+  <rect width="5400" height="3500" fill="url(#background)"/>
+  <text x="100" y="78" class="title">Playo Venue Observatory — Supabase ER Diagram</text>
+  <text x="100" y="119" class="subtitle">Live schema verified 1 October 2026  •  18 tables across public, private and auth schemas</text>
+  <rect x="100" y="165" width="24" height="24" rx="6" fill="#0F766E"/><text x="136" y="184" class="legend-text">Historical data</text><rect x="430" y="165" width="24" height="24" rx="6" fill="#475569"/><text x="466" y="184" class="legend-text">Private lineage</text><rect x="760" y="165" width="24" height="24" rx="6" fill="#2563EB"/><text x="796" y="184" class="legend-text">Machine learning</text><rect x="1090" y="165" width="24" height="24" rx="6" fill="#C2410C"/><text x="1126" y="184" class="legend-text">Community submissions</text><rect x="1420" y="165" width="24" height="24" rx="6" fill="#7C3AED"/><text x="1456" y="184" class="legend-text">Workspace</text><rect x="1750" y="165" width="24" height="24" rx="6" fill="#334155"/><text x="1786" y="184" class="legend-text">Supabase Auth</text>
+  <line x1="100" y1="215" x2="5300" y2="215" stroke="#CBD5E1" stroke-width="2"/>
+  <g class="relationship"><path d="M 740 923.0 H 820 V 403.0 H 740" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="823" y="637.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="828" y="655.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 740 1113.0 H 1287.0 V 533.0 H 1870" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="1290.0" y="797.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="1295.0" y="815.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 1870 913.0 H 1305.0 V 403.0 H 740" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="1308.0" y="632.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="1313.0" y="650.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 1870 647.0 H 1763.0 V 353.0 H 1620" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="1766.0" y="474.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="1771.0" y="492.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 2770 348.0 H 2681.0 V 533.0 H 2520" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="2684.0" y="414.5" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="2689.0" y="432.5" class="relation-label">1:1</text></g>
+<g class="relationship"><path d="M 2770 1143.0 H 2609.0 V 533.0 H 2520" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="2612.0" y="812.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="2617.0" y="830.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 2770 1181.0 H 2177.0 V 1153.0 H 1620" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="2180.0" y="1141.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="2185.0" y="1159.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 2770 2123.0 H 2645.0 V 1893.0 H 2520" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="2648.0" y="1982.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="2653.0" y="2000.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 2770 2161.0 H 2663.0 V 533.0 H 2520" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="2666.0" y="1321.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="2671.0" y="1339.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 3670 404.0 H 2681.0 V 353.0 H 1620" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="2684.0" y="352.5" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="2689.0" y="370.5" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 3670 1349.0 H 3059.0 V 533.0 H 2520" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="3062.0" y="915.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="3067.0" y="933.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 4320 1387.0 H 4484 V 328.0 H 4320" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="4487" y="831.5" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="4492" y="849.5" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 4320 2281.0 H 4465.0 V 2403.0 H 4610" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="4468.0" y="2316.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="4473.0" y="2334.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 3670 2319.0 H 3113.0 V 533.0 H 2520" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="3116.0" y="1400.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="3121.0" y="1418.0" class="relation-label">N:1</text></g>
+<g class="relationship"><path d="M 740 2188.0 H 2711.0 V 2403.0 H 4610" fill="none" stroke="#52667A" stroke-width="3" marker-end="url(#arrow-fk)"/><rect x="2714.0" y="2269.5" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="2719.0" y="2287.5" class="relation-label">1:1</text></g>
+<g class="relationship"><path d="M 970 1683.0 H 819.0 V 403.0 H 740" fill="none" stroke="#94A3B8" stroke-width="3" stroke-dasharray="14 10" marker-end="url(#arrow-logical)"/><rect x="822.0" y="1017.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="827.0" y="1035.0" class="relation-label">logical</text></g>
+<g class="relationship"><path d="M 740 1428.0 H 820 V 403.0 H 740" fill="none" stroke="#94A3B8" stroke-width="3" stroke-dasharray="14 10" marker-end="url(#arrow-logical)"/><rect x="823" y="889.5" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="828" y="907.5" class="relation-label">logical</text></g>
+<g class="relationship"><path d="M 4320 2969.0 H 4428 V 2243.0 H 4320" fill="none" stroke="#94A3B8" stroke-width="3" stroke-dasharray="14 10" marker-end="url(#arrow-logical)"/><rect x="4431" y="2580.0" width="64" height="25" rx="7" fill="#FAFAF7" opacity="0.94"/><text x="4436" y="2598.0" class="relation-label">logical</text></g>
+  <g id="private_ingestion_runs">
+<rect x="90" y="300" width="650" height="274" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 106 300 H 724 Q 740 300 740 316 V 384 H 90 V 316 Q 90 300 106 300 Z" fill="#475569"/>
+<text x="114" y="335" class="table-title">private.ingestion_runs</text>
+<text x="114" y="364" class="table-meta">1 row  •  RLS ON</text>
+<rect x="91" y="384" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="409" class="field-name">archive_hash</text>
+<text x="472" y="409" class="field-type">text</text>
+<text x="718" y="409" text-anchor="end" class="field-key" fill="#475569">PK</text>
+<line x1="91" y1="422" x2="739" y2="422" stroke="#E2E8F0" stroke-width="1"/>
+<text x="112" y="447" class="field-name">source_dataset</text>
+<text x="472" y="447" class="field-type">text</text>
+<line x1="91" y1="460" x2="739" y2="460" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="91" y="460" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="485" class="field-name">parser_version</text>
+<text x="472" y="485" class="field-type">text</text>
+<line x1="91" y1="498" x2="739" y2="498" stroke="#E2E8F0" stroke-width="1"/>
+<text x="112" y="523" class="field-name">quality</text>
+<text x="472" y="523" class="field-type">jsonb</text>
+<line x1="91" y1="536" x2="739" y2="536" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="91" y="536" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="561" class="field-name">loaded_at</text>
+<text x="472" y="561" class="field-type">timestamptz</text>
+</g>
+<g id="private_raw_lineage">
+<rect x="90" y="820" width="650" height="312" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 106 820 H 724 Q 740 820 740 836 V 904 H 90 V 836 Q 90 820 106 820 Z" fill="#475569"/>
+<text x="114" y="855" class="table-title">private.raw_lineage</text>
+<text x="114" y="884" class="table-meta">3,701 rows  •  RLS ON</text>
+<rect x="91" y="904" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="929" class="field-name">archive_hash</text>
+<text x="472" y="929" class="field-type">text</text>
+<text x="718" y="929" text-anchor="end" class="field-key" fill="#475569">PK · FK</text>
+<line x1="91" y1="942" x2="739" y2="942" stroke="#E2E8F0" stroke-width="1"/>
+<text x="112" y="967" class="field-name">source_file</text>
+<text x="472" y="967" class="field-type">text</text>
+<text x="718" y="967" text-anchor="end" class="field-key" fill="#475569">PK</text>
+<line x1="91" y1="980" x2="739" y2="980" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="91" y="980" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="1005" class="field-name">row_index</text>
+<text x="472" y="1005" class="field-type">integer</text>
+<text x="718" y="1005" text-anchor="end" class="field-key" fill="#475569">PK</text>
+<line x1="91" y1="1018" x2="739" y2="1018" stroke="#E2E8F0" stroke-width="1"/>
+<text x="112" y="1043" class="field-name">member_hash</text>
+<text x="472" y="1043" class="field-type">text</text>
+<line x1="91" y1="1056" x2="739" y2="1056" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="91" y="1056" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="1081" class="field-name">record_hash</text>
+<text x="472" y="1081" class="field-type">text</text>
+<line x1="91" y1="1094" x2="739" y2="1094" stroke="#E2E8F0" stroke-width="1"/>
+<text x="112" y="1119" class="field-name">venue_id</text>
+<text x="472" y="1119" class="field-type">uuid</text>
+<text x="718" y="1119" text-anchor="end" class="field-key" fill="#475569">FK</text>
+</g>
+<g id="private_import_chunks">
+<rect x="90" y="1325" width="650" height="198" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 106 1325 H 724 Q 740 1325 740 1341 V 1409 H 90 V 1341 Q 90 1325 106 1325 Z" fill="#475569"/>
+<text x="114" y="1360" class="table-title">private.import_chunks</text>
+<text x="114" y="1389" class="table-meta">10 rows  •  RLS ON</text>
+<rect x="91" y="1409" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="1434" class="field-name">archive_hash</text>
+<text x="472" y="1434" class="field-type">text</text>
+<text x="718" y="1434" text-anchor="end" class="field-key" fill="#475569">PK</text>
+<line x1="91" y1="1447" x2="739" y2="1447" stroke="#E2E8F0" stroke-width="1"/>
+<text x="112" y="1472" class="field-name">part</text>
+<text x="472" y="1472" class="field-type">integer</text>
+<text x="718" y="1472" text-anchor="end" class="field-key" fill="#475569">PK</text>
+<line x1="91" y1="1485" x2="739" y2="1485" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="91" y="1485" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="1510" class="field-name">rows</text>
+<text x="472" y="1510" class="field-type">jsonb</text>
+</g>
+<g id="private_schema_migrations">
+<rect x="90" y="1720" width="650" height="160" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 106 1720 H 724 Q 740 1720 740 1736 V 1804 H 90 V 1736 Q 90 1720 106 1720 Z" fill="#475569"/>
+<text x="114" y="1755" class="table-title">private.schema_migrations</text>
+<text x="114" y="1784" class="table-meta">5 rows  •  RLS ON</text>
+<rect x="91" y="1804" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="1829" class="field-name">version</text>
+<text x="472" y="1829" class="field-type">text</text>
+<text x="718" y="1829" text-anchor="end" class="field-key" fill="#475569">PK</text>
+<line x1="91" y1="1842" x2="739" y2="1842" stroke="#E2E8F0" stroke-width="1"/>
+<text x="112" y="1867" class="field-name">applied_at</text>
+<text x="472" y="1867" class="field-type">timestamptz</text>
+</g>
+<g id="private_admin_members">
+<rect x="90" y="2085" width="650" height="160" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 106 2085 H 724 Q 740 2085 740 2101 V 2169 H 90 V 2101 Q 90 2085 106 2085 Z" fill="#475569"/>
+<text x="114" y="2120" class="table-title">private.admin_members</text>
+<text x="114" y="2149" class="table-meta">1 row  •  RLS ON</text>
+<rect x="91" y="2169" width="648" height="38" fill="#EEF2F6"/>
+<text x="112" y="2194" class="field-name">user_id</text>
+<text x="472" y="2194" class="field-type">uuid</text>
+<text x="718" y="2194" text-anchor="end" class="field-key" fill="#475569">PK · FK</text>
+<line x1="91" y1="2207" x2="739" y2="2207" stroke="#E2E8F0" stroke-width="1"/>
+<text x="112" y="2232" class="field-name">granted_at</text>
+<text x="472" y="2232" class="field-type">timestamptz</text>
+</g>
+<g id="auth_users">
+<rect x="4610" y="2300" width="650" height="122" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 4626 2300 H 5244 Q 5260 2300 5260 2316 V 2384 H 4610 V 2316 Q 4610 2300 4626 2300 Z" fill="#334155"/>
+<text x="4634" y="2335" class="table-title">auth.users</text>
+<text x="4634" y="2364" class="table-meta">Supabase Auth  •  RLS ON</text>
+<rect x="4611" y="2384" width="648" height="38" fill="#F8FAFC"/>
+<text x="4632" y="2409" class="field-name">id</text>
+<text x="4992" y="2409" class="field-type">uuid</text>
+<text x="5238" y="2409" text-anchor="end" class="field-key" fill="#334155">PK</text>
+</g>
+<g id="public_source_regions">
+<rect x="970" y="250" width="650" height="160" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 986 250 H 1604 Q 1620 250 1620 266 V 334 H 970 V 266 Q 970 250 986 250 Z" fill="#0F766E"/>
+<text x="994" y="285" class="table-title">public.source_regions</text>
+<text x="994" y="314" class="table-meta">4 rows  •  RLS ON</text>
+<rect x="971" y="334" width="648" height="38" fill="#E6F5F3"/>
+<text x="992" y="359" class="field-name">region</text>
+<text x="1352" y="359" class="field-type">text</text>
+<text x="1598" y="359" text-anchor="end" class="field-key" fill="#0F766E">PK</text>
+<line x1="971" y1="372" x2="1619" y2="372" stroke="#E2E8F0" stroke-width="1"/>
+<text x="992" y="397" class="field-name">display_name</text>
+<text x="1352" y="397" class="field-type">text</text>
+</g>
+<g id="public_venues">
+<rect x="1870" y="430" width="650" height="540" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 1886 430 H 2504 Q 2520 430 2520 446 V 514 H 1870 V 446 Q 1870 430 1886 430 Z" fill="#0F766E"/>
+<text x="1894" y="465" class="table-title">public.venues</text>
+<text x="1894" y="494" class="table-meta">3,697 rows  •  RLS ON</text>
+<rect x="1871" y="514" width="648" height="38" fill="#E6F5F3"/>
+<text x="1892" y="539" class="field-name">venue_id</text>
+<text x="2252" y="539" class="field-type">uuid</text>
+<text x="2498" y="539" text-anchor="end" class="field-key" fill="#0F766E">PK</text>
+<line x1="1871" y1="552" x2="2519" y2="552" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="577" class="field-name">source_key</text>
+<text x="2252" y="577" class="field-type">text</text>
+<text x="2498" y="577" text-anchor="end" class="field-key" fill="#0F766E">UQ</text>
+<line x1="1871" y1="590" x2="2519" y2="590" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="590" width="648" height="38" fill="#E6F5F3"/>
+<text x="1892" y="615" class="field-name">name</text>
+<text x="2252" y="615" class="field-type">text</text>
+<line x1="1871" y1="628" x2="2519" y2="628" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="653" class="field-name">region</text>
+<text x="2252" y="653" class="field-type">text</text>
+<text x="2498" y="653" text-anchor="end" class="field-key" fill="#0F766E">FK</text>
+<line x1="1871" y1="666" x2="2519" y2="666" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="666" width="648" height="38" fill="#E6F5F3"/>
+<text x="1892" y="691" class="field-name">latitude</text>
+<text x="2252" y="691" class="field-type">float8</text>
+<line x1="1871" y1="704" x2="2519" y2="704" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="729" class="field-name">longitude</text>
+<text x="2252" y="729" class="field-type">float8</text>
+<line x1="1871" y1="742" x2="2519" y2="742" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="742" width="648" height="38" fill="#E6F5F3"/>
+<text x="1892" y="767" class="field-name">entity_group</text>
+<text x="2252" y="767" class="field-type">uuid</text>
+<line x1="1871" y1="780" x2="2519" y2="780" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="805" class="field-name">source_type</text>
+<text x="2252" y="805" class="field-type">text</text>
+<line x1="1871" y1="818" x2="2519" y2="818" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="818" width="648" height="38" fill="#E6F5F3"/>
+<text x="1892" y="843" class="field-name">is_synthetic</text>
+<text x="2252" y="843" class="field-type">boolean</text>
+<line x1="1871" y1="856" x2="2519" y2="856" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="881" class="field-name">source_dataset</text>
+<text x="2252" y="881" class="field-type">text</text>
+<line x1="1871" y1="894" x2="2519" y2="894" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="894" width="648" height="38" fill="#E6F5F3"/>
+<text x="1892" y="919" class="field-name">archive_hash</text>
+<text x="2252" y="919" class="field-type">text</text>
+<text x="2498" y="919" text-anchor="end" class="field-key" fill="#0F766E">FK</text>
+<line x1="1871" y1="932" x2="2519" y2="932" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="957" class="field-name">observed_at</text>
+<text x="2252" y="957" class="field-type">timestamptz</text>
+<text x="2498" y="957" text-anchor="end" class="field-key" fill="#0F766E">nullable</text>
+</g>
+<g id="public_venue_ratings">
+<rect x="2770" y="245" width="650" height="198" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 2786 245 H 3404 Q 3420 245 3420 261 V 329 H 2770 V 261 Q 2770 245 2786 245 Z" fill="#0F766E"/>
+<text x="2794" y="280" class="table-title">public.venue_ratings</text>
+<text x="2794" y="309" class="table-meta">3,697 rows  •  RLS ON</text>
+<rect x="2771" y="329" width="648" height="38" fill="#E6F5F3"/>
+<text x="2792" y="354" class="field-name">venue_id</text>
+<text x="3152" y="354" class="field-type">uuid</text>
+<text x="3398" y="354" text-anchor="end" class="field-key" fill="#0F766E">PK · FK</text>
+<line x1="2771" y1="367" x2="3419" y2="367" stroke="#E2E8F0" stroke-width="1"/>
+<text x="2792" y="392" class="field-name">avg_rating</text>
+<text x="3152" y="392" class="field-type">float8</text>
+<text x="3398" y="392" text-anchor="end" class="field-key" fill="#0F766E">nullable</text>
+<line x1="2771" y1="405" x2="3419" y2="405" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="2771" y="405" width="648" height="38" fill="#E6F5F3"/>
+<text x="2792" y="430" class="field-name">rating_count</text>
+<text x="3152" y="430" class="field-type">integer</text>
+</g>
+<g id="public_activity_labels">
+<rect x="970" y="1050" width="650" height="160" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 986 1050 H 1604 Q 1620 1050 1620 1066 V 1134 H 970 V 1066 Q 970 1050 986 1050 Z" fill="#0F766E"/>
+<text x="994" y="1085" class="table-title">public.activity_labels</text>
+<text x="994" y="1114" class="table-meta">89 rows  •  RLS ON</text>
+<rect x="971" y="1134" width="648" height="38" fill="#E6F5F3"/>
+<text x="992" y="1159" class="field-name">label</text>
+<text x="1352" y="1159" class="field-type">text</text>
+<text x="1598" y="1159" text-anchor="end" class="field-key" fill="#0F766E">PK</text>
+<line x1="971" y1="1172" x2="1619" y2="1172" stroke="#E2E8F0" stroke-width="1"/>
+<text x="992" y="1197" class="field-name">taxonomy_status</text>
+<text x="1352" y="1197" class="field-type">text</text>
+</g>
+<g id="public_venue_activities">
+<rect x="2770" y="1040" width="650" height="160" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 2786 1040 H 3404 Q 3420 1040 3420 1056 V 1124 H 2770 V 1056 Q 2770 1040 2786 1040 Z" fill="#0F766E"/>
+<text x="2794" y="1075" class="table-title">public.venue_activities</text>
+<text x="2794" y="1104" class="table-meta">7,052 rows  •  RLS ON</text>
+<rect x="2771" y="1124" width="648" height="38" fill="#E6F5F3"/>
+<text x="2792" y="1149" class="field-name">venue_id</text>
+<text x="3152" y="1149" class="field-type">uuid</text>
+<text x="3398" y="1149" text-anchor="end" class="field-key" fill="#0F766E">PK · FK</text>
+<line x1="2771" y1="1162" x2="3419" y2="1162" stroke="#E2E8F0" stroke-width="1"/>
+<text x="2792" y="1187" class="field-name">label</text>
+<text x="3152" y="1187" class="field-type">text</text>
+<text x="3398" y="1187" text-anchor="end" class="field-key" fill="#0F766E">PK · FK</text>
+</g>
+<g id="public_quality_reports">
+<rect x="970" y="1580" width="650" height="236" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 986 1580 H 1604 Q 1620 1580 1620 1596 V 1664 H 970 V 1596 Q 970 1580 986 1580 Z" fill="#0F766E"/>
+<text x="994" y="1615" class="table-title">public.quality_reports</text>
+<text x="994" y="1644" class="table-meta">1 row  •  RLS ON</text>
+<rect x="971" y="1664" width="648" height="38" fill="#E6F5F3"/>
+<text x="992" y="1689" class="field-name">archive_hash</text>
+<text x="1352" y="1689" class="field-type">text</text>
+<text x="1598" y="1689" text-anchor="end" class="field-key" fill="#0F766E">PK</text>
+<line x1="971" y1="1702" x2="1619" y2="1702" stroke="#E2E8F0" stroke-width="1"/>
+<text x="992" y="1727" class="field-name">parser_version</text>
+<text x="1352" y="1727" class="field-type">text</text>
+<line x1="971" y1="1740" x2="1619" y2="1740" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="971" y="1740" width="648" height="38" fill="#E6F5F3"/>
+<text x="992" y="1765" class="field-name">quality</text>
+<text x="1352" y="1765" class="field-type">jsonb</text>
+<line x1="971" y1="1778" x2="1619" y2="1778" stroke="#E2E8F0" stroke-width="1"/>
+<text x="992" y="1803" class="field-name">loaded_at</text>
+<text x="1352" y="1803" class="field-type">timestamptz</text>
+</g>
+<g id="public_model_runs">
+<rect x="1870" y="1790" width="650" height="540" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 1886 1790 H 2504 Q 2520 1790 2520 1806 V 1874 H 1870 V 1806 Q 1870 1790 1886 1790 Z" fill="#2563EB"/>
+<text x="1894" y="1825" class="table-title">public.model_runs</text>
+<text x="1894" y="1854" class="table-meta">1 row  •  RLS ON</text>
+<rect x="1871" y="1874" width="648" height="38" fill="#EAF1FF"/>
+<text x="1892" y="1899" class="field-name">run_id</text>
+<text x="2252" y="1899" class="field-type">uuid</text>
+<text x="2498" y="1899" text-anchor="end" class="field-key" fill="#2563EB">PK</text>
+<line x1="1871" y1="1912" x2="2519" y2="1912" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="1937" class="field-name">created_at</text>
+<text x="2252" y="1937" class="field-type">timestamptz</text>
+<line x1="1871" y1="1950" x2="2519" y2="1950" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="1950" width="648" height="38" fill="#EAF1FF"/>
+<text x="1892" y="1975" class="field-name">feature_version</text>
+<text x="2252" y="1975" class="field-type">text</text>
+<line x1="1871" y1="1988" x2="2519" y2="1988" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="2013" class="field-name">dataset_hash</text>
+<text x="2252" y="2013" class="field-type">text</text>
+<line x1="1871" y1="2026" x2="2519" y2="2026" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="2026" width="648" height="38" fill="#EAF1FF"/>
+<text x="1892" y="2051" class="field-name">training_hash</text>
+<text x="2252" y="2051" class="field-type">text</text>
+<line x1="1871" y1="2064" x2="2519" y2="2064" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="2089" class="field-name">model_name</text>
+<text x="2252" y="2089" class="field-type">text</text>
+<line x1="1871" y1="2102" x2="2519" y2="2102" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="2102" width="648" height="38" fill="#EAF1FF"/>
+<text x="1892" y="2127" class="field-name">metrics</text>
+<text x="2252" y="2127" class="field-type">jsonb</text>
+<line x1="1871" y1="2140" x2="2519" y2="2140" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="2165" class="field-name">split_summary</text>
+<text x="2252" y="2165" class="field-type">jsonb</text>
+<line x1="1871" y1="2178" x2="2519" y2="2178" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="2178" width="648" height="38" fill="#EAF1FF"/>
+<text x="1892" y="2203" class="field-name">sensitivity</text>
+<text x="2252" y="2203" class="field-type">jsonb</text>
+<line x1="1871" y1="2216" x2="2519" y2="2216" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="2241" class="field-name">parameters</text>
+<text x="2252" y="2241" class="field-type">jsonb</text>
+<line x1="1871" y1="2254" x2="2519" y2="2254" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="1871" y="2254" width="648" height="38" fill="#EAF1FF"/>
+<text x="1892" y="2279" class="field-name">versions</text>
+<text x="2252" y="2279" class="field-type">jsonb</text>
+<line x1="1871" y1="2292" x2="2519" y2="2292" stroke="#E2E8F0" stroke-width="1"/>
+<text x="1892" y="2317" class="field-name">explanation</text>
+<text x="2252" y="2317" class="field-type">jsonb</text>
+<text x="2498" y="2317" text-anchor="end" class="field-key" fill="#2563EB">nullable</text>
+</g>
+<g id="public_predictions">
+<rect x="2770" y="2020" width="650" height="274" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 2786 2020 H 3404 Q 3420 2020 3420 2036 V 2104 H 2770 V 2036 Q 2770 2020 2786 2020 Z" fill="#2563EB"/>
+<text x="2794" y="2055" class="table-title">public.predictions</text>
+<text x="2794" y="2084" class="table-meta">3,697 rows  •  RLS ON</text>
+<rect x="2771" y="2104" width="648" height="38" fill="#EAF1FF"/>
+<text x="2792" y="2129" class="field-name">run_id</text>
+<text x="3152" y="2129" class="field-type">uuid</text>
+<text x="3398" y="2129" text-anchor="end" class="field-key" fill="#2563EB">PK · FK</text>
+<line x1="2771" y1="2142" x2="3419" y2="2142" stroke="#E2E8F0" stroke-width="1"/>
+<text x="2792" y="2167" class="field-name">venue_id</text>
+<text x="3152" y="2167" class="field-type">uuid</text>
+<text x="3398" y="2167" text-anchor="end" class="field-key" fill="#2563EB">PK · FK</text>
+<line x1="2771" y1="2180" x2="3419" y2="2180" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="2771" y="2180" width="648" height="38" fill="#EAF1FF"/>
+<text x="2792" y="2205" class="field-name">predicted_rating</text>
+<text x="3152" y="2205" class="field-type">float8</text>
+<line x1="2771" y1="2218" x2="3419" y2="2218" stroke="#E2E8F0" stroke-width="1"/>
+<text x="2792" y="2243" class="field-name">split</text>
+<text x="3152" y="2243" class="field-type">text</text>
+<line x1="2771" y1="2256" x2="3419" y2="2256" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="2771" y="2256" width="648" height="38" fill="#EAF1FF"/>
+<text x="2792" y="2281" class="field-name">feature_hash</text>
+<text x="3152" y="2281" class="field-type">text</text>
+</g>
+<g id="public_submitted_venues">
+<rect x="3670" y="225" width="650" height="692" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 3686 225 H 4304 Q 4320 225 4320 241 V 309 H 3670 V 241 Q 3670 225 3686 225 Z" fill="#C2410C"/>
+<text x="3694" y="260" class="table-title">public.submitted_venues</text>
+<text x="3694" y="289" class="table-meta">0 rows  •  RLS ON</text>
+<rect x="3671" y="309" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="334" class="field-name">id</text>
+<text x="4052" y="334" class="field-type">uuid</text>
+<text x="4298" y="334" text-anchor="end" class="field-key" fill="#C2410C">PK</text>
+<line x1="3671" y1="347" x2="4319" y2="347" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="372" class="field-name">name</text>
+<text x="4052" y="372" class="field-type">text</text>
+<line x1="3671" y1="385" x2="4319" y2="385" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="385" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="410" class="field-name">region</text>
+<text x="4052" y="410" class="field-type">text</text>
+<text x="4298" y="410" text-anchor="end" class="field-key" fill="#C2410C">FK</text>
+<line x1="3671" y1="423" x2="4319" y2="423" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="448" class="field-name">locality</text>
+<text x="4052" y="448" class="field-type">text</text>
+<line x1="3671" y1="461" x2="4319" y2="461" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="461" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="486" class="field-name">address</text>
+<text x="4052" y="486" class="field-type">text</text>
+<line x1="3671" y1="499" x2="4319" y2="499" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="524" class="field-name">description</text>
+<text x="4052" y="524" class="field-type">text</text>
+<line x1="3671" y1="537" x2="4319" y2="537" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="537" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="562" class="field-name">latitude</text>
+<text x="4052" y="562" class="field-type">float8</text>
+<text x="4298" y="562" text-anchor="end" class="field-key" fill="#C2410C">nullable</text>
+<line x1="3671" y1="575" x2="4319" y2="575" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="600" class="field-name">longitude</text>
+<text x="4052" y="600" class="field-type">float8</text>
+<text x="4298" y="600" text-anchor="end" class="field-key" fill="#C2410C">nullable</text>
+<line x1="3671" y1="613" x2="4319" y2="613" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="613" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="638" class="field-name">activities</text>
+<text x="4052" y="638" class="field-type">text[]</text>
+<line x1="3671" y1="651" x2="4319" y2="651" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="676" class="field-name">source_type</text>
+<text x="4052" y="676" class="field-type">text</text>
+<line x1="3671" y1="689" x2="4319" y2="689" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="689" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="714" class="field-name">source_dataset</text>
+<text x="4052" y="714" class="field-type">text</text>
+<line x1="3671" y1="727" x2="4319" y2="727" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="752" class="field-name">is_synthetic</text>
+<text x="4052" y="752" class="field-type">boolean</text>
+<line x1="3671" y1="765" x2="4319" y2="765" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="765" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="790" class="field-name">verification_status</text>
+<text x="4052" y="790" class="field-type">text</text>
+<line x1="3671" y1="803" x2="4319" y2="803" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="828" class="field-name">submitted_at</text>
+<text x="4052" y="828" class="field-type">timestamptz</text>
+<line x1="3671" y1="841" x2="4319" y2="841" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="841" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="866" class="field-name">moderated_at</text>
+<text x="4052" y="866" class="field-type">timestamptz</text>
+<text x="4298" y="866" text-anchor="end" class="field-key" fill="#C2410C">nullable</text>
+<line x1="3671" y1="879" x2="4319" y2="879" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="904" class="field-name">moderation_note</text>
+<text x="4052" y="904" class="field-type">text</text>
+</g>
+<g id="public_venue_correction_reports">
+<rect x="3670" y="1170" width="650" height="464" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 3686 1170 H 4304 Q 4320 1170 4320 1186 V 1254 H 3670 V 1186 Q 3670 1170 3686 1170 Z" fill="#C2410C"/>
+<text x="3694" y="1205" class="table-title">public.venue_correction_reports</text>
+<text x="3694" y="1234" class="table-meta">0 rows  •  RLS ON</text>
+<rect x="3671" y="1254" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="1279" class="field-name">id</text>
+<text x="4052" y="1279" class="field-type">uuid</text>
+<text x="4298" y="1279" text-anchor="end" class="field-key" fill="#C2410C">PK</text>
+<line x1="3671" y1="1292" x2="4319" y2="1292" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="1317" class="field-name">target_type</text>
+<text x="4052" y="1317" class="field-type">text</text>
+<line x1="3671" y1="1330" x2="4319" y2="1330" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="1330" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="1355" class="field-name">venue_id</text>
+<text x="4052" y="1355" class="field-type">uuid</text>
+<text x="4298" y="1355" text-anchor="end" class="field-key" fill="#C2410C">FK · nullable</text>
+<line x1="3671" y1="1368" x2="4319" y2="1368" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="1393" class="field-name">submitted_venue_id</text>
+<text x="4052" y="1393" class="field-type">uuid</text>
+<text x="4298" y="1393" text-anchor="end" class="field-key" fill="#C2410C">FK · nullable</text>
+<line x1="3671" y1="1406" x2="4319" y2="1406" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="1406" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="1431" class="field-name">reason</text>
+<text x="4052" y="1431" class="field-type">text</text>
+<line x1="3671" y1="1444" x2="4319" y2="1444" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="1469" class="field-name">details</text>
+<text x="4052" y="1469" class="field-type">text</text>
+<line x1="3671" y1="1482" x2="4319" y2="1482" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="1482" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="1507" class="field-name">status</text>
+<text x="4052" y="1507" class="field-type">text</text>
+<line x1="3671" y1="1520" x2="4319" y2="1520" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="1545" class="field-name">submitted_at</text>
+<text x="4052" y="1545" class="field-type">timestamptz</text>
+<line x1="3671" y1="1558" x2="4319" y2="1558" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="1558" width="648" height="38" fill="#FFF0E8"/>
+<text x="3692" y="1583" class="field-name">moderated_at</text>
+<text x="4052" y="1583" class="field-type">timestamptz</text>
+<text x="4298" y="1583" text-anchor="end" class="field-key" fill="#C2410C">nullable</text>
+<line x1="3671" y1="1596" x2="4319" y2="1596" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="1621" class="field-name">moderation_note</text>
+<text x="4052" y="1621" class="field-type">text</text>
+</g>
+<g id="public_workspace_records">
+<rect x="3670" y="2140" width="650" height="388" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 3686 2140 H 4304 Q 4320 2140 4320 2156 V 2224 H 3670 V 2156 Q 3670 2140 3686 2140 Z" fill="#7C3AED"/>
+<text x="3694" y="2175" class="table-title">public.workspace_records</text>
+<text x="3694" y="2204" class="table-meta">0 rows  •  RLS ON</text>
+<rect x="3671" y="2224" width="648" height="38" fill="#F3EDFF"/>
+<text x="3692" y="2249" class="field-name">id</text>
+<text x="4052" y="2249" class="field-type">uuid</text>
+<text x="4298" y="2249" text-anchor="end" class="field-key" fill="#7C3AED">PK</text>
+<line x1="3671" y1="2262" x2="4319" y2="2262" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="2287" class="field-name">owner_id</text>
+<text x="4052" y="2287" class="field-type">uuid</text>
+<text x="4298" y="2287" text-anchor="end" class="field-key" fill="#7C3AED">FK</text>
+<line x1="3671" y1="2300" x2="4319" y2="2300" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="2300" width="648" height="38" fill="#F3EDFF"/>
+<text x="3692" y="2325" class="field-name">venue_id</text>
+<text x="4052" y="2325" class="field-type">uuid</text>
+<text x="4298" y="2325" text-anchor="end" class="field-key" fill="#7C3AED">FK · nullable</text>
+<line x1="3671" y1="2338" x2="4319" y2="2338" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="2363" class="field-name">name</text>
+<text x="4052" y="2363" class="field-type">text</text>
+<line x1="3671" y1="2376" x2="4319" y2="2376" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="2376" width="648" height="38" fill="#F3EDFF"/>
+<text x="3692" y="2401" class="field-name">note</text>
+<text x="4052" y="2401" class="field-type">text</text>
+<line x1="3671" y1="2414" x2="4319" y2="2414" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="2439" class="field-name">archived</text>
+<text x="4052" y="2439" class="field-type">boolean</text>
+<line x1="3671" y1="2452" x2="4319" y2="2452" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="2452" width="648" height="38" fill="#F3EDFF"/>
+<text x="3692" y="2477" class="field-name">created_at</text>
+<text x="4052" y="2477" class="field-type">timestamptz</text>
+<line x1="3671" y1="2490" x2="4319" y2="2490" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="2515" class="field-name">updated_at</text>
+<text x="4052" y="2515" class="field-type">timestamptz</text>
+</g>
+<g id="public_workspace_audit">
+<rect x="3670" y="2790" width="650" height="274" rx="16" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+<path d="M 3686 2790 H 4304 Q 4320 2790 4320 2806 V 2874 H 3670 V 2806 Q 3670 2790 3686 2790 Z" fill="#7C3AED"/>
+<text x="3694" y="2825" class="table-title">public.workspace_audit</text>
+<text x="3694" y="2854" class="table-meta">0 rows  •  RLS ON</text>
+<rect x="3671" y="2874" width="648" height="38" fill="#F3EDFF"/>
+<text x="3692" y="2899" class="field-name">id</text>
+<text x="4052" y="2899" class="field-type">bigint</text>
+<text x="4298" y="2899" text-anchor="end" class="field-key" fill="#7C3AED">PK</text>
+<line x1="3671" y1="2912" x2="4319" y2="2912" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="2937" class="field-name">owner_id</text>
+<text x="4052" y="2937" class="field-type">uuid</text>
+<line x1="3671" y1="2950" x2="4319" y2="2950" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="2950" width="648" height="38" fill="#F3EDFF"/>
+<text x="3692" y="2975" class="field-name">record_id</text>
+<text x="4052" y="2975" class="field-type">uuid</text>
+<line x1="3671" y1="2988" x2="4319" y2="2988" stroke="#E2E8F0" stroke-width="1"/>
+<text x="3692" y="3013" class="field-name">action</text>
+<text x="4052" y="3013" class="field-type">text</text>
+<line x1="3671" y1="3026" x2="4319" y2="3026" stroke="#E2E8F0" stroke-width="1"/>
+<rect x="3671" y="3026" width="648" height="38" fill="#F3EDFF"/>
+<text x="3692" y="3051" class="field-name">changed_at</text>
+<text x="4052" y="3051" class="field-type">timestamptz</text>
+</g>
+  <g transform="translate(3680 3320)">
+    <rect width="1620" height="105" rx="14" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+    <text x="24" y="37" class="note"><tspan font-weight="700">Notation:</tspan> PK = primary key  •  FK = enforced foreign key  •  UQ = unique</text>
+    <text x="24" y="73" class="note">Solid line = enforced FK  •  Dashed line = logical link  •  Arrows point to referenced records</text>
+  </g>
+</svg>

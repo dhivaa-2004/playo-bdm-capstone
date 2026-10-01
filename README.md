@@ -4,7 +4,7 @@ Independent MBA Business Data Management study using historical third-party Play
 
 **Current release:** The complete public, no-sign-in application is deployed independently at [playo-venue-observatory.dhivaa2004.workers.dev](https://playo-venue-observatory.dhivaa2004.workers.dev). Historical ETL, the normalized database, SQL EDA, feature store, grouped ML evaluation, prediction write-back, dashboard, venue map, moderated community submissions, correction reports, Turnstile protection and automated Cloudflare deployment are implemented. See [current status](docs/status.md) and [verification evidence](docs/test-results.md).
 
-**Team handoff:** Start with the [teammate guide](docs/team-guide.md), or download the final [presentation](deliverables/Playo_BDM_Capstone_Team_Presentation.pptx), [Word study guide](deliverables/Playo_BDM_Capstone_Teammate_Guide.docx) or [PDF study guide](deliverables/Playo_BDM_Capstone_Teammate_Guide.pdf). All presentation and guide text uses Arial; the supplied ER diagram is included and explained.
+**Team handoff:** Start with the [teammate guide](docs/team-guide.md), or download the final [presentation](deliverables/Playo_BDM_Capstone_Team_Presentation.pptx), [Word study guide](deliverables/Playo_BDM_Capstone_Teammate_Guide.docx), [PDF study guide](deliverables/Playo_BDM_Capstone_Teammate_Guide.pdf) or [verified Supabase ER diagram](deliverables/Playo_Supabase_ER_Diagram.png). All presentation and guide text uses Arial.
 
 ## 1. Project Overview
 Explore 3,697 exact-deduplicated historical candidate venue records across four source regions, with 89 activity/service labels. They are not guaranteed distinct real-world businesses.
@@ -56,7 +56,7 @@ Raw files remain unchanged and private. Lineage preserves every raw row and arch
 - `sql/eda/`, `sql/tests/`: SQL analysis and transaction-scoped access tests.
 - `frontend/`: dashboard, API routes, build files and pnpm lockfile.
 - `docs/`, `audit/historical/`: methodology and non-sensitive aggregate evidence.
-- `docs/assets/`: verified production screenshots and the supplied ER diagram used in the team materials.
+- `docs/assets/`: verified production screenshots plus a reproducible PNG/SVG ER diagram of the live Supabase schema.
 - `deliverables/`: final Arial presentation and teammate study guide in Word/PDF formats.
 - Ignored: raw data, generated row-level artifacts, model binary, actual environment files and dependencies.
 

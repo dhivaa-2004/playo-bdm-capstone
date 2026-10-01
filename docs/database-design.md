@@ -1,6 +1,10 @@
 # Implemented database design
 
-All historical records are protected from application writes. The schema was inspected through the Supabase plugin on 30 September 2026 before additive revisions.
+![Verified Playo Supabase ER diagram](assets/playo-supabase-er-diagram.png)
+
+The diagram above was regenerated from the live Supabase schema on 1 October 2026. Solid connectors are enforced foreign keys; dashed connectors are intentional logical links without a database FK constraint. A scalable version is available at [`docs/assets/playo-supabase-er-diagram.svg`](assets/playo-supabase-er-diagram.svg).
+
+All historical records are protected from application writes. The schema was most recently verified through the Supabase integration on 1 October 2026.
 
 | Object | Grain / constraints | Access |
 |---|---|---|
