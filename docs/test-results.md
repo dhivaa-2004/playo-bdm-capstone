@@ -5,7 +5,7 @@ Final release commit: [`fb207d7`](https://github.com/dhivaa-2004/playo-bdm-capst
 | Check | Executed result |
 |---|---|
 | Python ingestion unit tests | 16/16 passed with `python -m unittest discover -s tests -v` |
-| Frontend validation tests | 13/13 passed, including route allow-listing, exact 06:00/18:00 automatic-theme boundaries, public-field validation, Turnstile requirements and correction-report rules |
+| Frontend validation tests | 14/14 passed, including route allow-listing, exact 06:00/18:00 automatic-theme boundaries, public-field validation, Turnstile requirements, correction-report rules and visual-asset size budgets |
 | TypeScript | `tsc --noEmit` passed |
 | Lint | Completed with zero errors; 11 non-blocking framework/style warnings remain documented in CI output |
 | Worker production build | Passed from the pinned pnpm lockfile |

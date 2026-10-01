@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" role="img" aria-label="Data moving from an archive through processing and a database to an analytical dashboard">
+ <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eaf5ef"/><stop offset="1" stop-color="#fff4e2"/></linearGradient></defs>
+ <rect width="480" height="240" rx="28" fill="url(#bg)"/>
+ <path d="M94 120h53m73 0h47m74 0h45" stroke="#779288" stroke-width="8" stroke-linecap="round" stroke-dasharray="5 16"/>
+ <g transform="translate(42 72)"><rect width="64" height="88" rx="10" fill="#d85b4f"/><path d="M15 0h34l15 16v10H0V15A15 15 0 0 1 15 0Z" fill="#ef8a66"/><path d="M17 47h30M17 62h23" stroke="#fff" stroke-width="6" stroke-linecap="round"/></g>
+ <g transform="translate(145 72)"><rect width="82" height="88" rx="18" fill="#fff" stroke="#3f8063" stroke-width="5"/><path d="m21 49 15 15 27-36" fill="none" stroke="#3f8063" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <g transform="translate(262 65)"><ellipse cx="43" cy="18" rx="43" ry="18" fill="#5b82bd"/><path d="M0 18v69c0 10 19 18 43 18s43-8 43-18V18" fill="#77a5d6"/><path d="M0 48c0 10 19 18 43 18s43-8 43-18M0 76c0 10 19 18 43 18s43-8 43-18" fill="none" stroke="#dcecff" stroke-width="4"/></g>
+ <g transform="translate(382 70)"><rect width="70" height="96" rx="13" fill="#fff" stroke="#e09a35" stroke-width="5"/><path d="M16 71V52h10v19m7 0V37h10v34m7 0V25h10v46" stroke="#e09a35" stroke-width="8"/><path d="M14 18h30" stroke="#3f8063" stroke-width="6" stroke-linecap="round"/></g>
+</svg>

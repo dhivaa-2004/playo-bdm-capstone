@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" role="img" aria-label="Four connected source-region markers">
+ <rect width="480" height="240" rx="28" fill="#f0f6ef"/>
+ <path d="M95 73 210 112l113-52m-113 52 31 74m-146-113 15 91m213-104 56 91m-138 35 138-35m-269 13 131 22" fill="none" stroke="#adc2b6" stroke-width="6" stroke-linecap="round"/>
+ <g transform="translate(63 31)"><path d="M32 0C14 0 0 14 0 32c0 25 32 57 32 57s32-32 32-57C64 14 50 0 32 0Z" fill="#d85d50"/><circle cx="32" cy="31" r="12" fill="#fff"/></g>
+ <g transform="translate(178 70)"><path d="M32 0C14 0 0 14 0 32c0 25 32 57 32 57s32-32 32-57C64 14 50 0 32 0Z" fill="#3e8061"/><circle cx="32" cy="31" r="12" fill="#fff"/></g>
+ <g transform="translate(291 18)"><path d="M32 0C14 0 0 14 0 32c0 25 32 57 32 57s32-32 32-57C64 14 50 0 32 0Z" fill="#e09a35"/><circle cx="32" cy="31" r="12" fill="#fff"/></g>
+ <g transform="translate(347 109)"><path d="M32 0C14 0 0 14 0 32c0 25 32 57 32 57s32-32 32-57C64 14 50 0 32 0Z" fill="#5a82bd"/><circle cx="32" cy="31" r="12" fill="#fff"/></g>
+ <circle cx="241" cy="186" r="18" fill="#fff" stroke="#3e8061" stroke-width="7"/><path d="m234 186 6 7 11-14" fill="none" stroke="#3e8061" stroke-width="5" stroke-linecap="round"/>
+</svg>

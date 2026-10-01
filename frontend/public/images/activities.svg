@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" role="img" aria-label="Abstract collection of sports equipment and activity symbols">
+ <rect width="480" height="240" rx="28" fill="#eef5fb"/>
+ <circle cx="112" cy="122" r="72" fill="#f2a541"/>
+ <circle cx="112" cy="122" r="47" fill="#fff7e8" stroke="#d75d4f" stroke-width="8"/>
+ <path d="M112 75v94M65 122h94M79 89c25 18 41 47 54 68M145 89c-25 18-41 47-54 68" fill="none" stroke="#d75d4f" stroke-width="5"/>
+ <g transform="translate(218 43) rotate(12 50 76)"><ellipse cx="50" cy="52" rx="43" ry="55" fill="#e8f6ef" stroke="#3c8060" stroke-width="7"/><path d="M19 19l62 66M12 43l54 58M37 5l52 56M17 82l62-66M12 58l55-47M34 101l54-59" stroke="#79aa91" stroke-width="3"/><path d="M50 105v66" stroke="#3c8060" stroke-width="12" stroke-linecap="round"/></g>
+ <g transform="translate(350 72)"><path d="M45 0 70 39 57 63H33L20 39Z" fill="#5b82bd"/><path d="m20 39-16 6 29 18m37-24 17 6-30 18" fill="none" stroke="#5b82bd" stroke-width="7" stroke-linecap="round"/><circle cx="45" cy="91" r="25" fill="#d85d50"/><path d="M26 84h38M31 72l27 38" stroke="#ffd7c8" stroke-width="4"/></g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 240" role="img" aria-label="A venue submission moving through a review checkpoint">
+ <rect width="480" height="240" rx="28" fill="#fff3e6"/>
+ <g transform="translate(44 55)"><rect width="138" height="132" rx="18" fill="#fff" stroke="#df9a38" stroke-width="5"/><path d="M28 40h82M28 66h60M28 92h75" stroke="#98aa9f" stroke-width="8" stroke-linecap="round"/><circle cx="112" cy="106" r="23" fill="#d85d50"/><path d="M112 94v24m-12-12h24" stroke="#fff" stroke-width="6" stroke-linecap="round"/></g>
+ <path d="M194 120h58" stroke="#b09a7f" stroke-width="8" stroke-linecap="round" stroke-dasharray="6 15"/>
+ <g transform="translate(250 58)"><path d="m65 0 59 22v43c0 47-30 72-59 84C36 137 6 112 6 65V22Z" fill="#3d8061"/><path d="m39 74 18 18 37-44" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/></g>
+ <path d="M384 120h42" stroke="#b09a7f" stroke-width="8" stroke-linecap="round" stroke-dasharray="6 15"/>
+ <circle cx="437" cy="120" r="28" fill="#5a82bd"/><path d="M424 121h26m-13-13v26" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+</svg>
