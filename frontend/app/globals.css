@@ -129,7 +129,10 @@ body{font-size:16px;line-height:1.55;background:#f8f7f2;color:#182c29}
 .theme-option{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:31px;padding:5px 9px;border-radius:7px;color:#53675c;font-size:12px;font-weight:700;line-height:1;background:transparent}
 .theme-option:hover{background:#fff;color:#243f34}.theme-option[aria-pressed=true]{background:#244c3d;color:#fff;box-shadow:0 2px 7px #203d3122}
 .theme-option:focus-visible{outline:3px solid #c8752c;outline-offset:2px}
-body,[data-slot=sidebar],.topbar,.panel,.metric,.region-card,.callout,.outline-badge,.sidebar-note,.explanation-grid>div,.empty-state,.error-state{transition:background-color .25s ease,border-color .25s ease,color .25s ease,box-shadow .25s ease}
+/* Theme colours switch atomically so text never passes through a low-contrast
+   midpoint while the user changes appearance. Decorative shadows may still
+   ease without affecting readability. */
+body,[data-slot=sidebar],.topbar,.panel,.metric,.region-card,.callout,.outline-badge,.sidebar-note,.explanation-grid>div,.empty-state,.error-state{transition:box-shadow .2s ease}
 
 html[data-theme=dark]{color-scheme:dark;--background:#0c1513;--foreground:#e7efe9;--card:#16211e;--card-foreground:#e7efe9;--popover:#1a2622;--popover-foreground:#edf4ef;--primary:#ee806f;--primary-foreground:#241311;--secondary:#24322d;--secondary-foreground:#e7efe9;--muted:#202d29;--muted-foreground:#a9b9b0;--accent:#2a3a34;--accent-foreground:#f1f6f3;--destructive:#ff716c;--border:#354740;--input:#3a4b45;--ring:#f2a044;--sidebar:#101b18;--sidebar-foreground:#dfe9e3;--sidebar-primary:#ef8c78;--sidebar-primary-foreground:#231412;--sidebar-accent:#2a2420;--sidebar-accent-foreground:#ffb19f;--sidebar-border:#2c3d37;--sidebar-ring:#ee9a45}
 html[data-theme=dark] body{background:#0c1513;color:#e7efe9}

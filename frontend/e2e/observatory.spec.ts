@@ -27,6 +27,8 @@ test.describe('public observatory',()=>{
   await expect(page.locator('html')).toHaveAttribute('data-theme','dark');
   await page.getByRole('button',{name:'Light'}).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme','light');
+  const transition=await page.locator('.panel').first().evaluate(element=>getComputedStyle(element).transitionProperty);
+  expect(transition).not.toMatch(/background|color/);
  });
 
  test('lineage explanation changes with the selected evidence tab',async({page})=>{
