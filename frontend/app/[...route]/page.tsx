@@ -1,8 +1,8 @@
 import Observatory from '../observatory';
 import {notFound} from 'next/navigation';
+import {isAllowedPublicRoute} from '@/lib/public-routes';
 export default async function Page({params}:{params:Promise<{route:string[]}>}){
  const {route}=await params;
- const allowed=['add-venue','submitted-venues','report','venues','map','sports','cities','analytics','predictions','models','data-quality','quality','data-management','workspace','admin'];
- if(!(route.length===1&&allowed.includes(route[0]))&&!(route.length===2&&route[0]==='venues'&&/^[0-9a-f-]{36}$/i.test(route[1])))notFound();
+ if(!isAllowedPublicRoute(route))notFound();
  return <Observatory/>;
 }
