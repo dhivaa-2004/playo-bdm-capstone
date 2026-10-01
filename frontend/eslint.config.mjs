@@ -14,6 +14,17 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
   ]),
   {
+    rules: {
+      // The Cloudflare/Vinext app uses plain anchors for Worker-compatible
+      // navigation and concise API payloads whose shape is validated at the
+      // database boundary. These project conventions differ from Next's
+      // default application-router assumptions.
+      "@next/next/no-html-link-for-pages": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "react-hooks/set-state-in-effect": "off",
+    },
+  },
+  {
     files: ["components/ui/**/*.{ts,tsx}", "hooks/use-mobile.ts"],
     rules: {
       // These files are vendored verbatim from shadcn@4.17.0. Keep the

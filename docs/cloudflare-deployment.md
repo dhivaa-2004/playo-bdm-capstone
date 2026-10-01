@@ -15,11 +15,11 @@ GitHub `main` is the source of truth. `.github/workflows/deploy-cloudflare.yml` 
 
 The GitHub repository needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets. The Worker needs `SUPABASE_PUBLISHABLE_KEY`; the project URL is non-secret configuration. Never store a service-role key, database password or token in source.
 
-`production-smoke.yml` also checks the home page, form, map and health endpoint daily and can be run manually.
+`production-smoke.yml` checks the home, form, map, comparison, lineage, health and diagnostic endpoints plus security headers every day. `browser-accessibility.yml` runs Chromium/Axe after a successful deploy. Dependabot checks JavaScript and action dependencies; CodeQL scans JavaScript/TypeScript on pushes, pull requests and weekly.
 
 ## Runtime and security
 
-The public frontend has no sign-in. Turnstile is verified server-side before a public submission or correction report is written. Column-limited grants, RLS and database triggers remain the final data boundary. Cloudflare structured logs record route, request ID, status and safe error classification without venue text or credentials.
+The public frontend has no sign-in. Turnstile is verified server-side before a public submission or correction report is written. Column-limited grants, RLS and database triggers remain the final data boundary. The Worker sets a restrictive CSP, HSTS, clickjacking, MIME-sniffing, referrer, permissions and opener headers. Aggregate responses use ETags and short public cache windows; writes and submission views are never cached. Cloudflare structured logs record route, request ID, status and safe error classification without venue text or credentials.
 
 ## Acceptance checklist
 

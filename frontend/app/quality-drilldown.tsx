@@ -1,0 +1,17 @@
+'use client';
+
+import ContextualInsight from '@/components/contextual-insight';
+
+function width(value:number,max:number){return `${Math.max(2,value/Math.max(1,max)*100)}%`}
+
+export default function QualityDrilldown({data,regions}:{data:any;regions:Record<string,string>}){
+ const regionRows=data?.regions||[],rating=data?.rating_evidence||[],activities=data?.activity_multiplicity||[];
+ const maxRegion=Math.max(1,...regionRows.map((x:any)=>x.venues)),maxRating=Math.max(1,...rating.map((x:any)=>x.venues)),maxActivities=Math.max(1,...activities.map((x:any)=>x.venues));
+ const weakest=[...regionRows].sort((a:any,b:any)=>b.unrated_pct-a.unrated_pct)[0];
+ return <div className="quality-grid">
+  <section className="panel"><h2>Rating evidence by source region</h2><p>A high venue count does not guarantee equally complete rating evidence.</p><div className="quality-bars">{regionRows.map((r:any)=><div key={r.region}><div><strong>{regions[r.region]||r.region}</strong><span>{r.venues.toLocaleString('en-IN')} rows · {r.unrated_pct}% unrated</span></div><div><i style={{width:width(r.venues,maxRegion)}}/><b style={{width:`${100-r.unrated_pct}%`}}/></div></div>)}</div>{weakest&&<ContextualInsight headline={`${regions[weakest.region]||weakest.region} needs the most caution`} lead={`${weakest.unrated_pct}% of its historical rows have no recorded average rating.`} prompt="See how this affects comparisons" tone="caution"><p>Regional mean ratings use only rated rows. When missingness differs sharply between regions, a direct ranking can reflect data availability and collection patterns rather than venue quality.</p></ContextualInsight>}</section>
+  <section className="panel"><h2>Amount of rating evidence</h2><p>Rating counts describe evidence volume, not bookings or demand.</p><div className="compact-bars">{rating.map((r:any)=><div key={r.band}><span>{r.band}</span><i><b style={{width:width(r.venues,maxRating)}}/></i><strong>{r.venues.toLocaleString('en-IN')}</strong></div>)}</div></section>
+  <section className="panel"><h2>Labels attached per venue</h2><p>The many-to-many junction preserves multi-activity venues.</p><div className="compact-bars">{activities.map((r:any)=><div key={r.band}><span>{r.band} label{r.band==='1'?'':'s'}</span><i><b style={{width:width(r.venues,maxActivities)}}/></i><strong>{r.venues.toLocaleString('en-IN')}</strong></div>)}</div><ContextualInsight headline="Activity is not the same as sport" lead={`${data.labels?.unclassified??'—'} source labels intentionally remain unclassified instead of being forced into a misleading sports-only taxonomy.`} prompt="Why retain the source wording?" tone="method"><p>Labels such as coaching, physiotherapy, rental or spa services describe the domain but are not necessarily sports. Retaining them prevents information loss and avoids an unsupported reclassification.</p></ContextualInsight></section>
+  <section className="panel"><h2>Coordinate validation</h2><div className="coordinate-summary"><div><strong>{data.coordinates?.complete?.toLocaleString('en-IN')??'—'}</strong><span>complete coordinate pairs</span></div><div><strong>{data.coordinates?.missing?.toLocaleString('en-IN')??'—'}</strong><span>missing pairs</span></div><div><strong>{data.coordinates?.outside_valid_range?.toLocaleString('en-IN')??'—'}</strong><span>outside valid latitude/longitude ranges</span></div></div><p className="footnote">Valid ranges do not prove current venue location or municipal membership; they only validate coordinate structure.</p></section>
+ </div>;
+}

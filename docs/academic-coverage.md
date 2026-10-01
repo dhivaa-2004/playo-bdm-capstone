@@ -1,20 +1,24 @@
-> Planning reference from the audit phase. Implemented state and verification are documented in README.md, status.md and database-design.md; these supersede any pending or proposed statements below.
-
 # Academic coverage matrix
 
-The course assigns 20 marks to SQL-Driven EDA & Machine Learning Pipeline and 10 marks to the Technical PRD presentation. Lab exercises are separately assessed; broad course coverage does not turn every optional technology into a mandatory core feature.
+This matrix separates implemented capstone evidence from optional laboratory topics. An item is not described as complete merely because the course mentions it.
 
-| Outcome/sessions | Source | Concepts | Planned implementation | Evidence required |
-|---|---|---|---|---|
-| CO1; sessions 1–5 | Course pp.3,8–9 | Relational modelling, reliability, normalization; OLTP/OLAP trade-offs | core entities, junction tables, staging/private boundaries | Schema and constraint tests |
-| CO2; sessions 6–8 | Course pp.9–10 | SELECT, filtering, grouping and aggregates | city/sport counts, NULL-aware rating summaries | Query/result comparison |
-| CO3; sessions 9–10; Lab 1 | Course p.10 | Joins and Python database bridge | Python joins export Markdown summary | Executed standalone script |
-| CO2/3; sessions 11–12; Lab 2 | Course pp.11–12 | JSONB ingestion, recursive hierarchy, time series | raw JSONB; pipeline time series; hierarchy only if justified | Roundtrip JSONB and upsert tests |
-| CO2/3; sessions 13–15; Lab 3 | Course pp.12–13 | Windows, CTEs, cohorts and validation | venue rankings; actual snapshot trends; synthetic cohort demo only if explicitly identified | Saved queries and validation evidence |
-| CO3; sessions 16–17 | Course pp.12–13 | Python ELT, staged schemas, transactions, telemetry | transactional batch load and SQL transforms | Rollback and repeat-run test |
-| CO4; sessions 18–20; Lab 4 | Course pp.13–14 | pgvector, embeddings, chunking, LangChain/LlamaIndex | Conditional semantic venue text search; separately labelled lab demonstration if needed | Executed retrieval with model/dimension/cost documented |
-| Core capstone; sessions 21–22 | Course pp.14–16 | SQL stats, features, supervised ML, evaluation, write-back | Database-to-model-to-database workflow | Complete run with holdout metrics and persisted predictions |
-| CO5; sessions 23–24 | Course pp.16–17 | SQL push-down, plans, indexes, Green AI, retention | Bounded queries and simple models; caching/context pruning only if AI added | Measured before/after resource evidence |
-| CO4; PRD presentation | Course p.6 | Technical PRD walkthrough | Product requirements, trade-offs, architecture and limitations | Final presentation tied to implemented evidence |
+| Outcome / topic | Implemented evidence | Location | Honest boundary |
+|---|---|---|---|
+| Relational modelling and normalization | Regions, venues, ratings, activity labels and junctions with keys, checks and foreign keys | `sql/migrations/`, `docs/database-design.md` | Candidate venues are historical records, not guaranteed distinct businesses |
+| Provenance and reliability | Immutable raw archive policy; archive/member/record hashes; quality report; source flags | `pipeline/`, `audit/historical/`, lineage page | Raw files and contact-bearing HTML are private |
+| SQL filtering, grouping and aggregates | Region/activity statistics, rating distributions, NULL-aware summaries | `sql/eda/`, SQL analysis page | Unrated means missing target, never zero stars |
+| Joins, CTEs and windows | Normalized analytical queries and ranking/window examples | `sql/eda/` | Rankings describe the sample, not national market quality |
+| Python ELT and validation | Deterministic parser, exact deduplication, normalized chunk generation and tests | `pipeline/`, `scripts/`, `tests/` | Four exact duplicate extras removed; no synthetic fill |
+| Database security | RLS, invoker views/RPCs, constrained grants, validation and moderation triggers | `supabase/migrations/`, `sql/tests/` | Public site has no admin privileges or service-role key |
+| SQL feature store | One row per candidate, leakage-safe inputs, target and sensitivity variables | `public.feature_store_v1`, feature-store protocol | `rating_count` is sensitivity evidence, not an initial predictor |
+| Supervised ML | Grouped train/test split, baselines, cross-validation, random forest, MAE/RMSE/R² | `ml/`, `audit/historical/model-evaluation.json` | Modest R²; estimates are not demand, revenue or current quality |
+| Prediction write-back | Versioned run and 3,697 split-labelled outputs with feature hashes | `model_runs`, `predictions` | Only 639 held-out rows provide independent accuracy evidence |
+| Application and communication | Live database dashboard, map, comparisons, contextual explanations and lineage | `frontend/` | Current Playo was schema reference only; no automated scraping |
+| Operations and governance | Pending moderation, correction reports, Turnstile, monitoring, CodeQL, Dependabot and backup runbook | `.github/`, `docs/operations.md`, `docs/backup-recovery.md` | Community rows never enter empirical KPIs or ML |
 
-All database, ML, vector and application entries are PLANNED. The importer only verifies local source-envelope processing. No paid embedding API is selected. Do not claim Lab 4 completion from a conceptual description.
+## Deliberately not claimed
+
+- No booking, demand, revenue, price or time-series analysis is supported by the source.
+- No vector-search or generative-AI feature was added because the historical text is repetitive, contact-bearing HTML and is excluded from the public layer.
+- No synthetic expansion was needed for the core analysis.
+- No causal or operational recommendation is inferred from the rating-estimation experiment.

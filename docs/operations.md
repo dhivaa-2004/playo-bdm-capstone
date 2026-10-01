@@ -7,8 +7,9 @@ The production site has no application sign-in. The database owner moderates com
 1. Open Supabase → Table Editor → `submitted_venues`.
 2. Review rows where `verification_status = 'pending'`.
 3. Check the venue claim and possible normalized-name/region/locality duplicates.
-4. Set `verification_status` to `approved` to publish it, or `rejected` to keep it private.
-5. Approved records appear under `/submitted-venues` after refresh. They remain separate from historical KPIs, feature store and ML.
+4. Set `verification_status` to `approved` to publish it. To reject it, first enter a meaningful `moderation_note`, then set the status to `rejected`.
+5. The database stamps `moderated_at` automatically. Returning a record to `pending` clears that timestamp.
+6. Approved records appear under `/submitted-venues` after refresh. They remain separate from historical KPIs, feature store and ML.
 
 ## Review correction reports
 
@@ -16,11 +17,11 @@ Open `venue_correction_reports`. Resolve the referenced historical or submitted 
 
 ## Verification and deployment
 
-Run Python tests, frontend validation tests, TypeScript and the production build before release. GitHub Actions performs the same checks and deploys from `main`. The production smoke workflow monitors public routes and the health endpoint. Preserve returned errors; never report a zero-row update as success.
+Run Python tests, frontend validation tests, TypeScript and the production build before release. GitHub Actions performs the same checks and deploys from `main`. A second workflow runs Playwright and Axe against the deployed Worker. The production smoke workflow monitors public routes, evidence APIs and security headers. Preserve returned errors; never report a zero-row update as success.
 
 ## Recovery and secrets
 
-Apply additive migrations and preserve historical rows, lineage, model runs and predictions. Keep `.env` files, raw archives, Cloudflare tokens, Turnstile secrets, database passwords and service-role keys out of Git. Rotate a secret through its provider and GitHub/Cloudflare secret settings; never paste it into documentation.
+Apply additive migrations and preserve historical rows, lineage, model runs and predictions. Never run `db reset` against production. Git already preserves the schema/migration history; database backups and recovery checks follow [the backup runbook](backup-recovery.md). Keep `.env` files, raw archives, Cloudflare tokens, Turnstile secrets, database passwords and service-role keys out of Git. Rotate a secret through its provider and GitHub/Cloudflare secret settings; never paste it into documentation.
 
 ## API boundary
 

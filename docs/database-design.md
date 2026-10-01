@@ -26,6 +26,8 @@ All historical records are protected from application writes. The schema was mos
 
 Public views `feature_store_v1`, `dataset_status`, `region_statistics`, `region_directory`, `activity_statistics` use security invoker. Public RPCs are also security invoker. `quality_summary` was changed from security definer to invoker; a trigger refreshes its public aggregate report. Private triggers use locked search paths and fixed table targets.
 
+Aggregate-only functions `lineage_summary`, `quality_drilldown` and `model_diagnostics` expose reproducibility and evaluation evidence without exposing private raw rows. Moderation triggers stamp `moderated_at` on decisions and reject a rejection without an explanatory note. Partial indexes support pending/approved moderation queues and split-based prediction inspection.
+
 The restrictive `approved_admin` policy combines with ownership policies, preventing signup-based privilege escalation. Membership is not taken from editable user metadata. Historical tables have SELECT-only grants, with no INSERT/UPDATE/DELETE policies for public/application roles.
 
 Indexes cover region, activity/venue junction, archive, prediction venue FK, workspace owner/update time and venue FK, audit owner/time and private lineage venue FK. The existing lower-name pattern index does not accelerate leading-wildcard ILIKE; at this dataset size measured search remained small (one sampled RPC: 17.874 ms). No claim of measured index speedup is made. A trigram extension is not needed for the current volume.

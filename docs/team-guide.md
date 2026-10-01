@@ -51,27 +51,31 @@ Click **Venue map**. Choose a source region and inspect the plotted historical c
 
 ![Interactive venue map](assets/map.png)
 
-### 4. Explain the SQL analysis
+### 4. Compare evidence
 
-Click **SQL analysis**. Use the cards and charts to discuss regional coverage, ratings and activity/service counts. These values are database aggregates, not hard-coded numbers.
+Click **Compare evidence**. Select two to four source regions. You can also open venue details and save up to four venues for side-by-side comparison. The page explains why unequal coverage prevents a simple “winner” claim.
+
+### 5. Explain the SQL analysis and lineage
+
+Click **SQL analysis** for regional statistics, then **SQL & data lineage** to follow the archive hash, Python validation, normalized tables, feature store and model run. Switch its tabs to see the relevant explanation and sanitized SQL evidence. These values are database results, not hard-coded numbers.
 
 ![SQL analysis dashboard](assets/analytics.png)
 
-### 5. Explain the model honestly
+### 6. Explain the model honestly
 
-Click **Rating estimation**. Start with the median baseline, then compare the random forest on the held-out entity groups. The modest R² is a limitation, not a failure to hide.
+Click **ML explanation**. Start with the median baseline, then compare the random forest on the held-out entity groups. Use residual and calibration views to show where errors occur. The modest R² is a limitation, not a failure to hide.
 
 ![ML explanation page](assets/ml.png)
 
-### 6. Submit a community venue
+### 7. Submit a community venue
 
 Click **Add a venue**, complete the required fields, solve Turnstile and submit. The row is written to Supabase as `pending`; it does not enter historical KPIs or ML.
 
 ![Public add-venue form](assets/add-venue.png)
 
-### 7. Understand moderation
+### 8. Understand moderation
 
-The database owner opens Supabase → **Table Editor** → `submitted_venues`, finds the row and changes `verification_status` from `pending` to `approved` or `rejected`. Only approved rows can appear on **Submitted venues**. Public visitors cannot update or delete rows.
+The database owner opens Supabase → **Table Editor** → `submitted_venues`, finds the row and changes `verification_status` from `pending` to `approved`, or adds a note and changes it to `rejected`. The database records moderation time automatically. Only approved rows can appear on **Community venues**. Public visitors cannot update or delete rows.
 
 ![Approved community venue area](assets/community.png)
 
@@ -79,7 +83,7 @@ The database owner opens Supabase → **Table Editor** → `submitted_venues`, f
 
 The core empirical path is `source_regions → venues → venue_ratings` and `venues ↔ activity_labels` through `venue_activities`. `model_runs → predictions` stores reproducible model output. `submitted_venues` and `venue_correction_reports` form a separate moderated community layer.
 
-![Supabase ER diagram supplied for the project](assets/er-diagram.png)
+![Verified Supabase ER diagram](assets/playo-supabase-er-diagram.png)
 
 ## Data and ML rules for the viva
 
@@ -109,9 +113,10 @@ No `.env`, database password, service-role key or API token belongs in GitHub. T
 1. Overview and dataset disclaimer.
 2. Venue explorer search/filter.
 3. SQL analysis and map.
-4. Rating-estimation metrics and limitations.
-5. Add-venue form and pending moderation rule.
-6. Supabase table design/ER diagram.
-7. GitHub Actions and live Cloudflare URL.
+4. Compare evidence, SQL lineage and quality drill-down.
+5. ML metrics, residuals and limitations.
+6. Add-venue form and pending moderation rule.
+7. Supabase table design/ER diagram.
+8. GitHub Actions and live Cloudflare URL.
 
 For more explanation, troubleshooting and likely viva questions, use the full Word or PDF guide linked at the top of this page.

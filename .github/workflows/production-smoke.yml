@@ -19,4 +19,11 @@ jobs:
           curl --fail --silent --show-error --max-time 20 "$base/" >/dev/null
           curl --fail --silent --show-error --max-time 20 "$base/add-venue" >/dev/null
           curl --fail --silent --show-error --max-time 20 "$base/map" >/dev/null
+          curl --fail --silent --show-error --max-time 20 "$base/compare" >/dev/null
+          curl --fail --silent --show-error --max-time 20 "$base/lineage" >/dev/null
           curl --fail --silent --show-error --max-time 20 "$base/api/data?kind=health" >/dev/null
+          curl --fail --silent --show-error --max-time 20 "$base/api/data?kind=quality_detail" >/dev/null
+          curl --fail --silent --show-error --max-time 20 "$base/api/data?kind=model_diagnostics" >/dev/null
+          headers="$(curl --fail --silent --show-error --head --max-time 20 "$base/")"
+          grep -qi '^content-security-policy:' <<<"$headers"
+          grep -qi '^strict-transport-security:' <<<"$headers"

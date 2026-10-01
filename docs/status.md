@@ -1,6 +1,6 @@
 # Current status
 
-Updated 30 September 2026. The historical audit, ETL, normalized Supabase database, SQL EDA, feature store, grouped ML experiment, prediction write-back, public dashboard, venue map, moderated community workflow, correction reports and independent Cloudflare deployment are implemented. The empirical dataset remains 3,697 exact-deduplicated historical records, with zero synthetic records.
+Updated 1 October 2026. The historical audit, ETL, normalized Supabase database, SQL EDA, feature store, grouped ML experiment, prediction write-back, public dashboard, evidence comparison, SQL/data lineage, model and quality diagnostics, clustered venue map, moderated community workflow, correction reports and independent Cloudflare deployment are implemented. The empirical dataset remains 3,697 exact-deduplicated historical records, with zero synthetic records.
 
 ## Production architecture
 
@@ -16,12 +16,12 @@ Public venue submissions use Turnstile, server and database validation, normaliz
 
 ## Implemented analytical additions
 
-The venue map displays all 3,697 historical coordinates with region filtering; coordinate-less records would remain available through the normal explorer. The ML explanation page shows baselines, held-out MAE/RMSE/R², grouped evaluation, feature-importance categories and an explicit non-causal estimate warning.
+The venue map displays all 3,697 historical coordinates with region filtering and client-side clustering at lower zoom; coordinate-less records would remain available through the normal explorer. The comparison view supports two-to-four source regions and up to four browser-saved venues. The lineage view traces archive and training hashes, normalized tables, safe SQL examples and the stored model run. Quality drill-down and model diagnostics calculate their explanation text from the returned evidence, so the wording changes when the result changes rather than repeating a single generic template.
 
 ## Security and observability
 
-Public writes do not use a service-role key. Turnstile is verified server-side. Database triggers enforce valid activities, field rules and caps, including pending rows hidden from public RLS. Cloudflare structured logs record safe request/error metadata. A scheduled production smoke workflow checks the public home, form, map and health routes.
+Public writes do not use a service-role key. Turnstile is verified server-side. Database triggers enforce valid activities, field rules and caps, automatically stamp moderation time, and require notes for rejection. Pending rows stay hidden through public RLS. The Worker adds CSP, HSTS, referrer, permissions, content-type, frame and opener policies. Stable aggregate responses have ETags and bounded cache policies; writes and moderation-sensitive reads use `no-store`. Cloudflare structured logs record safe request/error metadata. Daily route checks, post-deployment Chromium/Axe tests, Dependabot and CodeQL are configured.
 
 ## Verification state
 
-Frontend tests, TypeScript, production build, GitHub Actions deployment, production route smoke checks and rollback-scoped database acceptance pass. Database acceptance proves pending visibility rules, approval visibility, correction-report writes, map output and model-explanation storage, then rolls fixtures back. A clearly labelled production form submission reached Supabase as `pending`, was moderated, and its exact UUID was deleted after testing. No demonstration row remains. Final team presentation and screenshot-led guide are available in `deliverables/`.
+Python/frontend tests, TypeScript, production build and rollback-scoped database acceptance pass for the 1 October changes. Database acceptance proves moderation timestamps, rejection-note rules and all new aggregate diagnostic RPCs while leaving historical counts unchanged. The previous production form test reached Supabase as `pending`, was moderated, and its exact UUID was deleted. No demonstration row remains. The live deployment and post-deployment browser result are recorded in `docs/test-results.md`.
