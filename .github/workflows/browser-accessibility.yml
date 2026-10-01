@@ -19,7 +19,7 @@ jobs:
     env:
       PLAYO_BASE_URL: https://playo-venue-observatory.dhivaa2004.workers.dev
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v4
         with:
           version: 11.25.0
