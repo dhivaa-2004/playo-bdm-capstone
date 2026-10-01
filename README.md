@@ -96,3 +96,8 @@ Optional 400 fictional demonstration records remain deferred and would require s
 
 ## 22. Honest Project Positioning
 This is an academic observatory built from a historical third-party Playo-related dataset. The current Playo website was used only as a domain/schema reference; it was not scraped. Historical rows, community submissions and any future synthetic demonstration data must remain visibly separate. The model estimates recorded historical ratings from limited attributes and must not be described as predicting demand, bookings, revenue or current venue quality.
+
+## 23. Numbered Project Handoff Package
+The private handoff ZIP is organized in the actual project order: original inputs → untouched raw archive → audit and cleaning → structured Supabase data → SQL analysis → ML → web application → GitHub/Cloudflare deployment → images → presentation and guide → verification → complete GitHub source. See [archive structure](docs/archive-structure.md).
+
+Run `python scripts/build_handoff_package.py --uploads /path/to/upload --output /path/to/package` to rebuild it. The package intentionally remains outside the public repository because it contains the original historical archive and structured row-level derivatives. It never includes `.env`, `.dev.vars`, database passwords, service-role keys, Cloudflare tokens, Git metadata, dependencies or build caches.
