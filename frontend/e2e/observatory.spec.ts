@@ -42,7 +42,7 @@ test.describe('public observatory',()=>{
   const response=await request.get('/api/data?kind=export_summary');
   expect(response.ok()).toBeTruthy();
   expect(response.headers()['content-type']).toContain('text/csv');
-  expect(response.headers()['content-disposition']).toContain('playo-observatory-summary.csv');
+  expect(response.headers()['content-disposition']).toContain('playo-observatory-aggregate-summary.csv');
   expect(response.headers()['x-content-type-options']).toBe('nosniff');
   expect(response.headers()['content-security-policy']).toContain("default-src 'self'");
  });
