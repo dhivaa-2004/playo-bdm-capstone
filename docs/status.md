@@ -18,7 +18,7 @@ Public venue submissions use Turnstile, server and database validation, normaliz
 
 The venue map displays all 3,697 historical coordinates with region filtering and client-side clustering at lower zoom; coordinate-less records would remain available through the normal explorer. The comparison view supports two-to-four source regions and up to four browser-saved venues. The lineage view traces archive and training hashes, normalized tables, safe SQL examples and the stored model run. Quality drill-down and model diagnostics calculate their explanation text from the returned evidence, so the wording changes when the result changes rather than repeating a single generic template.
 
-Visual context remains deliberately lightweight: four original SVG guides are reused across the activity, source-region, lineage and community workflows, and load lazily with fixed dimensions. The overview photographs are served as resized WebP files. Data-heavy pages that already contain maps, charts or tables do not receive unnecessary decorative images.
+Visual context remains deliberately lightweight: three original WebP photographs provide prominent context on the activity, source-region and community workflows, while the lineage workflow keeps a compact SVG process guide. The photographs are visibly labelled as illustrative, stay below 150 KB each, use fixed dimensions and load lazily. The overview photographs are also served as resized WebP files. Data-heavy pages that already contain maps, charts or tables do not receive unnecessary decorative images.
 
 ## Security and observability
 
