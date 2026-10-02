@@ -35,6 +35,13 @@ test('public discovery counts, filters and historical details are consistent',as
 });
 
 // Browser fixtures never create submissions in production.
+async function fixtureDirectories(route:any){
+ const kind=new URL(route.request().url()).searchParams.get('kind');
+ if(kind==='summary')return route.fulfill({json:{counts:{venues:8,rated:7,unrated:1,activity_labels:1,regions:1},regions:[{region:'chennai',venues:8,rated:7,unrated:1,mean_rating:4}]}});
+ if(kind==='regions')return route.fulfill({json:[{region:'chennai',display_name:'Chennai',venues:8,rated:7,unrated:1}]});
+ if(kind==='labels')return route.fulfill({json:[{label:'Badminton'}]});
+ return route.continue();
+}
 test('approved community venues open from explorer and can be compared',async({page})=>{
  const fixture={venue_id:'00000000-0000-4000-8000-000000000001',name:'Browser fixture community court',region:'chennai',source_type:'user_submitted',is_synthetic:false,avg_rating:null,rating_count:null,activities:['Badminton'],locality:'Fixture locality',address:'Fixture address',description:'Fixture description',latitude:null,longitude:null,submitted_at:'2026-10-02T00:00:00Z',venue_ratings:{avg_rating:null,rating_count:null},venue_activities:[{label:'Badminton'}],predictions:[]};
  await page.route('**/api/data?**',async route=>{
@@ -42,7 +49,7 @@ test('approved community venues open from explorer and can be compared',async({p
   if(kind==='search')return route.fulfill({json:{total:1,historical_total:0,community_total:1,rows:[fixture]}});
   if(kind==='detail')return route.fulfill({json:[fixture]});
   if(kind==='compare')return route.fulfill({json:[fixture]});
-  return route.continue();
+  return fixtureDirectories(route);
  });
  await page.goto('/venues?source=community');
  await expect(page.getByText('0 historical + 1 approved community', {exact:false})).toBeVisible();
@@ -62,7 +69,7 @@ test('activity directory shows both sources and opens the combined activity filt
  await page.route('**/api/data?**',async route=>{
   const p=new URL(route.request().url()).searchParams;
   if(p.get('kind')==='activities')return route.fulfill({json:[{label:'Badminton',venues:8,approved_community_venues:2,discoverable_venues:10,rated:7,unrated:1,mean_rating:4}]});
-  return route.continue();
+  return fixtureDirectories(route);
  });
  await page.goto('/sports');
  for(const name of ['Historical','Approved community','Total venues','Historical mean rating'])await expect(page.getByRole('columnheader',{name,exact:true})).toBeVisible();
