@@ -35,7 +35,7 @@ export async function GET(req:NextRequest){
   if(kind==='lineage')return await call('rpc/lineage_summary',req,'POST',{},undefined,600);
   if(kind==='model_diagnostics')return await call('rpc/model_diagnostics',req,'POST',{},undefined,600);
   if(kind==='regions')return await call('region_directory?select=*&order=display_name.asc',req,'GET',undefined,undefined,3600);
-  if(kind==='activities')return await call('activity_statistics?select=*&order=venues.desc,label.asc',req,'GET',undefined,undefined,600);
+  if(kind==='activities')return await call('activity_directory?select=*&order=discoverable_venues.desc,label.asc',req);
   if(kind==='analytics')return await call('rpc/analytics_detail',req,'POST',{},undefined,600);
   if(kind==='predictions')return await call('rpc/prediction_summary',req,'POST',{},undefined,600);
   if(kind==='labels')return await call('activity_labels?select=label&order=label.asc',req,'GET',undefined,undefined,3600);
@@ -51,23 +51,32 @@ export async function GET(req:NextRequest){
    return await call('rpc/venue_duplicate_candidates',req,'POST',{p_name:name,p_region:region,p_locality:locality});
   }
   if(kind==='search'){
-   const page=Number(p.get('page')||1),min=Number(p.get('min')||0),rating=Number(p.get('rating')||0),sort=p.get('sort')||'name';
-   if(!Number.isInteger(page)||page<1||page>10000||!Number.isInteger(min)||min<0||min>2147483647||!Number.isFinite(rating)||rating<0||rating>5||!['name','rating_desc','count_desc'].includes(sort)||(p.get('q')||'').length>160)return NextResponse.json({error:'Invalid search filters or page number.'},{status:400});
-   return await call('rpc/venue_search_v2',req,'POST',{q:p.get('q')||'',region_filter:p.get('region')||'',activity_filter:p.get('activity')||'',min_count:min,min_rating:rating,sort_by:sort,page_number:page,page_size:20},undefined,30);
+   const page=Number(p.get('page')||1),min=Number(p.get('min')||0),rating=Number(p.get('rating')||0),sort=p.get('sort')||'name',source=p.get('source')||'';
+   if(!['','historical','community'].includes(source)||(p.get('region')||'').length>60||(p.get('activity')||'').length>160||!Number.isInteger(page)||page<1||page>10000||!Number.isInteger(min)||min<0||min>2147483647||!Number.isFinite(rating)||rating<0||rating>5||!['name','rating_desc','count_desc'].includes(sort)||(p.get('q')||'').length>160)return NextResponse.json({error:'Invalid search filters or page number.'},{status:400});
+   return await call('rpc/venue_catalog_search',req,'POST',{q:p.get('q')||'',region_filter:p.get('region')||'',activity_filter:p.get('activity')||'',min_count:min,min_rating:rating,sort_by:sort,page_number:page,page_size:20,source_filter:source});
   }
   if(kind==='detail'){
-   const id=p.get('id')||'';if(!uuid(id))return NextResponse.json({error:'Invalid venue ID'},{status:400});
-   const latest=await call('model_runs?select=run_id&order=created_at.desc,run_id.asc&limit=1',req,'GET',undefined,undefined,60);if(!latest.ok)return latest;
-   const runs:any=await latest.json();
-   return await call('venues?predictions.run_id=eq.'+(runs[0]?.run_id||'00000000-0000-0000-0000-000000000000')+'&venue_id=eq.'+id+'&select=venue_id,name,region,latitude,longitude,source_type,is_synthetic,source_dataset,observed_at,venue_ratings(avg_rating,rating_count),venue_activities(label),predictions(predicted_rating,split,run_id,feature_hash)',req,'GET',undefined,undefined,60);
+   const id=p.get('id')||'',source=p.get('source')||'';
+   if(!uuid(id)||!['','historical','community'].includes(source))return NextResponse.json({error:'Invalid venue ID or source.'},{status:400});
+   const query=new URLSearchParams({venue_id:'eq.'+id,select:'*'});
+   if(source)query.set('source_type','eq.'+(source==='community'?'user_submitted':'third_party_historical'));
+   const result=await call('venue_catalog?'+query.toString(),req);if(!result.ok)return result;
+   const rows:any[]=await result.json();
+   let predictions:any[]=[];
+   if(rows.some(v=>v.source_type==='third_party_historical')){
+    const latest=await call('model_runs?select=run_id&order=created_at.desc,run_id.asc&limit=1',req);if(!latest.ok)return latest;
+    const runs:any[]=await latest.json();
+    if(runs.length){
+     const stored=await call('predictions?venue_id=eq.'+id+'&run_id=eq.'+runs[0].run_id+'&select=predicted_rating,split,run_id,feature_hash',req);
+     if(!stored.ok)return stored;predictions=await stored.json();
+    }
+   }
+   return NextResponse.json(rows.map(v=>({...v,venue_ratings:{avg_rating:v.avg_rating,rating_count:v.rating_count},venue_activities:v.activities.map((label:string)=>({label})),predictions:v.source_type==='third_party_historical'?predictions:[]})),{headers:{'Cache-Control':'no-store'}});
   }
   if(kind==='compare'){
    const ids=(p.get('ids')||'').split(',').filter(Boolean);
    if(!ids.length||ids.length>4||ids.some(x=>!uuid(x)))return NextResponse.json({error:'Choose one to four valid venue records.'},{status:400});
-   const result=await call(`venues?venue_id=in.(${ids.join(',')})&select=venue_id,name,region,latitude,longitude,venue_ratings(avg_rating,rating_count),venue_activities(label)`,req,'GET',undefined,undefined,60);
-   if(!result.ok)return result;
-   const rows:any[]=await result.json();
-   return NextResponse.json(rows.map(v=>({venue_id:v.venue_id,name:v.name,region:v.region,latitude:v.latitude,longitude:v.longitude,avg_rating:v.venue_ratings?.avg_rating??null,rating_count:v.venue_ratings?.rating_count??0,activities:(v.venue_activities||[]).map((a:any)=>a.label).sort()})),{headers:{'Cache-Control':cacheValue(60)}});
+   return await call(`venue_catalog?venue_id=in.(${ids.join(',')})&select=venue_id,name,region,latitude,longitude,source_type,avg_rating,rating_count,activities`,req);
   }
   if(kind==='submissions'){
    const page=Number(p.get('page')||1),q=(p.get('q')||'').trim(),region=p.get('region')||'';

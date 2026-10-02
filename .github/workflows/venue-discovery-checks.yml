@@ -1,0 +1,36 @@
+name: Venue discovery checks
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "frontend/**"
+      - ".github/workflows/venue-discovery-checks.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: pnpm install --frozen-lockfile
+      - name: Unit tests, typecheck and production build
+        run: |
+          pnpm test
+          pnpm typecheck
+          pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: Community explorer and activity browser regressions
+        run: pnpm exec playwright test --config playwright.discovery.config.ts --grep "approved community venues open|activity directory shows"
