@@ -22,7 +22,7 @@ Visual context remains deliberately lightweight: three original WebP photographs
 
 ## Security and observability
 
-Public writes do not use a service-role key. Turnstile is verified server-side. Database triggers enforce valid activities, field rules and caps, automatically stamp moderation time, and require notes for rejection. Pending and rejected rows stay hidden through public RLS. Unified discovery and activity-directory responses use `no-store` so moderation changes are visible immediately. The Worker adds CSP, HSTS, referrer, permissions, content-type, frame and opener policies. Stable aggregate responses have ETags and bounded cache policies. Cloudflare structured logs record safe request/error metadata. Daily route checks, post-deployment Chromium/Axe tests and CodeQL are configured.
+Public writes do not use a service-role key. Turnstile is verified server-side. Database triggers enforce valid activities, field rules and caps, automatically stamp moderation time, and require notes for rejection. Pending and rejected rows stay hidden through public RLS. Unified discovery and activity-directory responses use `no-store` so moderation changes are visible immediately. The Worker adds CSP, HSTS, referrer, permissions, content-type, frame and opener policies. Stable aggregate responses have ETags and bounded cache policies. Cloudflare structured logs record safe request/error metadata. Daily route checks, post-deployment Chromium/Axe tests, CodeQL and a weekly production-dependency audit are configured.
 
 ## Verification state
 

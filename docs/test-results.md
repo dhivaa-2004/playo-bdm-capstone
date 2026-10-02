@@ -9,6 +9,7 @@ Application release commit: [`bdc35bb`](https://github.com/dhivaa-2004/playo-bdm
 | TypeScript | `tsc --noEmit` passed |
 | Lint | Completed with zero errors; 11 non-blocking framework/style warnings remain documented in CI output |
 | Worker production build | Passed from the pinned pnpm lockfile |
+| Production dependency audit | `pnpm audit --prod` reports zero vulnerabilities after the verified dependency update |
 | Post-deployment browser suite | 5/5 passed: public navigation without sign-in, persisted/atomic theme switching, interactive lineage tabs, CSV/security headers and serious/critical Axe checks |
 | Venue discovery regression | Three discovery specifications pass; the pull-request workflow runs the two browser fixture checks without creating production submissions |
 | Cloudflare deployment | [Workflow 36968976838](https://github.com/dhivaa-2004/playo-bdm-capstone/actions/runs/36968976838) completed successfully |

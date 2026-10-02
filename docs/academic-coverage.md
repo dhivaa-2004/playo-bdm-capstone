@@ -14,7 +14,7 @@ This matrix separates implemented capstone evidence from optional laboratory top
 | Supervised ML | Grouped train/test split, baselines, cross-validation, random forest, MAE/RMSE/R² | `ml/`, `audit/historical/model-evaluation.json` | Modest R²; estimates are not demand, revenue or current quality |
 | Prediction write-back | Versioned run and 3,697 split-labelled outputs with feature hashes | `model_runs`, `predictions` | Only 639 held-out rows provide independent accuracy evidence |
 | Application and communication | Live database dashboard, map, comparisons, contextual explanations and lineage | `frontend/` | Current Playo was schema reference only; no automated scraping |
-| Operations and governance | Pending moderation, correction reports, Turnstile, monitoring, CodeQL, Dependabot and backup runbook | `.github/`, `docs/operations.md`, `docs/backup-recovery.md` | Community rows never enter empirical KPIs or ML |
+| Operations and governance | Pending moderation, correction reports, Turnstile, monitoring, CodeQL, weekly dependency audit and backup runbook | `.github/`, `docs/operations.md`, `docs/backup-recovery.md` | Community rows never enter empirical KPIs or ML |
 
 ## Deliberately not claimed
 

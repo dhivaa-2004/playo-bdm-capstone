@@ -15,7 +15,7 @@ GitHub `main` is the source of truth. `.github/workflows/deploy-cloudflare.yml` 
 
 The GitHub repository needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets. The Worker needs `SUPABASE_PUBLISHABLE_KEY`; the project URL is non-secret configuration. Never store a service-role key, database password or token in source.
 
-`production-smoke.yml` checks the home, form, map, comparison, lineage, health and diagnostic endpoints plus security headers every day. `browser-accessibility.yml` runs Chromium/Axe after a successful deploy. Dependabot checks JavaScript and action dependencies; CodeQL scans JavaScript/TypeScript on pushes, pull requests and weekly.
+`production-smoke.yml` checks the home, form, map, comparison, lineage, health and diagnostic endpoints plus security headers every day. `browser-accessibility.yml` runs Chromium/Axe after a successful deploy. `dependency-security.yml` audits production dependencies weekly and whenever dependency files change without creating update branches. CodeQL scans JavaScript/TypeScript on pushes, pull requests and weekly.
 
 ## Runtime and security
 
