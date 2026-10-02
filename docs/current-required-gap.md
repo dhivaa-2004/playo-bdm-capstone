@@ -1,20 +1,20 @@
-# Current versus required — 30 September 2026
+# Historical implementation plan — closed 2 October 2026
 
-Inspected the existing public repository, local website and live Supabase project using authenticated connectors. No rebuild or synthetic expansion is required.
+This file preserves the 30 September implementation plan for traceability. Its gaps are closed; use `README.md`, `docs/status.md` and `docs/test-results.md` for the current state. No rebuild, synthetic expansion or ML retraining was required.
 
-| Area | Current verified state | Required change |
+| Area | 30 September starting point | Closed outcome |
 |---|---|---|
-| Historical data | 3,697 records; 3,186 rated; 511 unrated; 89 labels; four source regions; zero synthetic | Preserve records and private 3,701-row lineage |
-| Model | Existing grouped evaluation and 3,697 predictions | Preserve trained experiment; expose split-specific summaries and traceability |
-| Database | Normalized tables, checks, FKs, RLS, invoker views | Add missing FK indexes and analytical aggregates |
-| Access | Owner-only workspace policies allow any authenticated account to write | Add explicit server-controlled admin membership; retain ownership |
-| Accounts | Zero application users; zero workspace records | User must register an account before an intended administrator can be bound |
-| Website | Overview, explorer, detail, analysis, model, quality and workspace implementations | Add required route aliases, activities, regions, admin, sorting and rating filters |
-| Data origin | Region labels and synthetic KPI hardcoded in UI | Read these values from the database |
-| Search | SQL pagination and basic filters | Validate pagination; add rating filter and stable sorting |
-| Public content | Sanitized tables; raw HTML/phones absent | Preserve exclusion |
-| GitHub | Public audit foundation; pipeline and website changes still local | Publish current source, migrations, lockfile and accurate documentation; exclude raw archives, artifacts and secrets |
-| Verification | Earlier 16 Python tests and transaction-scoped RLS/CRUD passed | Repeat affected security tests with admin roles; typecheck/build and browser checks |
-| Deployment | Site registered; environment configured; no successful deployment verified | Deploy after validation and verify actual URL |
+| Historical data | 3,697 records; 3,186 rated; 511 unrated; 89 labels; four source regions; zero synthetic | Preserved with private 3,701-row raw lineage and unchanged analytical counts |
+| Model | Existing grouped evaluation and 3,697 predictions | Preserved; split summaries, hashes, diagnostics and limitations are exposed |
+| Database | Normalized tables, checks, FKs, RLS, invoker views | Indexes, aggregates, moderation tables, unified venue discovery and source-separated activity counts implemented |
+| Access | Workspace authorization required hardening | Explicit server-controlled membership, ownership checks and public no-sign-in boundaries implemented |
+| Accounts | Zero application users; zero workspace records | Public application intentionally has no sign-in; private workspace remains outside public routes |
+| Website | Core analytical pages existed | Required aliases, filters, sorting, map, comparison, lineage, diagnostics, moderated submissions and approved-community discovery implemented |
+| Data origin | Some UI values were hardcoded | Region, activity and discovery counts read from Supabase |
+| Search | SQL pagination and basic filters | Bounded pagination, stable sorting, rating/source/region/activity filters and community discovery validated |
+| Public content | Sanitized tables; raw HTML/phones absent | Exclusion preserved |
+| GitHub | Some pipeline and website changes were local | Source, migrations, lockfile, workflows, documentation and final deliverables published; secrets/raw archives excluded |
+| Verification | Earlier Python and RLS/CRUD checks passed | 16 Python tests, 15 frontend tests, SQL acceptance, typecheck, lint, build, browser/accessibility and live API checks pass |
+| Deployment | No successful deployment verified | `main` deploys successfully to the independent Cloudflare Worker URL |
 
-No PPT, new empirical collection, synthetic records, or ML retraining is planned. Database account membership is not inferred from GitHub or Supabase project ownership. Public sign-up never grants administrator privileges.
+The final PPT and teammate guide are in `deliverables/`. No new empirical collection, synthetic records or ML retraining was added. Database account membership is not inferred from GitHub or Supabase project ownership. Public access never grants administrator privileges.

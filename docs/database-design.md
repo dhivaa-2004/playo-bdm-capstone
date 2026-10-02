@@ -2,9 +2,9 @@
 
 ![Verified Playo Supabase ER diagram](assets/playo-supabase-er-diagram.png)
 
-The diagram above was regenerated from the live Supabase schema on 1 October 2026. Solid connectors are enforced foreign keys; dashed connectors are intentional logical links without a database FK constraint. A scalable version is available at [`docs/assets/playo-supabase-er-diagram.svg`](assets/playo-supabase-er-diagram.svg).
+The diagram above was regenerated from the live Supabase schema and presentation-safe artwork was verified on 2 October 2026. Solid connectors are enforced foreign keys; dashed connectors are intentional logical links without a database FK constraint. A scalable version is available at [`docs/assets/playo-supabase-er-diagram.svg`](assets/playo-supabase-er-diagram.svg).
 
-All historical records are protected from application writes. The schema was most recently verified through the Supabase integration on 1 October 2026.
+All historical records are protected from application writes. The schema was most recently verified through the Supabase integration on 2 October 2026.
 
 | Object | Grain / constraints | Access |
 |---|---|---|
@@ -24,7 +24,7 @@ All historical records are protected from application writes. The schema was mos
 | private.schema_migrations | Original application migration ledger | Database owner |
 | private.admin_members | Auth user PK/FK; grant time | Database owner writes; authenticated user sees only own membership |
 
-Public views `feature_store_v1`, `dataset_status`, `region_statistics`, `region_directory`, `activity_statistics` use security invoker. Public RPCs are also security invoker. `quality_summary` was changed from security definer to invoker; a trigger refreshes its public aggregate report. Private triggers use locked search paths and fixed table targets.
+Public views `feature_store_v1`, `dataset_status`, `region_statistics`, `region_directory`, `activity_statistics`, `venue_catalog` and `activity_directory` use security invoker. Public RPCs, including `venue_catalog_search`, are also security invoker. `venue_catalog` combines historical rows with approved community rows only; pending/rejected rows and moderation notes are excluded. `activity_directory` keeps historical rating statistics separate while adding approved-community and combined discovery counts. `quality_summary` was changed from security definer to invoker; a trigger refreshes its public aggregate report. Private triggers use locked search paths and fixed table targets.
 
 Aggregate-only functions `lineage_summary`, `quality_drilldown` and `model_diagnostics` expose reproducibility and evaluation evidence without exposing private raw rows. Moderation triggers stamp `moderated_at` on decisions and reject a rejection without an explanatory note. Partial indexes support pending/approved moderation queues and split-based prediction inspection.
 
